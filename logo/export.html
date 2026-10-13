@@ -1,0 +1,33 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Zyqon logo export</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,700&family=JetBrains+Mono:wght@500&display=swap">
+<style>body{margin:0;background:#888;font-family:sans-serif}canvas{display:block;margin:10px}</style></head><body>
+<!-- Open this page over http (node ../serve.js → http://localhost:8766/logo/export.html) and run exportAll() in the console; it returns PNG data URLs. -->
+<div style="font-family:Inter;font-weight:700;position:absolute;opacity:0">Zyqon</div><div style="font-family:'JetBrains Mono';font-weight:500;position:absolute;opacity:0">.io</div>
+<script>
+function draw(mode, markOnly){
+  const S=4, W=markOnly?64*S*2:(64*2+16+300)*S, H=64*S*2;
+  const c=document.createElement('canvas');c.width=W;c.height=H;const x=c.getContext('2d');
+  const bg={dark:'#090C14',light:'#FFFFFF',transparent:null}[mode];
+  if(bg){x.fillStyle=bg;x.fillRect(0,0,W,H);}
+  const g1=mode==='light'?'#0E9F8E':'#5EEAD4', g2=mode==='light'?'#5B6CF0':'#8B9CFF';
+  x.save();x.scale(S*2,S*2);
+  const grad=x.createLinearGradient(0,0,64,64);grad.addColorStop(0,g1);grad.addColorStop(1,g2);
+  x.strokeStyle=grad;x.lineWidth=5.5;x.lineCap='round';x.lineJoin='round';
+  x.stroke(new Path2D('M51.18 40.54A21 21 0 1 0 40.54 51.18'));
+  x.stroke(new Path2D('M23 24h18L23 40h18l12 12'));
+  x.restore();
+  if(!markOnly){
+    x.fillStyle=mode==='light'?'#0D1220':'#EEF2FA';
+    x.font=`700 ${44*S}px Inter`;x.letterSpacing=`${-1.6*S}px`;x.textBaseline='alphabetic';
+    const tx=(64*2+16)*S, ty=(64+16)*S;
+    x.fillText('Zyqon',tx,ty);
+    const w=x.measureText('Zyqon').width;
+    x.letterSpacing='0px';x.fillStyle=mode==='light'?'#4F5B75':'#9AA6BF';x.font=`500 ${24*S}px "JetBrains Mono"`;
+    x.fillText('.io',tx+w+1*S,ty);
+  }
+  document.body.appendChild(c);
+  return c.toDataURL('image/png');
+}
+window.exportAll=async function(){await document.fonts.load('700 40px Inter');await document.fonts.load('500 20px "JetBrains Mono"');await document.fonts.ready;
+  return {dark:draw('dark'),light:draw('light'),markDark:draw('transparent',true),markLight:draw('light',true)};};
+</script></body></html>
