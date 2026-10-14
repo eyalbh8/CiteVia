@@ -7,14 +7,6 @@ export const primaryNavItems = [
     href: '/blog',
   },
   {
-    label: 'Resources & glossary',
-    href: '/resources',
-  },
-  {
-    label: 'Company facts',
-    href: '/ai-info',
-  },
-  {
     label: 'Services',
     href: '/services',
     children: [
