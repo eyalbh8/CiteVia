@@ -7,7 +7,8 @@ import { methodology } from '@/content/methodology';
 import { industries } from '@/content/industries';
 import { solutions } from '@/content/solutions';
 import { caseStudies } from '@/content/case-studies';
-import { faqs as homepageFaqs } from '@/components/arielos/data';
+import { faqs as homepageFaqs, serviceFaqs } from '@/components/arielos/data';
+import { methodologyFaqs } from '@/components/arielos/pageContent';
 import { glossary, resourceFaqs } from '@/content/resources';
 
 const introduction = `# Citevia\n\n> ${site.description}\n\nWebsite: ${site.url}\nContact: ${site.email}\n\nCitevia provides services. Project scope is agreed with the business. Example case studies are constructed educational scenarios, not client engagements or achieved performance results. The homepage Nayax ranking, mentions and sentiment are transcribed from a supplied static screenshot. Other homepage reporting views remain illustrative; case-study metrics are synthetic and no live analytics API is connected. Independent search rankings and AI recommendations are not guaranteed.\n`;
@@ -31,7 +32,7 @@ export function llmsIndex() {
           .map((page) => `- [${page.title}](${absoluteUrl(page.path)}): ${page.description}`)
           .join('\n')}`,
     ),
-    `## Optional\n\n- [Full-text companion](${absoluteUrl('/llms-full.txt')}): Published services, solutions, example studies, blog articles, and resource definitions.\n- [Sitemap](${absoluteUrl('/sitemap.xml')}): Canonical public pages when production indexing is enabled.\n- [Privacy notice](${absoluteUrl('/privacy')}): How website inquiries and delivery are handled.\n- [Website terms](${absoluteUrl('/terms')}): Website use and content limitations.`,
+    `## Optional\n\n- [Full-text companion](${absoluteUrl('/llms-full.txt')}): Published methodology, services and FAQs, solutions, example studies, blog articles, and resource definitions.\n- [Sitemap](${absoluteUrl('/sitemap.xml')}): Canonical public pages when production indexing is enabled.\n- [Privacy notice](${absoluteUrl('/privacy')}): How website inquiries and delivery are handled.\n- [Website terms](${absoluteUrl('/terms')}): Website use and content limitations.`,
     '',
   ].join('\n\n');
 }
@@ -46,6 +47,10 @@ export function llmsFullText() {
       (step) =>
         `### ${step.name}\n\n${step.question}\n\n${step.body}\n\nInputs:\n${bullets(step.inputs)}\n\nOutputs:\n${bullets(step.outputs)}`,
     ),
+    '## Methodology questions',
+    ...methodologyFaqs.map((faq) => `### ${faq.q}\n\n${faq.a}`),
+    '## Services overview questions',
+    ...serviceFaqs.map((faq) => `### ${faq.q}\n\n${faq.a}`),
     '## Services',
     ...services.map((item) =>
       [

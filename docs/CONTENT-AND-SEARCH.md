@@ -6,7 +6,7 @@ The site serves 49 content pages: home, service index, eleven services, methodol
 
 Next.js server routes provide metadata and prerender the primary page content, including the supplied interactive React components. Client components handle shared navigation, five static report tabs, image dialogs and contact interaction. Pages use semantic headings, descriptive links, image alternatives, and accessible FAQ disclosures. Brand, origin, and contact details share one configuration.
 
-Every page has a title, description, canonical URL, Open Graph metadata, and social image. JSON-LD describes the visible organization, website, page, breadcrumbs, services, and articles. It contains no fabricated ratings or performance claims. Visible FAQs help readers; they are not promoted as a guaranteed rich-result feature.
+Every page has a title, description, canonical URL, Open Graph metadata, and social image. JSON-LD describes the visible organization, website, page, breadcrumbs, services, articles, and FAQ content. FAQPage markup mirrors the questions and answers shown on the homepage, services, methodology, and resource pages; it does not guarantee a search rich result or AI citation. The structured data contains no fabricated ratings or performance claims.
 
 ## Service updates
 
@@ -61,7 +61,7 @@ No framework, schema, or format guarantees rankings or AI citations. The impleme
 - `/robots.txt` allows public content and assets in indexable production and excludes API paths. The wildcard rule also applies to cooperating AI crawlers. Preview builds disallow crawling. Robots rules are not authentication.
 - `/sitemap.xml` lists canonical HTML pages with meaningful modification dates. It omits legal pages, redirects, filtered variants, and text mirrors. It remains empty for previews.
 - `/llms.txt` is a Markdown overview following the [llms.txt proposal](https://llmstxt.org/), with identity, grouped content links, and example labels.
-- `/llms-full.txt` is a text companion for methodology, industries, services, solutions, studies, blog articles, glossary entries, and resource FAQs. It is generated directly from the same published records, including sources and dates.
+- `/llms-full.txt` is a text companion for methodology and service FAQs, industries, services, solutions, studies, blog articles, glossary entries, and resource FAQs. It is generated directly from the same published records, including sources and dates.
 - Both text routes return `text/plain; charset=utf-8` and `X-Robots-Tag: noindex, follow`. This preserves canonical HTML as the search destination while leaving the text available to readers and tools. A site-wide `Link: </llms.txt>; rel="describedby"` header advertises the index. Rebuild after content or origin changes.
 - `/ai-info` provides a human-readable identity and content reference with no invented locations, certifications, clients, or endorsements.
 

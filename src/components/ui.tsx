@@ -2,7 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import type { ReactNode } from 'react';
 import { ArrowIcon } from './icons';
-import { breadcrumbSchema } from '@/lib/seo';
+import { breadcrumbSchema, faqPageSchema } from '@/lib/seo';
 
 export function JsonLd({ data }: { data: Record<string, unknown> | Record<string, unknown>[] }) {
   return (
@@ -84,17 +84,20 @@ export function SectionHeading({
 
 export function Faq({ items }: { items: { question: string; answer: string }[] }) {
   return (
-    <div className="faq-list">
-      {items.map((item) => (
-        <details key={item.question}>
-          <summary>
-            {item.question}
-            <span aria-hidden="true">+</span>
-          </summary>
-          <p>{item.answer}</p>
-        </details>
-      ))}
-    </div>
+    <>
+      <JsonLd data={faqPageSchema(items)} />
+      <div className="faq-list">
+        {items.map((item) => (
+          <details key={item.question}>
+            <summary>
+              {item.question}
+              <span aria-hidden="true">+</span>
+            </summary>
+            <p>{item.answer}</p>
+          </details>
+        ))}
+      </div>
+    </>
   );
 }
 

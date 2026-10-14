@@ -170,6 +170,40 @@ try {
   assert(pages.size >= 19, `Expected all 19 initial pages to be reachable, found ${pages.size}`);
   const robots = await (await request('/robots.txt')).text();
   const sitemap = await (await request('/sitemap.xml')).text();
+  const llmsIndexResponse = await request('/llms.txt');
+  assert.equal(llmsIndexResponse.status, 200, '/llms.txt must be available');
+  assert(
+    llmsIndexResponse.headers.get('content-type')?.includes('text/plain'),
+    '/llms.txt must be served as plain text',
+  );
+  assert.equal(
+    llmsIndexResponse.headers.get('x-robots-tag'),
+    'noindex, follow',
+    '/llms.txt must not compete with canonical HTML pages',
+  );
+  const llmsIndex = await llmsIndexResponse.text();
+  assert(llmsIndex.includes('# Citevia'), '/llms.txt must identify the site');
+  assert(llmsIndex.includes(`${canonicalOrigin}/services`), '/llms.txt must link to services');
+  const llmsFullResponse = await request('/llms-full.txt');
+  assert.equal(llmsFullResponse.status, 200, '/llms-full.txt must be available');
+  assert(
+    llmsFullResponse.headers.get('content-type')?.includes('text/plain'),
+    '/llms-full.txt must be served as plain text',
+  );
+  assert.equal(
+    llmsFullResponse.headers.get('x-robots-tag'),
+    'noindex, follow',
+    '/llms-full.txt must not compete with canonical HTML pages',
+  );
+  const llmsFull = await llmsFullResponse.text();
+  for (const section of [
+    '## Homepage questions',
+    '## Methodology questions',
+    '## Services overview questions',
+    '## Services',
+    '## Common questions',
+  ])
+    assert(llmsFull.includes(section), `/llms-full.txt must include ${section}`);
   const urls = [...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map(([, value]) => decode(value));
   if (indexable) {
     assert(

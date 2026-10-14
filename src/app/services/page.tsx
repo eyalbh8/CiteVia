@@ -1,6 +1,7 @@
 import { ServicesPage } from '@/components/arielos/Pages';
 import { JsonLd } from '@/components/ui';
-import { breadcrumbSchema, pageMetadata, webPageSchema } from '@/lib/seo';
+import { breadcrumbSchema, faqPageSchema, pageMetadata, webPageSchema } from '@/lib/seo';
+import { serviceFaqs } from '@/components/arielos/data.js';
 const description =
   'We build the marketing infrastructure that turns AI Search signals into continuous, compounding execution.';
 export const metadata = pageMetadata({
@@ -25,6 +26,7 @@ export default function Page() {
           'CollectionPage',
         )}
       />
+      <JsonLd data={faqPageSchema(serviceFaqs.map(({ q, a }) => ({ question: q, answer: a })))} />
       <div className="arielos-home">
         <ServicesPage />
       </div>

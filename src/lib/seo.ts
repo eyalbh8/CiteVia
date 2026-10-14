@@ -84,3 +84,14 @@ export function breadcrumbSchema(items: { name: string; href: string }[]) {
     })),
   };
 }
+
+export function faqPageSchema(items: { question: string; answer: string }[]) {
+  return {
+    '@type': 'FAQPage',
+    mainEntity: items.map(({ question, answer }) => ({
+      '@type': 'Question',
+      name: question,
+      acceptedAnswer: { '@type': 'Answer', text: answer },
+    })),
+  };
+}
