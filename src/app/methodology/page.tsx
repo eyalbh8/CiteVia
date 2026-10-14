@@ -1,6 +1,6 @@
 import { MethodologyPage } from '@/components/arielos/Pages';
 import { JsonLd } from '@/components/ui';
-import { pageMetadata, webPageSchema } from '@/lib/seo';
+import { breadcrumbSchema, pageMetadata, webPageSchema } from '@/lib/seo';
 const description =
   'Data tells us where to act. The methodology turns those signals into infrastructure that executes faster, learns continuously, and compounds over time.';
 export const metadata = pageMetadata({
@@ -11,6 +11,12 @@ export const metadata = pageMetadata({
 export default function Page() {
   return (
     <>
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: 'Home', href: '/' },
+          { name: 'Methodology', href: '/methodology' },
+        ])}
+      />
       <JsonLd
         data={webPageSchema(
           'AI Search Marketing Methodology',

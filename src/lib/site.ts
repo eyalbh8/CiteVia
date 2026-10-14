@@ -31,7 +31,7 @@ export function absoluteUrl(path = '/') {
 }
 
 export const navigation = [
-  { href: '/blog', label: 'Insights' },
+  { href: '/blog', label: 'Blog' },
   { href: '/services', label: 'All services' },
   { href: '/methodology', label: 'Methodology' },
 ];

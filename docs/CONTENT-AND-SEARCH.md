@@ -16,18 +16,26 @@ Update `site.updated` in `src/lib/site.ts` after substantive site-wide or servic
 
 ## Article publishing
 
-Add an entry to `src/content/blog-articles.ts` (the original three foundation guides remain in `src/content/articles.ts`) with:
+Add an entry to `src/content/blog-articles.ts` (the three foundation guides live in `src/content/foundation-articles.ts`; `src/content/articles.ts` combines the registries) with:
 
-- A unique slug and title addressing a real question.
-- A concise description and direct takeaway.
+- A stable unique slug, descriptive title, and one natural `focusKeyphrase` that matches the reader’s intent.
+- A concise `seoTitle` (the site adds ` | Citevia`), a specific description, and a direct takeaway.
+- Natural use of the keyphrase in the title, opening, description, and a relevant heading; use related terms where they read better.
 - Sections explaining the answer, tradeoffs, evidence, and limitations.
-- Primary source links beside relevant claims where applicable.
+- Contextual links to related articles or services, plus primary external sources beside the claims they support.
+- Short paragraphs, clear sentences, useful subheadings, and practical examples or steps. Avoid padding to meet a word count.
 - Accurate publication and modification dates.
 - A related service appropriate to the topic.
 
+All ten articles share the same server-rendered blog template, a table of contents, a direct answer, related reading and `BlogPosting` structured data. The title, dates, author, image and word count come from the same records as the visible article. Article images are selected in `src/content/article-media.ts`; keep their alternative text descriptive. Research examples remain visibly labeled, and no independent expert review is implied.
+
+Paragraphs, bullets and example text support links using `[descriptive anchor](/blog/article-slug)` and `[source title](https://source.example/page)`. `ArticleText` renders these as real HTML links. Internal links use Next.js navigation; external editorial links are ordinary followed links. Only site-relative paths and HTTP(S) destinations are accepted, with no raw HTML. Other Markdown formatting is not supported. The LLM companion preserves the links and makes internal destinations absolute. Reading times count visible words rather than URL strings.
+
+The October 14 editorial pass follows [Yoast’s SEO analysis guidance](https://yoast.com/features/seo-analysis/) and [readability guidance](https://yoast.com/yoast-seo-readability-analysis/): focused intent, useful titles/descriptions, relevant links, concise paragraphs, clear headings and natural language. This Next.js site does not run the Yoast WordPress plugin, and no plugin score or ranking result is claimed. Before publishing, review each article’s sources, internal destinations, actual rendered metadata and readability. Keep numeric examples explicitly hypothetical.
+
 The visible byline identifies Citevia as the organization author. Do not invent a person. When named experts are available, add real author profiles and update Article schema to match. Keep publication dates stable and change modification dates after substantive revisions.
 
-The canonical blog lives at `/blog`; former `/insights` URLs redirect permanently. The source library lives in `src/components/arielos/content/insights.js`, with `src/content/arielos-articles.ts` adapting those records into the shared article registry. Article routes, the directory, the sitemap, and text exports follow the shared article array automatically. The directory presents the three source research notes first and additional Citevia guides below. The initial HTML includes the complete directory. When adding a new article, review its card artwork and related links for relevance.
+The canonical blog lives at `/blog`; former `/insights` URLs redirect permanently. The source library lives in `src/components/arielos/content/insights.js`, with `src/content/arielos-articles.ts` adapting those records into the shared article registry. Article routes, the directory, the sitemap, and text exports follow the shared article array automatically. The Blog landing page features a foundation guide and a searchable directory of all articles, ordered by publication date. Topic filters, publication dates, reading times and article images help readers browse. The initial HTML includes the complete directory; filtering is local and does not create duplicate URL variants. Shared navigation, footer and the homepage link to `/blog` using the Blog label. Blog and breadcrumb structured data describe the landing page. When adding a new article, review its card artwork and related links for relevance.
 
 ## Solutions and example studies
 
@@ -83,7 +91,7 @@ The user supplied `/Users/eyalbenhaim/Desktop/Arielos` as the source of the requ
 - Six exact generated images are copied into `public/images/generated/`. The earlier copies in `public/images/editorial/` are retained for existing references. Open Sauce One and Poppins WOFF2 font files and their licenses are in `public/fonts/arielos/`. Instrument Serif uses the existing Fontsource package.
 - `src/components/arielos/data/workspaceData.js` shares the supplied Nayax snapshot across the hero, account brief, mentions view and lower comparison: Nayax (rank 1.0, 1,403 mentions, sentiment 92), squareup (2.3, 507, 88), Cantaloupe (2.7, 496, 96), 365 Retail Markets (4.3, 237, 94), and ingenico.com (5.0, 230, 88). No reporting period, share of voice or platform split was supplied, so the snapshot uses average rank and brand mention bars. Traffic, prompt and citation previews use Nayax naming and remain labeled illustrative. Animated overlays are concepts. No live data is requested.
 - Additional source photographs are in `public/images/` and the supplied product screenshots are in `public/images/product/`. Page-specific text comes from `pageContent.js`, `content/services.js` and `content/insights.js` in the Arielos component directory. The typed registries derive primary service, industry, methodology and research content from these same records for metadata and text exports.
-- `src/content/arielos-articles.ts` adapts the three supplied research articles, using Citevia publication dates and the complete source copy. These join the same article registry used by the blog, metadata, sitemap and LLM exports.
+- `src/content/arielos-articles.ts` adapts the three supplied research articles, using Citevia publication dates and the maintained editorial copy. The October 14 editorial revision removes repeated draft paragraphs and supplies contextual internal and external links. These join the same article registry used by the blog, metadata, sitemap and LLM exports.
 - Homepage FAQ answers are included in the full-text LLM companion. Statistical cards link to Bain's original research and Adobe's March 2026 retail findings; these are separate from the illustrative dashboards.
 - The shared footer's compact contact form prepares an email draft using the configured contact email. Visitors review and send it themselves. Booking buttons use `site.bookingUrl`. The assessment uses the existing contact validation and optional webhook; without a configured webhook it prepares an email draft. `/thank-you` does not assert delivery without confirmation and remains outside the sitemap.
 

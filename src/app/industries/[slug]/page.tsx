@@ -2,7 +2,7 @@ import { notFound } from 'next/navigation';
 import { IndustryPage } from '@/components/arielos/Pages';
 import { industryProfiles } from '@/components/arielos/pageContent';
 import { JsonLd } from '@/components/ui';
-import { pageMetadata, webPageSchema } from '@/lib/seo';
+import { breadcrumbSchema, pageMetadata, webPageSchema } from '@/lib/seo';
 type Props = { params: Promise<{ slug: string }> };
 export const dynamicParams = false;
 export function generateStaticParams() {
@@ -24,6 +24,13 @@ export default async function Page({ params }: Props) {
   if (!industry) notFound();
   return (
     <>
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: 'Home', href: '/' },
+          { name: 'Industries', href: '/industries' },
+          { name: industry.name, href: `/industries/${slug}` },
+        ])}
+      />
       <JsonLd data={webPageSchema(industry.name, industry.summary, `/industries/${slug}`)} />
       <div className="arielos-home">
         <IndustryPage industrySlug={slug} />

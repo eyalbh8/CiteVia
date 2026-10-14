@@ -1,0 +1,309 @@
+.citevia-post {
+  background: #fff;
+}
+.citevia-post .post-shell {
+  max-width: 1160px;
+  padding-top: 124px;
+}
+.citevia-post .breadcrumbs {
+  margin: 0 0 34px;
+  font-size: 12px;
+  color: var(--muted);
+}
+.citevia-post .breadcrumbs ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  padding: 0;
+}
+.citevia-post .breadcrumbs li:not(:last-child)::after {
+  content: '/';
+  padding-left: 8px;
+  color: #a8acc1;
+}
+.citevia-post .breadcrumbs a {
+  color: var(--muted);
+}
+.citevia-post .post-header {
+  max-width: 940px;
+}
+.citevia-post .post-header h1 {
+  margin: 18px 0 24px;
+  font-size: clamp(36px, 5vw, 62px);
+  line-height: 1.12;
+  letter-spacing: -0.045em;
+  text-wrap: balance;
+}
+.citevia-post .post-deck {
+  max-width: 800px;
+  font-size: 18px;
+  line-height: 1.8;
+  color: var(--muted);
+}
+.citevia-post .post-byline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 22px;
+  margin: 26px 0 34px;
+  font-size: 11px;
+  line-height: 1.7;
+  color: var(--muted);
+}
+.citevia-post .post-byline a {
+  color: var(--accent);
+  font-weight: 600;
+}
+.citevia-post .post-cover {
+  position: relative;
+  aspect-ratio: 2.9;
+  margin: 0 0 66px;
+  border-radius: 24px;
+  overflow: hidden;
+  background: #08152a;
+}
+.citevia-post .post-cover img {
+  object-fit: cover;
+}
+.citevia-post .post-layout {
+  display: grid;
+  grid-template-columns: 235px minmax(0, 1fr);
+  gap: clamp(36px, 5vw, 80px);
+  align-items: start;
+}
+.citevia-post .post-toc {
+  position: sticky;
+  top: 120px;
+  padding-right: 20px;
+  max-height: calc(100vh - 160px);
+  overflow-y: auto;
+}
+.citevia-post .post-toc nav {
+  display: grid;
+  gap: 16px;
+  margin: 24px 0;
+  padding-left: 18px;
+  border-left: 1px solid var(--line);
+}
+.citevia-post .post-toc a {
+  font-size: 12px;
+  line-height: 1.65;
+  color: var(--muted);
+  text-decoration: none;
+}
+.citevia-post .post-toc a:hover,
+.citevia-post .post-toc .post-back {
+  color: var(--accent);
+}
+.citevia-post .post-body {
+  min-width: 0;
+  font-size: 16px;
+  line-height: 1.9;
+  color: #42485e;
+}
+.citevia-post .post-body section {
+  margin: 42px 0;
+  scroll-margin-top: 118px;
+}
+.citevia-post .post-body h2 {
+  margin: 0 0 22px;
+  font-size: clamp(25px, 2.5vw, 32px);
+  line-height: 1.3;
+  letter-spacing: -0.035em;
+  color: var(--ink);
+}
+.citevia-post .post-body p {
+  margin: 0 0 22px;
+}
+.citevia-post .post-body a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1px;
+  overflow-wrap: anywhere;
+}
+.citevia-post .post-body a:hover {
+  text-decoration-thickness: 2px;
+}
+.citevia-post .post-body ul {
+  margin: 20px 0;
+  padding-left: 22px;
+}
+.citevia-post .post-body li {
+  padding-left: 5px;
+  margin: 12px 0;
+}
+.citevia-post .post-takeaway {
+  padding: 26px 30px;
+  border-left: 3px solid var(--accent);
+  border-radius: 0 16px 16px 0;
+  background: linear-gradient(115deg, #f0edff, #eefbff);
+  color: #282f48;
+}
+.citevia-post .post-takeaway .eyebrow {
+  margin-bottom: 14px;
+}
+.citevia-post .post-takeaway p:last-child,
+.citevia-post .post-example p:last-child {
+  margin-bottom: 0;
+}
+.citevia-post .post-example {
+  margin: 28px 0;
+  padding: 24px;
+  background: #f7f8fc;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  font-size: 15px;
+}
+.citevia-post .post-example h3 {
+  margin: 0 0 12px;
+  color: var(--ink);
+  font-size: 17px;
+  line-height: 1.5;
+}
+.citevia-post .post-body .post-source {
+  font-size: 13px;
+}
+.citevia-post .post-review {
+  margin-top: 48px;
+  padding: 28px 0 64px;
+  border-top: 1px solid var(--line);
+  font-size: 13px;
+}
+.citevia-post .post-review p {
+  margin-bottom: 10px;
+}
+.citevia-post .post-related {
+  padding: 64px 0;
+  border-block: 1px solid var(--line);
+  background: #f6f7ff;
+}
+.citevia-post .post-related h2,
+.citevia-post .post-cta h2 {
+  font-size: clamp(26px, 3vw, 38px);
+  line-height: 1.25;
+  letter-spacing: -0.035em;
+  margin: 18px 0 28px;
+}
+.citevia-post .post-related-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+.citevia-post .post-related-card {
+  display: flex;
+  flex-direction: column;
+  padding: 28px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: #fff;
+  text-decoration: none;
+}
+.citevia-post .post-related-card .eyebrow {
+  font-size: 9px;
+}
+.citevia-post .post-related-card h3 {
+  margin: 20px 0 14px;
+  color: var(--ink);
+  font-size: 22px;
+  line-height: 1.4;
+  letter-spacing: -0.03em;
+}
+.citevia-post .post-related-card p {
+  margin: 0 0 26px;
+  font-size: 13px;
+  line-height: 1.8;
+  color: var(--muted);
+}
+.citevia-post .post-read {
+  display: flex;
+  justify-content: space-between;
+  margin-top: auto;
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 600;
+}
+.citevia-post .post-all {
+  display: inline-block;
+  margin-top: 28px;
+  color: var(--accent);
+  font-size: 14px;
+}
+.citevia-post .post-cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  padding-block: 70px;
+}
+.citevia-post .post-cta h2 {
+  max-width: 620px;
+  margin-bottom: 14px;
+}
+.citevia-post .post-cta p:not(.eyebrow) {
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.7;
+}
+.citevia-post .post-cta .button {
+  flex-shrink: 0;
+}
+.citevia-post a:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 4px;
+}
+@media (max-width: 900px) {
+  .citevia-post .post-layout {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .citevia-post .post-toc {
+    position: static;
+    max-height: none;
+    padding: 24px;
+    background: #f7f8fc;
+    border-radius: 14px;
+  }
+  .citevia-post .post-toc nav {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .citevia-post .post-cover {
+    margin-bottom: 36px;
+  }
+  .citevia-post .post-related-grid {
+    grid-template-columns: 1fr;
+  }
+  .citevia-post .post-cta {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+@media (max-width: 600px) {
+  .citevia-post .post-shell {
+    padding-top: 112px;
+  }
+  .citevia-post .post-deck {
+    font-size: 16px;
+  }
+  .citevia-post .post-byline {
+    gap: 8px 16px;
+  }
+  .citevia-post .post-cover {
+    aspect-ratio: 1.6;
+    border-radius: 16px;
+  }
+  .citevia-post .post-toc nav {
+    grid-template-columns: 1fr;
+  }
+  .citevia-post .post-body {
+    font-size: 15px;
+    line-height: 1.85;
+  }
+  .citevia-post .post-takeaway {
+    padding: 22px;
+  }
+  .citevia-post .post-related,
+  .citevia-post .post-cta {
+    padding-block: 48px;
+  }
+}

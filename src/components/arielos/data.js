@@ -3,7 +3,7 @@ export const assessmentHref = '/private-ai-visibility-assessment';
 
 export const primaryNavItems = [
   {
-    label: 'Insights',
+    label: 'Blog',
     href: '/blog',
   },
   {
@@ -79,7 +79,7 @@ export const footerServiceItems = [
 
 export const footerNavItems = [
   {
-    label: 'Insights',
+    label: 'Blog',
     href: '/blog',
   },
   {

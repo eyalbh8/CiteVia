@@ -142,7 +142,10 @@ try {
       assert(
         nodes.some(
           (node) =>
-            node['@type'] === 'Article' && node.datePublished && node.dateModified && node.author,
+            ['Article', 'BlogPosting'].includes(node['@type']) &&
+            node.datePublished &&
+            node.dateModified &&
+            node.author,
         ),
         `${path}: incomplete article schema`,
       );

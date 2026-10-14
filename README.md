@@ -20,7 +20,7 @@ Open <http://localhost:3000>. No external credentials are needed. The contact fo
 - `src/components/`: navigation, footer, cards, contact form, and reusable page sections.
 - `src/components/arielos/`: the supplied marketing page components, shared navigation and footer, page copy, research articles, and static reporting views.
 - `src/content/services.ts` and `src/content/marketing-services.ts`: eleven service definitions, FAQs, and approach copy.
-- `src/content/articles.ts`, `src/content/blog-articles.ts`, and `src/content/arielos-articles.ts`: ten blog articles, source links, dates, and related services.
+- `src/content/articles.ts`: shared article model and registry; `foundation-articles.ts`, `blog-articles.ts`, and `arielos-articles.ts` supply ten posts with focus keyphrases, SEO titles, sources, dates and related services.
 - `src/content/solutions.ts`: three audience-specific solution pages.
 - `src/content/case-studies.ts` and `src/content/sector-case-studies.ts`: six clearly labeled illustrative studies; three include synthetic before-and-after figures.
 - `src/content/industries.ts`: five sector pages with buyer questions, barriers, and evidence.
@@ -41,7 +41,7 @@ The historical Zyqon brief is retained in `docs/legacy-brand-brief.md`; its clai
 
 ## Content and discovery
 
-Browse `/industries`, `/methodology`, `/private-ai-visibility-assessment`, `/solutions`, `/case-studies`, `/blog`, `/resources`, and `/ai-info`. The blog presents the supplied research library followed by the existing Citevia guides; all articles render in the initial HTML. Example studies are labeled on cards, pages, metadata, and text exports.
+Browse `/industries`, `/methodology`, `/private-ai-visibility-assessment`, `/solutions`, `/case-studies`, `/blog`, `/resources`, and `/ai-info`. The Blog page at `/blog` presents a featured guide and all ten articles with keyword search, topic filters, publication dates and reading times. Blog links appear in the shared navigation, footer and homepage. All article links render in the initial HTML. Each post uses a shared reading layout with a table of contents, contextual internal and external links, source-backed examples, an author byline, updated date and BlogPosting metadata. The copy follows Yoast-style editorial criteria; no Yoast plugin score is claimed. Example studies are labeled on cards, pages, metadata, and text exports.
 
 `/robots.txt` and `/sitemap.xml` follow the production indexing policy. `/llms.txt` provides a concise content index and `/llms-full.txt` provides readable source content. Both text files are generated during the build, use `SITE_URL`, and carry `noindex, follow` to keep the HTML pages canonical. They are supplemental reading formats, not ranking guarantees. See `docs/CONTENT-AND-SEARCH.md` for publishing and source notes.
 

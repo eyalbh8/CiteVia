@@ -1,5 +1,6 @@
 import { PageHero, Section } from '@/components/arielos/UI';
-import { pageMetadata } from '@/lib/seo';
+import { breadcrumbSchema, pageMetadata } from '@/lib/seo';
+import { JsonLd } from '@/components/ui';
 import { site } from '@/lib/site';
 export const metadata = {
   ...pageMetadata({
@@ -12,6 +13,12 @@ export const metadata = {
 export default function PrivacyPage() {
   return (
     <div className="arielos-home">
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: 'Home', href: '/' },
+          { name: 'Privacy notice', href: '/privacy' },
+        ])}
+      />
       <PageHero
         eyebrow="WEBSITE INFORMATION"
         title="Privacy notice"

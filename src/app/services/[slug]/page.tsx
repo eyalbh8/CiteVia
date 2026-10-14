@@ -7,7 +7,7 @@ import { methodology } from '@/content/methodology';
 import { serviceHeadlines } from '@/content/marketing-services';
 import { Breadcrumbs, Cta, Faq, JsonLd, PageIntro } from '@/components/ui';
 import { ArrowIcon, CheckIcon } from '@/components/icons';
-import { pageMetadata, webPageSchema } from '@/lib/seo';
+import { breadcrumbSchema, pageMetadata, webPageSchema } from '@/lib/seo';
 import { absoluteUrl, site } from '@/lib/site';
 
 export const dynamicParams = false;
@@ -37,6 +37,11 @@ export default async function ServicePage({ params }: Props) {
         <JsonLd
           data={[
             webPageSchema(service.name, service.summary, path),
+            breadcrumbSchema([
+              { name: 'Home', href: '/' },
+              { name: 'Services', href: '/services' },
+              { name: service.name, href: path },
+            ]),
             {
               '@type': 'Service',
               '@id': `${absoluteUrl(path)}#service`,

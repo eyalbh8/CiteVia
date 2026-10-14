@@ -10,6 +10,8 @@ const slugify = (text: string) =>
 export const arielosArticles: Article[] = insightArticles.map((article) => ({
   slug: article.slug,
   title: article.title,
+  seoTitle: article.seoTitle,
+  focusKeyphrase: article.focusKeyphrase,
   description: article.deck,
   category: 'RESEARCH',
   published: article.datePublished,
@@ -17,23 +19,26 @@ export const arielosArticles: Article[] = insightArticles.map((article) => ({
   takeaway: article.executiveSummary.join(' '),
   relatedService: 'aeo',
   sections: [
-    { id: 'executive-summary', title: 'Executive summary', paragraphs: article.executiveSummary },
-    ...article.definitions.map((definition) => ({
-      id: slugify(definition.term),
-      title: definition.term,
-      paragraphs: [definition.quote],
-    })),
+    {
+      id: 'key-definitions',
+      title: 'Key definitions',
+      paragraphs: [],
+      bullets: article.definitions.map((definition) => `${definition.term}: ${definition.quote}`),
+    },
     ...article.sections.map((section) => ({
       id: slugify(section.heading),
       title: section.heading,
-      paragraphs: [...section.paragraphs, section.example.title, section.example.text],
+      paragraphs: section.paragraphs,
+      example: section.example,
     })),
-    { id: 'limitations', title: 'Interpret with care.', paragraphs: article.limitations },
-    ...article.sources.map((source, index) => ({
-      id: `source-${index + 1}`,
-      title: source.title,
-      paragraphs: [source.organization],
-      source: { title: source.title, url: source.url },
-    })),
+    { id: 'limitations', title: 'Scope and limitations', paragraphs: article.limitations },
+    {
+      id: 'sources',
+      title: 'Sources and further reading',
+      paragraphs: [],
+      bullets: article.sources.map(
+        (source) => `[${source.title}](${source.url}) — ${source.organization}`,
+      ),
+    },
   ],
 }));

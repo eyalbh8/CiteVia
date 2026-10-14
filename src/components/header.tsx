@@ -51,7 +51,7 @@ export function Header({
       <div className="container header-inner">
         <Brand />
         <nav className="desktop-nav" aria-label="Main navigation">
-          <Link href="/blog">Insights</Link>
+          <Link href="/blog">Blog</Link>
           <div
             className="service-nav"
             ref={dropdown}

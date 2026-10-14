@@ -635,8 +635,8 @@ function Research() {
     <Section id="research" tone="blue">
       <div className="section-head">
         <h2>Research</h2>
-        <Link className="section-head__link" to="/blog" aria-label="See all research">
-          <span className="visually-hidden">See all research</span>→
+        <Link className="text-link" to="/blog">
+          Visit the blog <span aria-hidden="true">→</span>
         </Link>
       </div>
       <ResearchGrid articles={insightArticles} />

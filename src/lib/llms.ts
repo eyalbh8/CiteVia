@@ -1,6 +1,7 @@
 import { contentIndex } from './content-index';
 import { site, absoluteUrl } from './site';
 import { articles } from '@/content/articles';
+import { parseArticleText } from './article-text';
 import { services } from '@/content/services';
 import { methodology } from '@/content/methodology';
 import { industries } from '@/content/industries';
@@ -11,6 +12,14 @@ import { glossary, resourceFaqs } from '@/content/resources';
 
 const introduction = `# Citevia\n\n> ${site.description}\n\nWebsite: ${site.url}\nContact: ${site.email}\n\nCitevia provides services. Project scope is agreed with the business. Example case studies are constructed educational scenarios, not client engagements or achieved performance results. The homepage Nayax ranking, mentions and sentiment are transcribed from a supplied static screenshot. Other homepage reporting views remain illustrative; case-study metrics are synthetic and no live analytics API is connected. Independent search rankings and AI recommendations are not guaranteed.\n`;
 const bullets = (items: string[]) => items.map((item) => `- ${item}`).join('\n');
+const articleMarkdown = (value: string) =>
+  parseArticleText(value)
+    .map((part) =>
+      part.href
+        ? `[${part.text}](${part.href.startsWith('/') ? absoluteUrl(part.href) : part.href})`
+        : part.text,
+    )
+    .join('');
 
 export function llmsIndex() {
   return [
@@ -132,12 +141,15 @@ export function llmsFullText() {
         `Canonical: ${absoluteUrl(`/blog/${item.slug}`)}`,
         `Author: Citevia\nPublished: ${item.published}\nUpdated: ${item.updated}`,
         item.description,
-        `Takeaway: ${item.takeaway}`,
+        `Takeaway: ${articleMarkdown(item.takeaway)}`,
         ...item.sections.map((section) =>
           [
             `#### ${section.title}`,
-            ...section.paragraphs,
-            ...(section.bullets ? [bullets(section.bullets)] : []),
+            ...section.paragraphs.map(articleMarkdown),
+            ...(section.bullets ? [bullets(section.bullets.map(articleMarkdown))] : []),
+            ...(section.example
+              ? [`##### ${section.example.title}`, articleMarkdown(section.example.text)]
+              : []),
             ...(section.source ? [`Source: [${section.source.title}](${section.source.url})`] : []),
           ].join('\n\n'),
         ),

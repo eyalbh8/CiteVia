@@ -1,6 +1,6 @@
 import { IndustriesPage } from '@/components/arielos/Pages';
 import { JsonLd } from '@/components/ui';
-import { pageMetadata, webPageSchema } from '@/lib/seo';
+import { breadcrumbSchema, pageMetadata, webPageSchema } from '@/lib/seo';
 const description =
   'We work where buyers research privately, decisions carry meaningful consequence and a generic mention is no substitute for a credible, context-specific recommendation.';
 export const metadata = pageMetadata({
@@ -11,6 +11,12 @@ export const metadata = pageMetadata({
 export default function Page() {
   return (
     <>
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: 'Home', href: '/' },
+          { name: 'Industries', href: '/industries' },
+        ])}
+      />
       <JsonLd
         data={webPageSchema(
           'Industries — High-Consideration Markets',

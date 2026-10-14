@@ -24,7 +24,7 @@ export function Footer() {
             </div>
             <div>
               <h2>Explore</h2>
-              <Link href="/blog">Insights</Link>
+              <Link href="/blog">Blog</Link>
               <Link href="/case-studies">Example case studies</Link>
               <Link href="/methodology">Methodology</Link>
               <Link href="/solutions">B2B solutions</Link>
