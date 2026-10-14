@@ -13,3 +13,13 @@ The mark is a Q ring whose opening lets the Z's bottom stroke run out as the Q t
 | `zyqon-mark.png` / `zyqon-mark-on-white.png` | Mark at 512x512 |
 
 Clear space: half the ring's diameter on every side. Minimum mark size: 20px. Do not rotate, outline, or recolour outside the two gradients and mono.
+
+## Citevia.io logo
+
+The active Citevia.io assets are in `../public/logo/` for Next.js. Each original PNG is 1254x1254 and includes its background and whitespace. The white-background palette is the website default. The Zyqon assets above are historical and are not used by the active site.
+
+| File | Use |
+|---|---|
+| `citevia-logo-light.png` | Full logo on a white background |
+| `citevia-mark-on-white.png` | Standalone mark on a white background |
+| `citevia-logo-dark.png` | Full logo on a dark navy background |

@@ -2,3 +2,10 @@
 node_modules/
 *.log
 .claude/
+.next/
+out/
+.env*
+!.env.example
+*.tsbuildinfo
+next-env.d.ts
+.npm-cache/
