@@ -5,15 +5,23 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { formatDate, type ArticleSummary } from '@/content/articles';
 import { articleMedia } from '@/content/article-media';
+import { useLanguage, translateToSpanish, translateToTurkish } from '@/i18n/LanguageProvider.jsx';
 
 export function BlogDirectory({ articles }: { articles: ArticleSummary[] }) {
   const [category, setCategory] = useState('ALL');
   const [query, setQuery] = useState('');
+  const { language } = useLanguage();
   const categories = ['ALL', ...new Set(articles.map((article) => article.category))];
   const matches = articles.filter(
     (article) =>
       (category === 'ALL' || article.category === category) &&
-      `${article.title} ${article.description} ${article.category}`
+      `${article.title} ${article.description} ${article.category} ${
+        language === 'es'
+          ? `${translateToSpanish(article.title)} ${translateToSpanish(article.description)} ${translateToSpanish(article.category)}`
+          : language === 'tr'
+            ? `${translateToTurkish(article.title)} ${translateToTurkish(article.description)} ${translateToTurkish(article.category)}`
+            : ''
+      }`
         .toLowerCase()
         .includes(query.trim().toLowerCase()),
   );

@@ -4,6 +4,7 @@ import { useState, type FormEvent } from 'react';
 import Link from 'next/link';
 import { contactInterests, validateContact } from '@/lib/contact';
 import { ArrowIcon } from './icons';
+import { useLanguage, translateToSpanish, translateToTurkish } from '@/i18n/LanguageProvider.jsx';
 
 export function ContactForm({
   email,
@@ -14,6 +15,7 @@ export function ContactForm({
   directDelivery: boolean;
   assessment?: boolean;
 }) {
+  const { language } = useLanguage();
   const [pending, setPending] = useState(false);
   const [status, setStatus] = useState<{ message: string; error: boolean; mailto?: string } | null>(
     null,
@@ -31,8 +33,19 @@ export function ContactForm({
     if (data.companyFax) return;
     setStatus(null);
     if (!directDelivery) {
-      const body = `Hello Citevia,\n\nI would like to discuss: ${data.interest}\n\nName: ${data.name}\nEmail: ${data.email}\nCompany: ${data.company}\nWebsite: ${data.website || 'Not provided'}${data.role ? `\nRole: ${data.role}` : ''}${data.industry ? `\nIndustry: ${data.industry}` : ''}${data.markets ? `\nPriority markets: ${data.markets}` : ''}\n\n${data.message}`;
-      const mailto = `mailto:${email}?subject=${encodeURIComponent(`${data.interest} — ${data.company}`)}&body=${encodeURIComponent(body)}`;
+      const body =
+        language === 'es'
+          ? `Hola, Citevia:\n\nMe gustaría hablar sobre: ${translateToSpanish(data.interest)}\n\nNombre: ${data.name}\nCorreo electrónico: ${data.email}\nEmpresa: ${data.company}\nSitio web: ${data.website || 'No indicado'}${data.role ? `\nCargo: ${data.role}` : ''}${data.industry ? `\nSector: ${data.industry}` : ''}${data.markets ? `\nMercados prioritarios: ${data.markets}` : ''}\n\n${data.message}`
+          : language === 'tr'
+            ? `Merhaba Citevia,\n\nŞu konuyu görüşmek istiyorum: ${translateToTurkish(data.interest)}\n\nAd: ${data.name}\nE-posta: ${data.email}\nŞirket: ${data.company}\nWeb sitesi: ${data.website || 'Belirtilmedi'}${data.role ? `\nGörev: ${translateToTurkish(data.role)}` : ''}${data.industry ? `\nSektör: ${translateToTurkish(data.industry)}` : ''}${data.markets ? `\nÖncelikli pazarlar: ${data.markets}` : ''}\n\n${data.message}`
+            : `Hello Citevia,\n\nI would like to discuss: ${data.interest}\n\nName: ${data.name}\nEmail: ${data.email}\nCompany: ${data.company}\nWebsite: ${data.website || 'Not provided'}${data.role ? `\nRole: ${data.role}` : ''}${data.industry ? `\nIndustry: ${data.industry}` : ''}${data.markets ? `\nPriority markets: ${data.markets}` : ''}\n\n${data.message}`;
+      const subject =
+        language === 'es'
+          ? `${translateToSpanish(data.interest)} — ${data.company}`
+          : language === 'tr'
+            ? `${translateToTurkish(data.interest)} — ${data.company}`
+            : `${data.interest} — ${data.company}`;
+      const mailto = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
       setStatus({
         message:
           'Your email draft is ready. Send it from your email app to complete your request. Nothing has been submitted through this website.',

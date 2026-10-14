@@ -4,16 +4,29 @@ import { useHomeSettings } from './settings.jsx';
 import { useState } from 'react';
 import { Link } from './Link.jsx';
 import { assessmentHref } from './data.js';
+import { useLanguage } from '@/i18n/LanguageProvider.jsx';
 
 export default function ContactLead() {
   const { email } = useHomeSettings();
+  const { language } = useLanguage();
   const [draft, setDraft] = useState('');
   function prepareEmail(event) {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
     if (data.get('website')) return;
-    const body = `Name: ${data.get('name')}\nEmail: ${data.get('email')}\nCompany: ${data.get('company')}\nPhone: ${data.get('phone') || 'Not supplied'}\n\nI would like to discuss AI search visibility with Citevia.`;
-    const href = `mailto:${email}?subject=${encodeURIComponent('Citevia — contact request')}&body=${encodeURIComponent(body)}`;
+    const body =
+      language === 'es'
+        ? `Nombre: ${data.get('name')}\nCorreo electrónico: ${data.get('email')}\nEmpresa: ${data.get('company')}\nTeléfono: ${data.get('phone') || 'No indicado'}\n\nMe gustaría hablar con Citevia sobre la visibilidad en búsquedas con IA.`
+        : language === 'tr'
+          ? `Ad: ${data.get('name')}\nE-posta: ${data.get('email')}\nŞirket: ${data.get('company')}\nTelefon: ${data.get('phone') || 'Belirtilmedi'}\n\nCitevia ile yapay zekâ arama görünürlüğü hakkında görüşmek istiyorum.`
+          : `Name: ${data.get('name')}\nEmail: ${data.get('email')}\nCompany: ${data.get('company')}\nPhone: ${data.get('phone') || 'Not supplied'}\n\nI would like to discuss AI search visibility with Citevia.`;
+    const subject =
+      language === 'es'
+        ? 'Citevia — solicitud de contacto'
+        : language === 'tr'
+          ? 'Citevia — iletişim talebi'
+          : 'Citevia — contact request';
+    const href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     setDraft(href);
     window.location.href = href;
   }

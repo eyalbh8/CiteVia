@@ -4,6 +4,7 @@ import { useRef, useState } from 'react';
 import { Link } from './Link.jsx';
 import { useHomeSettings } from './settings.jsx';
 import { validateContact } from '@/lib/contact';
+import { useLanguage, translateToSpanish, translateToTurkish } from '@/i18n/LanguageProvider.jsx';
 const initialAssessmentValues = {
   name: '',
   email: '',
@@ -67,6 +68,7 @@ function Field({ id, label, hint, error, children, className = '' }) {
 
 export default function AssessmentPage({ directDelivery = false }) {
   const { email } = useHomeSettings();
+  const { language } = useLanguage();
   const [values, setValues] = useState(initialAssessmentValues);
   const [errors, setErrors] = useState({});
   const [status, setStatus] = useState('idle');
@@ -134,8 +136,19 @@ export default function AssessmentPage({ directDelivery = false }) {
     setStatusMessage('');
     setDraft('');
     if (!directDelivery) {
-      const body = `Hello Citevia,\n\nI would like a private AI visibility assessment.\n\nName: ${data.name}\nEmail: ${data.email}\nCompany: ${data.company}\nWebsite: ${data.website}\nRole: ${data.role}\nIndustry: ${data.industry}\nMarkets: ${data.markets}\n\n${data.message}`;
-      const mailto = `mailto:${email}?subject=${encodeURIComponent(`Private assessment — ${data.company}`)}&body=${encodeURIComponent(body)}`;
+      const body =
+        language === 'es'
+          ? `Hola, Citevia:\n\nMe gustaría solicitar una evaluación privada de visibilidad en IA.\n\nNombre: ${data.name}\nCorreo electrónico: ${data.email}\nEmpresa: ${data.company}\nSitio web: ${data.website}\nCargo: ${translateToSpanish(data.role)}\nSector: ${translateToSpanish(data.industry)}\nMercados: ${data.markets}\n\nObjetivo: ${translateToSpanish(values.objective)}\n\n${values.concern}`
+          : language === 'tr'
+            ? `Merhaba Citevia,\n\nYapay zekâ görünürlüğü için özel bir değerlendirme almak istiyorum.\n\nAd: ${data.name}\nE-posta: ${data.email}\nŞirket: ${data.company}\nWeb sitesi: ${data.website}\nGörev: ${translateToTurkish(data.role)}\nSektör: ${translateToTurkish(data.industry)}\nPazarlar: ${data.markets}\n\nHedef: ${translateToTurkish(values.objective)}\n\n${values.concern}`
+            : `Hello Citevia,\n\nI would like a private AI visibility assessment.\n\nName: ${data.name}\nEmail: ${data.email}\nCompany: ${data.company}\nWebsite: ${data.website}\nRole: ${data.role}\nIndustry: ${data.industry}\nMarkets: ${data.markets}\n\n${data.message}`;
+      const subject =
+        language === 'es'
+          ? `Evaluación privada — ${data.company}`
+          : language === 'tr'
+            ? `Özel değerlendirme — ${data.company}`
+            : `Private assessment — ${data.company}`;
+      const mailto = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
       setDraft(mailto);
       setStatus('ready');
       setStatusMessage(

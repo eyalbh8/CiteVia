@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { HomeSettings } from './settings.jsx';
+import { LanguageProvider } from '@/i18n/LanguageProvider.jsx';
 import Nav from './Nav.jsx';
 import { usePathname } from 'next/navigation';
 import Footer from './Footer.jsx';
@@ -62,18 +63,20 @@ function ScrollEffects() {
 
 export default function SiteExperience({ email, bookingUrl, children }) {
   return (
-    <HomeSettings.Provider value={{ email, bookingUrl }}>
-      <div className="arielos-home arielos-chrome">
-        <ScrollEffects />
-        <Nav />
-      </div>
-      <main id="main-content" className="site-main" tabIndex={-1}>
-        {children}
-      </main>
-      <div className="arielos-home arielos-chrome">
-        <Footer />
-        <FloatingCal />
-      </div>
-    </HomeSettings.Provider>
+    <LanguageProvider>
+      <HomeSettings.Provider value={{ email, bookingUrl }}>
+        <div className="arielos-home arielos-chrome">
+          <ScrollEffects />
+          <Nav />
+        </div>
+        <main id="main-content" className="site-main" tabIndex={-1}>
+          {children}
+        </main>
+        <div className="arielos-home arielos-chrome">
+          <Footer />
+          <FloatingCal />
+        </div>
+      </HomeSettings.Provider>
+    </LanguageProvider>
   );
 }

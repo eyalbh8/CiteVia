@@ -383,6 +383,7 @@ body:has(.arielos-home).nav-open {
   gap: clamp(22px, 2.4vw, 36px);
 }
 .arielos-home .nav-links a,
+.arielos-home .nav-links .nav-language,
 .arielos-home .nav-assessment {
   font-family: var(--label);
   font-size: 14px;
@@ -393,6 +394,57 @@ body:has(.arielos-home).nav-open {
 }
 .arielos-home .nav-links a {
   color: var(--muted);
+}
+.arielos-home .nav-links .nav-language {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  white-space: nowrap;
+}
+.arielos-home .nav-links .nav-language:hover {
+  color: var(--ink);
+}
+.arielos-home .nav-language-control {
+  position: relative;
+}
+.arielos-home .nav-language-caret {
+  margin-left: 2px;
+}
+.arielos-home .nav-language-menu {
+  position: absolute;
+  z-index: 110;
+  top: calc(100% + 10px);
+  right: 0;
+  min-width: 170px;
+  padding: 6px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--surface-raised);
+  box-shadow: 0 14px 32px rgba(15, 23, 42, 0.16);
+}
+.arielos-home .nav-links .nav-language-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 10px 12px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--ink);
+  font: 500 14px/1.3 var(--label);
+  text-align: left;
+  cursor: pointer;
+}
+.arielos-home .nav-links .nav-language-option:hover,
+.arielos-home .nav-links .nav-language-option[aria-checked='true'] {
+  background: var(--paper-soft);
+  color: var(--ink);
 }
 .arielos-home .nav-links a:hover,
 .arielos-home .nav-links a.is-active,
@@ -1005,6 +1057,12 @@ body:has(.arielos-home).nav-open {
   line-height: 0.98;
   letter-spacing: -0.015em;
   text-shadow: 0 2px 40px rgba(0, 0, 0, 0.35);
+}
+html[lang='es'] .arielos-home .hero h1.hero__headline,
+html[lang='tr'] .arielos-home .hero h1.hero__headline {
+  width: min(100%, 900px);
+  max-width: 900px;
+  font-size: clamp(50px, min(5.5vw, 10vh), 112px);
 }
 .arielos-home .eyebrow {
   margin: 0 0 22px;
@@ -4180,6 +4238,33 @@ body:has(.arielos-home).nav-open {
     letter-spacing: -0.01em;
     text-transform: none;
   }
+  .arielos-home .nav-links .nav-language {
+    min-height: 54px;
+    width: 100%;
+    padding: 15px 0;
+    border-bottom: 1px solid var(--line);
+    font: 700 19px var(--display);
+    letter-spacing: -0.01em;
+    justify-content: flex-start;
+  }
+  .arielos-home .nav-language-control {
+    width: 100%;
+  }
+  .arielos-home .nav-language-menu {
+    position: static;
+    min-width: 0;
+    padding: 4px 0 8px 14px;
+    border: 0;
+    border-bottom: 1px solid var(--line);
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+  .arielos-home .nav-links .nav-language-option {
+    min-height: 44px;
+    padding: 10px 0;
+    font: 500 16px/1.3 var(--label);
+  }
   .arielos-home .nav-group__trigger {
     border-bottom: 1px solid var(--line);
   }
@@ -4346,6 +4431,10 @@ body:has(.arielos-home).nav-open {
   }
   .arielos-home .hero h1.hero__headline {
     font-size: clamp(42px, 12.5vw, 64px);
+  }
+  html[lang='es'] .arielos-home .hero h1.hero__headline,
+  html[lang='tr'] .arielos-home .hero h1.hero__headline {
+    font-size: clamp(38px, 11vw, 56px);
   }
   .arielos-home .hero .hero__cta {
     justify-content: center;
