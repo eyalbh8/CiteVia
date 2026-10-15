@@ -267,8 +267,8 @@ const esRoutes = {
   'WEBSITE INFORMATION': 'INFORMACIÓN DEL SITIO WEB',
   'Privacy notice': 'Aviso de privacidad',
   'Website terms': 'Términos del sitio web',
-  'This notice describes the contact and storage features of this website. Last updated 14 October 2026.':
-    'Este aviso describe las funciones de contacto y almacenamiento de este sitio web. Última actualización: 14 de octubre de 2026.',
+  'This notice describes the contact and storage features of this website. Last updated 15 October 2026.':
+    'Este aviso describe las funciones de contacto y almacenamiento de este sitio web. Última actualización: 15 de octubre de 2026.',
   'Information about this website and our service descriptions. Last updated 13 October 2026.':
     'Información sobre este sitio web y las descripciones de nuestros servicios. Última actualización: 13 de octubre de 2026.',
   'Contact information': 'Información de contacto',
@@ -280,8 +280,8 @@ const esRoutes = {
   'If direct submission is enabled and the button says “Send your request,” the website sends your details to Citevia’s configured inquiry service. The website reports success only after that service accepts the request. Please avoid sending sensitive personal information in the form.':
     'Si está habilitado el envío directo y el botón indica «Enviar tu solicitud», el sitio web envía tus datos al servicio de consultas configurado por Citevia. El sitio web solo confirma el envío cuando ese servicio acepta la solicitud. Evita incluir información personal sensible en el formulario.',
   'Browser storage and technical information': 'Almacenamiento del navegador e información técnica',
-  'The website uses a light theme and does not include advertising cookies or third-party analytics scripts. A preference saved by an earlier version can be removed through your browser settings.':
-    'El sitio web utiliza un tema claro y no incluye cookies publicitarias ni scripts de analítica de terceros. Puedes eliminar desde la configuración del navegador cualquier preferencia guardada por una versión anterior.',
+  'The website uses a light theme and does not include advertising cookies or third-party analytics scripts. Your selected language is saved in this browser for your next visit. You can change it in the language menu or remove saved preferences through your browser settings.':
+    'El sitio web utiliza un tema claro y no incluye cookies publicitarias ni scripts de analítica de terceros. El idioma elegido se guarda en este navegador para tu próxima visita. Puedes cambiarlo en el menú de idiomas o eliminar las preferencias guardadas desde la configuración del navegador.',
   'The hosting and email services used to operate the site and respond to inquiries may process technical or delivery information. Their processing depends on the services used. The application does not create a separate contact database.':
     'Los servicios de alojamiento y correo utilizados para operar el sitio y responder consultas pueden procesar información técnica o de entrega. El tratamiento depende de los servicios utilizados. La aplicación no crea una base de datos de contactos independiente.',
   'Questions about your information': 'Preguntas sobre tu información',

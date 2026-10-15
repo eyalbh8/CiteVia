@@ -198,7 +198,9 @@ export function ContactForm({
             defaultValue={assessment ? 'Private AI visibility assessment' : 'AI visibility audit'}
           >
             {contactInterests.map((interest) => (
-              <option key={interest}>{interest}</option>
+              <option key={interest} value={interest}>
+                {interest}
+              </option>
             ))}
           </select>
         </div>

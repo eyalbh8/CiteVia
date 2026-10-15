@@ -22,8 +22,8 @@ export function BlogDirectory({ articles }: { articles: ArticleSummary[] }) {
             ? `${translateToTurkish(article.title)} ${translateToTurkish(article.description)} ${translateToTurkish(article.category)}`
             : ''
       }`
-        .toLowerCase()
-        .includes(query.trim().toLowerCase()),
+        .toLocaleLowerCase(language)
+        .includes(query.trim().toLocaleLowerCase(language)),
   );
   return (
     <section className="blog-directory" aria-labelledby="all-articles">
@@ -60,9 +60,9 @@ export function BlogDirectory({ articles }: { articles: ArticleSummary[] }) {
         ))}
       </div>
       <p className="result-count" role="status">
-        {matches.length} {matches.length === 1 ? 'article' : 'articles'}
-        {category !== 'ALL' ? ` in ${category.toLowerCase()}` : ''}
-        {query.trim() ? ` matching “${query.trim()}”` : ''}
+        <span>{`${matches.length} ${matches.length === 1 ? 'article' : 'articles'}`}</span>
+        {category !== 'ALL' && <span>{` in ${category.toLowerCase()}`}</span>}
+        {query.trim() && <span>{` matching “${query.trim()}”`}</span>}
       </p>
       <div className="blog-grid">
         {matches.map((article) => (
@@ -80,7 +80,7 @@ export function BlogDirectory({ articles }: { articles: ArticleSummary[] }) {
               <div className="blog-card__body">
                 <div className="blog-meta">
                   <time dateTime={article.published}>{formatDate(article.published)}</time>
-                  <span>{article.minutes} min read</span>
+                  <span>{`${article.minutes} min read`}</span>
                 </div>
                 <h3>{article.title}</h3>
                 <p>{article.description}</p>

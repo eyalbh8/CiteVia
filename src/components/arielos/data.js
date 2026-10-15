@@ -82,6 +82,8 @@ export const footerServiceItems = [
 ];
 
 export const footerNavItems = [
+  { label: 'Resources & glossary', href: '/resources' },
+  { label: 'Company facts', href: '/ai-info' },
   {
     label: 'Contact us',
     href: '/contact',

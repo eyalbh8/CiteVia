@@ -10,6 +10,7 @@
     "build": "next build",
     "start": "next start",
     "typecheck": "next typegen && tsc --noEmit",
+    "test": "node --test scripts/*.test.mjs",
     "check:seo": "node scripts/check-seo.mjs",
     "format": "prettier --write src scripts docs README.md BRIEF.md next.config.ts tsconfig.json package.json .github/workflows/site-checks.yml"
   },

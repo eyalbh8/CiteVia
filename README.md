@@ -49,6 +49,7 @@ Browse `/industries`, `/methodology`, `/private-ai-visibility-assessment`, `/sol
 
 ```sh
 npm run typecheck
+npm test
 npm run build
 npm run check:seo
 ```
@@ -61,6 +62,8 @@ SITE_URL=https://citevia.io SITE_INDEXABLE=true npm run check:seo
 ```
 
 GitHub Actions runs both indexable production and non-indexable preview checks. Formatting is available through `npm run format`.
+
+`npm test` covers contact validation and translation regressions. See [mobile and language QA](docs/MOBILE-QA.md) for the browser checks and their limits.
 
 ## Production setup
 

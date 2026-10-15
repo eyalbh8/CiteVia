@@ -22,7 +22,7 @@ export default function PrivacyPage() {
       <PageHero
         eyebrow="WEBSITE INFORMATION"
         title="Privacy notice"
-        copy="This notice describes the contact and storage features of this website. Last updated 14 October 2026."
+        copy="This notice describes the contact and storage features of this website. Last updated 15 October 2026."
       />
       <Section tone="paper">
         <div className="legal-copy">
@@ -53,8 +53,9 @@ export default function PrivacyPage() {
             <h2>Browser storage and technical information</h2>
             <p>
               The website uses a light theme and does not include advertising cookies or third-party
-              analytics scripts. A preference saved by an earlier version can be removed through
-              your browser settings.
+              analytics scripts. Your selected language is saved in this browser for your next
+              visit. You can change it in the language menu or remove saved preferences through your
+              browser settings.
             </p>
             <p>
               The hosting and email services used to operate the site and respond to inquiries may

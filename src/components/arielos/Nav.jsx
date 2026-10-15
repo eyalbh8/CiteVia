@@ -73,7 +73,7 @@ function NavGroup({ item, onNavigate }) {
           ref={toggleRef}
         >
           <span className="sr-only">
-            {expanded ? 'Hide' : 'Show'} {item.label.toLowerCase()} pages
+            {`${expanded ? 'Hide' : 'Show'} ${item.label.toLowerCase()} pages`}
           </span>
           <svg
             aria-hidden="true"
@@ -109,7 +109,7 @@ function NavGroup({ item, onNavigate }) {
             className={({ isActive }) => (isActive ? 'is-active' : undefined)}
             onClick={onNavigate}
           >
-            All {item.label.toLowerCase()}
+            {`All ${item.label.toLowerCase()}`}
           </NavLink>
         </li>
       </ul>
@@ -199,7 +199,7 @@ export default function Nav() {
             onClick={() => setOpen((value) => !value)}
             ref={toggleRef}
           >
-            <span className="sr-only">{open ? 'Close' : 'Open'} navigation</span>
+            <span className="sr-only">{`${open ? 'Close' : 'Open'} navigation`}</span>
             <span aria-hidden="true">
               {open ? (
                 'Close'
@@ -256,7 +256,9 @@ export default function Nav() {
                   ref={languageButtonRef}
                 >
                   <span aria-hidden="true">{currentLanguage.flag}</span>
-                  {currentLanguage.label}
+                  <span translate="no" lang={currentLanguage.code}>
+                    {currentLanguage.label}
+                  </span>
                   <svg
                     aria-hidden="true"
                     className="nav-language-caret"
@@ -298,6 +300,7 @@ export default function Nav() {
                         type="button"
                         key={option.code}
                         lang={option.code}
+                        translate="no"
                         role="menuitemradio"
                         aria-checked={language === option.code}
                         onClick={() => {

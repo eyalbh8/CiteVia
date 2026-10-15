@@ -1,4 +1,12 @@
 const esUi = {
+  '{sector} / ILLUSTRATIVE EXAMPLE': '{sector} / EJEMPLO ILUSTRATIVO',
+  'GEO FOR {audience}': 'GEO PARA {audience}',
+  '{service} questions': 'Preguntas sobre {service}',
+  'Establish your {industry} recommendation baseline.':
+    'Establece tu línea de base de recomendaciones en {industry}.',
+  'in {category}': 'en {category}',
+  'matching “{query}”': 'que coinciden con “{query}”',
+  '{minutes} min read': '{minutes} min de lectura',
   'Contact us': 'Contacto',
   'Contact and booking': 'Contacto y reservas',
   'Book on Cal.com': 'Reservar en Cal.com',
@@ -83,6 +91,8 @@ const esUi = {
   'LLM index': 'Índice para modelos de lenguaje',
   'See where': 'Descubre dónde',
   'to act': 'actuar',
+  Breadcrumb: 'Ruta de navegación',
+  'Company facts': 'Datos de la empresa',
   'Before you begin': 'Antes de empezar',
   'Close navigation': 'Cerrar navegación',
   'Open navigation': 'Abrir navegación',

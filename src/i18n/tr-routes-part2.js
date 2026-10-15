@@ -68,8 +68,8 @@ const trRoutesPart2 = {
     'Bilgilere ilişkin düzeltmeleri veya sorularınızı şu adrese gönderin:',
   'This reference was updated on': 'Bu kaynak şu tarihte güncellendi:',
   'WEBSITE INFORMATION': 'WEB SİTESİ BİLGİLERİ',
-  'This notice describes the contact and storage features of this website. Last updated 14 October 2026.':
-    'Bu bildirim, web sitesinin iletişim ve veri saklama özelliklerini açıklar. Son güncelleme: 14 Ekim 2026.',
+  'This notice describes the contact and storage features of this website. Last updated 15 October 2026.':
+    'Bu bildirim, web sitesinin iletişim ve veri saklama özelliklerini açıklar. Son güncelleme: 15 Ekim 2026.',
   'Information about this website and our service descriptions. Last updated 13 October 2026.':
     'Bu web sitesi ve hizmet açıklamalarımız hakkında bilgiler. Son güncelleme: 13 Ekim 2026.',
   'Contact information': 'İletişim bilgileri',
@@ -81,8 +81,8 @@ const trRoutesPart2 = {
   'If direct submission is enabled and the button says “Send your request,” the website sends your details to Citevia’s configured inquiry service. The website reports success only after that service accepts the request. Please avoid sending sensitive personal information in the form.':
     'Doğrudan gönderim etkinse ve düğmede “Talebinizi gönderin” yazıyorsa web sitesi bilgilerinizi Citevia’nın yapılandırılmış talep hizmetine iletir. Web sitesi yalnızca bu hizmet talebi kabul ettikten sonra başarılı olduğunu bildirir. Lütfen formda hassas kişisel bilgiler paylaşmayın.',
   'Browser storage and technical information': 'Tarayıcı depolaması ve teknik bilgiler',
-  'The website uses a light theme and does not include advertising cookies or third-party analytics scripts. A preference saved by an earlier version can be removed through your browser settings.':
-    'Web sitesi açık renkli bir tema kullanır; reklam çerezleri veya üçüncü taraf analiz betikleri içermez. Önceki bir sürümün kaydettiği tercihi tarayıcı ayarlarınızdan kaldırabilirsiniz.',
+  'The website uses a light theme and does not include advertising cookies or third-party analytics scripts. Your selected language is saved in this browser for your next visit. You can change it in the language menu or remove saved preferences through your browser settings.':
+    'Web sitesi açık renkli bir tema kullanır; reklam çerezleri veya üçüncü taraf analiz betikleri içermez. Seçtiğiniz dil, sonraki ziyaretiniz için bu tarayıcıya kaydedilir. Dil menüsünden değiştirebilir veya tarayıcı ayarlarınızdan kayıtlı tercihleri kaldırabilirsiniz.',
   'The hosting and email services used to operate the site and respond to inquiries may process technical or delivery information. Their processing depends on the services used. The application does not create a separate contact database.':
     'Siteyi çalıştırmak ve taleplere yanıt vermek için kullanılan barındırma ve e-posta hizmetleri teknik veya iletim bilgilerini işleyebilir. Bu işlemler kullanılan hizmetlere bağlıdır. Uygulama ayrı bir iletişim veritabanı oluşturmaz.',
   'Questions about your information': 'Bilgilerinizle ilgili sorular',

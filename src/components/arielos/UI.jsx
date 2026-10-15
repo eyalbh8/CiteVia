@@ -373,7 +373,7 @@ export function FaqAccordion({ items, initialCount = 6 }) {
       })}
       {!showAll && hiddenCount > 0 && (
         <button type="button" className="accordion__show-more" onClick={() => setShowAll(true)}>
-          Show {hiddenCount} more question{hiddenCount === 1 ? '' : 's'}
+          {`Show ${hiddenCount} more question${hiddenCount === 1 ? '' : 's'}`}
           <span aria-hidden="true">↓</span>
         </button>
       )}

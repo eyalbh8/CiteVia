@@ -43,7 +43,7 @@ The route validates origin, content type, field lengths, URL scheme, and a honey
 
 ## Release checklist
 
-1. Run `npm ci`, `npm run typecheck`, and `npm run build` using the intended configuration.
+1. Run `npm ci`, `npm run typecheck`, `npm test`, and `npm run build` using the intended configuration.
 2. Run `npm run check:seo` using matching `SITE_URL` and `SITE_INDEXABLE` values. The script requests HTML without browser JavaScript and stops its local server afterward.
 3. Check home, service, solution, example study, blog, article, resources, and contact at mobile and desktop widths. Check keyboard access, blog filters, FAQs, and theme controls. Inspect `/llms.txt`, `/llms-full.txt`, `/robots.txt`, and `/sitemap.xml` for the intended origin and policy.
 4. Verify the final domain, email, booking destination, and delivery integration. Configure host redirects from old domains if needed; application redirects cover paths only.
@@ -56,7 +56,7 @@ The route validates origin, content type, field lengths, URL scheme, and a honey
 - CI checks both indexing modes on pull requests and pushes to `main` or `master`.
 - Preserve published URL slugs; add permanent redirects when one must change.
 - Keep important content in server-rendered HTML, including JSON-LD.
-- The browser stores only an explicit theme preference under `citevia-theme`. White is the default independently of system appearance.
+- The browser remembers the selected language under `citevia-language`. White is the default theme; a `citevia-theme` preference from an older version may remain in browser storage.
 - Original logo PNGs remain unchanged in `public/logo/`. Their backgrounds and whitespace are preserved; the header frames them with CSS and Next.js handles delivery sizes.
 
 The legacy draft included illustrative KPIs, fictional case studies, placeholder testimonials, looping article links, and simulated form success. The new site replaces these with substantive service explanations, a measurement framework, and complete articles. Add real case studies after verifying claims, attribution, and publication rights.

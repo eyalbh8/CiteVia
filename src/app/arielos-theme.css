@@ -218,6 +218,24 @@ body:has(.arielos-home) > main {
   min-height: 0;
   padding-top: 110px;
 }
+
+/* Long translated headings must fit narrow phones without horizontal scrolling. */
+.site-main h1,
+.site-main h2,
+.site-main h3 {
+  overflow-wrap: anywhere;
+}
+.arielos-home .nav-toggle {
+  min-width: 44px;
+}
+.site-main .buyer-questions > div {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+@media (max-width: 760px) {
+  .site-main .buyer-questions > div {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
 .arielos-home .contact-lead--page {
   padding-top: clamp(32px, 4vw, 56px);
 }

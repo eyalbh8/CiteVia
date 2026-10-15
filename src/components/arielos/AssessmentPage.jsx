@@ -286,7 +286,9 @@ export default function AssessmentPage({ directDelivery = false }) {
                     <select {...inputProps('role', details)}>
                       <option value="">Select a role</option>
                       {roles.map((role) => (
-                        <option key={role}>{role}</option>
+                        <option key={role} value={role}>
+                          {role}
+                        </option>
                       ))}
                     </select>
                   )}
@@ -296,7 +298,9 @@ export default function AssessmentPage({ directDelivery = false }) {
                     <select {...inputProps('industry', details)}>
                       <option value="">Select an industry</option>
                       {industries.map((industry) => (
-                        <option key={industry}>{industry}</option>
+                        <option key={industry} value={industry}>
+                          {industry}
+                        </option>
                       ))}
                     </select>
                   )}
@@ -326,7 +330,9 @@ export default function AssessmentPage({ directDelivery = false }) {
                     <select {...inputProps('objective', details)}>
                       <option value="">Select an objective</option>
                       {objectives.map((objective) => (
-                        <option key={objective}>{objective}</option>
+                        <option key={objective} value={objective}>
+                          {objective}
+                        </option>
                       ))}
                     </select>
                   )}
