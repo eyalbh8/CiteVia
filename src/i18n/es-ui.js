@@ -1,4 +1,16 @@
 const esUi = {
+  'Contact us': 'Contacto',
+  'Contact and booking': 'Contacto y reservas',
+  'Book on Cal.com': 'Reservar en Cal.com',
+  'Book on Cal.com (opens in a new tab)': 'Reservar en Cal.com (se abre en una pestaña nueva)',
+  'LET’S TALK': 'HABLEMOS',
+  'Let’s talk about your business and how we can help you get found.':
+    'Hablemos de tu negocio y de cómo podemos ayudarte a ganar visibilidad.',
+  'Prefer to choose a time?': '¿Prefieres elegir una hora?',
+  'We could not confirm delivery. Please try again or email us directly.':
+    'No pudimos confirmar el envío. Vuelve a intentarlo o escríbenos directamente.',
+  'Please keep your phone number under 50 characters.':
+    'El número de teléfono debe tener menos de 50 caracteres.',
   Blog: 'Blog',
   Services: 'Servicios',
   Methodology: 'Metodología',

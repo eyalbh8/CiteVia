@@ -12,6 +12,7 @@ export type ContactInput = {
   markets: string;
   name: string;
   email: string;
+  phone: string;
   company: string;
   website: string;
   interest: string;
@@ -43,6 +44,10 @@ export function validateContact(input: unknown): { data?: ContactInput; error?: 
       return { error: 'Please keep role, industry, and market details under 200 characters each.' };
     result[field] = value.trim();
   }
+  const phone = raw.phone ?? '';
+  if (typeof phone !== 'string' || phone.trim().length > 50)
+    return { error: 'Please keep your phone number under 50 characters.' };
+  result.phone = phone.trim();
   if (result.name.length < 2 || result.name.length > 100)
     return { error: 'Please enter a name between 2 and 100 characters.' };
   if (result.email.length > 254 || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(result.email))

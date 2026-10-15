@@ -61,10 +61,10 @@ function ScrollEffects() {
   );
 }
 
-export default function SiteExperience({ email, bookingUrl, children }) {
+export default function SiteExperience({ email, bookingUrl, directDelivery, children }) {
   return (
     <LanguageProvider>
-      <HomeSettings.Provider value={{ email, bookingUrl }}>
+      <HomeSettings.Provider value={{ email, bookingUrl, directDelivery }}>
         <div className="arielos-home arielos-chrome">
           <ScrollEffects />
           <Nav />

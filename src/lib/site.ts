@@ -1,3 +1,5 @@
+import { defaultBookingUrl } from './booking';
+
 const origin = new URL(process.env.SITE_URL || 'https://citevia.io');
 if (
   !['http:', 'https:'].includes(origin.protocol) ||
@@ -17,7 +19,7 @@ export const site = {
   email: process.env.CONTACT_EMAIL || 'eyal@citevia.com',
   description:
     'Citevia connects AI search strategy, SEO, content, reputation, and measurement to help brands become easier to find, understand, and choose.',
-  bookingUrl: process.env.BOOKING_URL || '/private-ai-visibility-assessment',
+  bookingUrl: process.env.BOOKING_URL || defaultBookingUrl,
   indexable:
     process.env.SITE_INDEXABLE === 'true' &&
     process.env.NODE_ENV === 'production' &&

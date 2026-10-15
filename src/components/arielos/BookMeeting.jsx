@@ -8,8 +8,15 @@ export default function BookMeeting({
   ...props
 }) {
   const { bookingUrl } = useHomeSettings();
+  const external = /^https?:\/\//.test(bookingUrl);
   return (
-    <Link className={className} to={bookingUrl} {...props}>
+    <Link
+      className={className}
+      to={bookingUrl}
+      target={external ? '_blank' : undefined}
+      rel={external ? 'noopener noreferrer' : undefined}
+      {...props}
+    >
       {children}
     </Link>
   );

@@ -2,7 +2,7 @@
 
 import { useHomeSettings } from './settings.jsx';
 import { useState } from 'react';
-import { Link } from './Link.jsx';
+import { Link, useLocation } from './Link.jsx';
 import { assessmentHref, footerIndustryItems, footerNavItems, footerServiceItems } from './data.js';
 import { AssessmentLink, BrandMark } from './UI.jsx';
 import ContactLead from './ContactLead.jsx';
@@ -29,6 +29,7 @@ function FooterLinkGroup({ title, children }) {
 
 export default function Footer() {
   const { email } = useHomeSettings();
+  const { pathname } = useLocation();
   return (
     <footer className="footer">
       <div className="footer__cta">
@@ -48,7 +49,7 @@ export default function Footer() {
           <AssessmentLink placement="footer-cta">Private assessment</AssessmentLink>
         </div>
       </div>
-      <ContactLead />
+      {pathname !== '/contact' && <ContactLead />}
       <div className="shell">
         <div className="footer__main">
           <div className="footer__brand">

@@ -214,6 +214,96 @@ body:has(.arielos-home) > main {
   margin-top: 30px;
 }
 
+.arielos-home.contact-page {
+  min-height: 0;
+  padding-top: 110px;
+}
+.arielos-home .contact-lead--page {
+  padding-top: clamp(32px, 4vw, 56px);
+}
+.arielos-home .contact-lead h1 {
+  margin: 16px 0 0;
+  font: 500 clamp(48px, 6vw, 76px)/1.05 var(--display);
+  letter-spacing: -0.04em;
+}
+.arielos-home .contact-lead .contact-lead__booking {
+  margin-top: 18px;
+  color: #fff;
+}
+.arielos-home .contact-lead-submit:disabled {
+  opacity: 0.65;
+  cursor: wait;
+}
+.arielos-home .contact-lead__status {
+  padding: 12px 16px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+.arielos-home .contact-lead__status p {
+  margin: 0 0 8px;
+}
+.arielos-home .contact-lead__status[data-error='true'] {
+  color: #9f2222;
+  border-color: #dc9c9c;
+}
+.arielos-home .floating-contact {
+  position: fixed;
+  z-index: 90;
+  right: max(22px, env(safe-area-inset-right));
+  bottom: calc(22px + env(safe-area-inset-bottom));
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.arielos-home .floating-contact .floating-cal,
+.arielos-home .floating-contact__link {
+  position: static;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: auto;
+  height: auto;
+  min-height: 48px;
+  padding: 12px 16px;
+  border-radius: var(--r-pill);
+  font: 600 12px/1.4 var(--label);
+  text-decoration: none;
+}
+.arielos-home .floating-contact__link {
+  background: #fff;
+  color: var(--accent);
+  border: 1px solid var(--line);
+  box-shadow: 0 8px 30px #29206c1a;
+}
+.arielos-home .floating-contact__link:hover {
+  background: var(--accent-veil);
+}
+.arielos-home .floating-contact__link svg {
+  width: 18px;
+  height: 18px;
+  flex: none;
+}
+.arielos-home .floating-contact .floating-cal__label {
+  display: inline;
+}
+.arielos-home .floating-contact a:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 4px;
+}
+@media (max-width: 600px) {
+  .arielos-home .floating-contact {
+    right: max(12px, env(safe-area-inset-right));
+    bottom: calc(12px + env(safe-area-inset-bottom));
+    gap: 6px;
+  }
+  .arielos-home .floating-contact .floating-cal,
+  .arielos-home .floating-contact__link {
+    padding: 11px 12px;
+    font-size: 11px;
+  }
+}
+
 /* Shared source navigation and footer, with page styles scoped independently. */
 .arielos-home.arielos-chrome {
   min-height: 0;

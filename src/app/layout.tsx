@@ -56,7 +56,11 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             },
           ]}
         />
-        <SiteExperience email={site.email} bookingUrl={site.bookingUrl}>
+        <SiteExperience
+          email={site.email}
+          bookingUrl={site.bookingUrl}
+          directDelivery={Boolean(process.env.CONTACT_WEBHOOK_URL)}
+        >
           {children}
         </SiteExperience>
       </body>

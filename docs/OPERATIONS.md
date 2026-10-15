@@ -7,7 +7,7 @@ Keep secrets in host environment settings or ignored `.env.local` files. Commit 
 - `SITE_URL`: the single public HTTPS origin, without a path. Used in canonical URLs, JSON-LD, social metadata, robots, and the sitemap. Confirm the public domain before enabling indexing.
 - `SITE_INDEXABLE`: set to `true` only for a public production build and its runtime. Default is `false`. Development and Vercel preview environments are always non-indexable.
 - `CONTACT_EMAIL`: defaults to `eyal@citevia.com`.
-- `BOOKING_URL`: optional HTTPS scheduling URL. Otherwise the header CTA opens `/private-ai-visibility-assessment`.
+- `BOOKING_URL`: optional override for the public Cal.com URL (`https://cal.com/eyal-BC`) in `src/lib/booking.ts`. Booking links open in a new tab. The private-assessment CTA remains separate.
 - `CONTACT_WEBHOOK_URL`: optional HTTPS endpoint for lead delivery.
 - `CONTACT_WEBHOOK_TOKEN`: optional server-only bearer token.
 - `GOOGLE_SITE_VERIFICATION`, `BING_SITE_VERIFICATION`: optional verification values emitted as metadata. Verify the domain in the respective service.
@@ -16,7 +16,7 @@ Metadata, sitemap, and LLM text routes are pre-rendered at build time. Rebuild w
 
 ## Contact delivery
 
-The default form is an **email draft flow**. It validates details, opens the visitor’s email application, and says that they must send the message themselves. It never claims a lead was delivered by the website.
+The default form is an **email draft flow**. It validates details, opens the visitor’s email application, and says that they must send the message themselves. It never claims a lead was delivered by the website. The shared Contact Us form appears on `/contact` and above the footer on other pages. It requires name, email, and company name; phone is optional. Floating contact and Cal.com links stay available on every page, including mobile.
 
 To enable direct delivery, configure an HTTPS webhook accepting this JSON:
 
@@ -24,6 +24,7 @@ To enable direct delivery, configure an HTTPS webhook accepting this JSON:
 {
   "name": "Example Person",
   "email": "person@example.com",
+  "phone": "+1 202 555 0100",
   "company": "Example Company",
   "website": "https://example.com",
   "interest": "AI visibility audit",
@@ -62,4 +63,4 @@ The legacy draft included illustrative KPIs, fictional case studies, placeholder
 
 The later content expansion adds clearly labeled educational example studies at the user’s request. They are constructed scenarios with proposed work and measurement plans, with synthetic example outcomes clearly labeled as invented demonstration figures, never achieved performance. `/insights` and `/insights/:slug` redirect to their `/blog` equivalents. Keep these redirects when adding or revising articles.
 
-The assessment form includes optional role, industry, and priority-market fields. These are included in the email draft or optional webhook payload. The Arielos homepage contact form always prepares an email draft and has no webhook submission. Its email and booking destination come from `site` at build time; rebuild if those settings change. The contact and private-assessment pages retain their optional webhook delivery. Homepage reports use labeled static reference data and have no API credentials or live connection.
+The assessment form includes optional role, industry, and priority-market fields. These are included in the email draft or optional webhook payload. The shared Contact Us form uses the same optional webhook delivery and includes the phone number (an empty string when omitted); its interest is `Something else`, with empty website and message fields. Email, booking destination, and the shared form’s delivery setting come from the root layout; rebuild when changing these settings so prerendered pages stay consistent. Homepage reports use labeled static reference data and have no API credentials or live connection.

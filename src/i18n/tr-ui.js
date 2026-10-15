@@ -1,4 +1,16 @@
 const trUi = {
+  'Contact us': 'İletişim',
+  'Contact and booking': 'İletişim ve randevu',
+  'Book on Cal.com': 'Cal.com’da randevu al',
+  'Book on Cal.com (opens in a new tab)': 'Cal.com’da randevu al (yeni sekmede açılır)',
+  'LET’S TALK': 'KONUŞALIM',
+  'Let’s talk about your business and how we can help you get found.':
+    'İşletmeniz ve görünürlüğünüzü artırmak için nasıl yardımcı olabileceğimiz hakkında konuşalım.',
+  'Prefer to choose a time?': 'Bir saat seçmek ister misiniz?',
+  'We could not confirm delivery. Please try again or email us directly.':
+    'Teslimatı doğrulayamadık. Lütfen tekrar deneyin veya doğrudan e-posta gönderin.',
+  'Please keep your phone number under 50 characters.':
+    'Lütfen telefon numaranızı 50 karakterden kısa tutun.',
   Blog: 'Blog',
   Services: 'Hizmetler',
   Methodology: 'Metodoloji',
