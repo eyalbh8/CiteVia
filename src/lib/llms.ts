@@ -158,6 +158,12 @@ export function llmsFullText() {
             ...(section.source ? [`Source: [${section.source.title}](${section.source.url})`] : []),
           ].join('\n\n'),
         ),
+        ...(item.faq
+          ? [
+              `#### ${item.faq.title}`,
+              ...item.faq.items.map(({ question, answer }) => `##### ${question}\n\n${answer}`),
+            ]
+          : []),
       ].join('\n\n'),
     ),
     '## Glossary',

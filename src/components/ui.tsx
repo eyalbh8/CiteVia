@@ -4,10 +4,17 @@ import type { ReactNode } from 'react';
 import { ArrowIcon } from './icons';
 import { breadcrumbSchema, faqPageSchema } from '@/lib/seo';
 
-export function JsonLd({ data }: { data: Record<string, unknown> | Record<string, unknown>[] }) {
+export function JsonLd({
+  data,
+  localize = false,
+}: {
+  data: Record<string, unknown> | Record<string, unknown>[];
+  localize?: boolean;
+}) {
   return (
     <script
       type="application/ld+json"
+      data-localize-article={localize ? '' : undefined}
       dangerouslySetInnerHTML={{
         __html: JSON.stringify({
           '@context': 'https://schema.org',
@@ -18,11 +25,17 @@ export function JsonLd({ data }: { data: Record<string, unknown> | Record<string
   );
 }
 
-export function Breadcrumbs({ items }: { items: { name: string; href: string }[] }) {
+export function Breadcrumbs({
+  items,
+  localize = false,
+}: {
+  items: { name: string; href: string }[];
+  localize?: boolean;
+}) {
   const all = [{ name: 'Home', href: '/' }, ...items];
   return (
     <>
-      <JsonLd data={breadcrumbSchema(all)} />
+      <JsonLd data={breadcrumbSchema(all)} localize={localize} />
       <nav className="breadcrumbs" aria-label="Breadcrumb">
         <ol>
           {all.map((item, i) => (

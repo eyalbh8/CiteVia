@@ -149,6 +149,51 @@ try {
         ),
         `${path}: incomplete article schema`,
       );
+    const article = nodes.find((node) => node['@type'] === 'BlogPosting');
+    if (article?.datePublished >= '2026-10-16') {
+      const faqNodes = nodes.filter((node) => node['@type'] === 'FAQPage');
+      assert.equal(faqNodes.length, 1, `${path}: new articles require one FAQPage`);
+      const faq = faqNodes[0];
+      const section = html.match(/<section\b[^>]*id="faq"[^>]*>([\s\S]*?)<\/section>/)?.[1];
+      assert(section, `${path}: missing visible FAQ section`);
+      const questions = [...section.matchAll(/<h3\b[^>]*>([\s\S]*?)<\/h3>/g)].map(([, value]) =>
+        decode(value),
+      );
+      const answers = [...section.matchAll(/<p\b[^>]*>([\s\S]*?)<\/p>/g)].map(([, value]) =>
+        decode(value),
+      );
+      assert(questions.length >= 4 && questions.length <= 6, `${path}: expected 4–6 useful FAQs`);
+      assert.deepEqual(
+        faq.mainEntity.map((item) => item.name),
+        questions,
+        `${path}: FAQ questions disagree`,
+      );
+      assert.deepEqual(
+        faq.mainEntity.map((item) => item.acceptedAnswer.text),
+        answers,
+        `${path}: FAQ answers disagree`,
+      );
+      assert(
+        faq.mainEntity.every(
+          (item) => item['@type'] === 'Question' && item.acceptedAnswer['@type'] === 'Answer',
+        ),
+      );
+      assert.equal(faq.inLanguage, 'en');
+      assert.equal(article.inLanguage, 'en');
+      assert.equal(article.mainEntityOfPage['@id'], faq['@id']);
+      const words = [
+        ...html.matchAll(/<(h[23]|p|li)\b[^>]*data-article-words[^>]*>([\s\S]*?)<\/\1>/g),
+      ]
+        .map(([, , value]) => decode(value.replace(/<[^>]+>/g, '')))
+        .join(' ')
+        .trim()
+        .split(/\s+/).length;
+      assert.equal(
+        article.wordCount,
+        words,
+        `${path}: word count must include visible FAQ content`,
+      );
+    }
     for (const link of tags(html, 'a')) {
       if (!link.href) continue;
       const url = new URL(link.href, new URL(path, base));
@@ -196,6 +241,13 @@ try {
     '/llms-full.txt must not compete with canonical HTML pages',
   );
   const llmsFull = await llmsFullResponse.text();
+  for (const [path, html] of pages) {
+    if (!path.startsWith('/blog/')) continue;
+    const faq = html.match(/<section\b[^>]*id="faq"[^>]*>([\s\S]*?)<\/section>/)?.[1];
+    if (!faq) continue;
+    for (const [, value] of faq.matchAll(/<(?:h3|p)\b[^>]*>([\s\S]*?)<\/(?:h3|p)>/g))
+      assert(llmsFull.includes(decode(value)), `${path}: FAQ must appear in the full-text export`);
+  }
   for (const section of [
     '## Homepage questions',
     '## Methodology questions',

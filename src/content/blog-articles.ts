@@ -1,6 +1,8 @@
 import type { Article } from './articles';
+import { aiCrawlerPolicy } from './ai-crawler-policy.js';
 
 export const newArticles: Article[] = [
+  aiCrawlerPolicy,
   {
     slug: 'ai-visibility-audit-playbook',
     title: 'How to run an AI visibility audit your team can use',

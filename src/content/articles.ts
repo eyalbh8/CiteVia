@@ -14,6 +14,8 @@ export type Article = {
   updated: string;
   takeaway: string;
   relatedService: string;
+  faq?: { title: string; items: { question: string; answer: string }[] };
+  translations?: Record<string, Record<string, string>>;
   sections: {
     id: string;
     title: string;
@@ -26,7 +28,7 @@ export type Article = {
 
 export const articles: Article[] = [...arielosArticles, ...newArticles, ...foundationArticles];
 
-export function articleWordCount(article: Article) {
+export function articleWordCount(article: Article, language = 'en') {
   const text = [
     article.takeaway,
     ...article.sections.flatMap((s) => [
@@ -34,13 +36,19 @@ export function articleWordCount(article: Article) {
       ...s.paragraphs,
       ...(s.bullets || []),
       ...(s.example ? [s.example.title, s.example.text] : []),
+      ...(s.source ? [`Source: ${s.source.title}`] : []),
     ]),
-  ].join(' ');
+    ...(article.faq
+      ? [article.faq.title, ...article.faq.items.flatMap((item) => [item.question, item.answer])]
+      : []),
+  ]
+    .map((value) => article.translations?.[language]?.[value] || value)
+    .join(' ');
   return articlePlainText(text).trim().split(/\s+/).length;
 }
 
-export function readingMinutes(article: Article) {
-  return Math.max(1, Math.ceil(articleWordCount(article) / 220));
+export function readingMinutes(article: Article, language = 'en') {
+  return Math.max(1, Math.ceil(articleWordCount(article, language) / 220));
 }
 
 export function articleSummary(article: Article) {
@@ -51,6 +59,12 @@ export function articleSummary(article: Article) {
     category: article.category,
     published: article.published,
     minutes: readingMinutes(article),
+    localizedMinutes: Object.fromEntries(
+      Object.keys(article.translations || {}).map((language) => [
+        language,
+        readingMinutes(article, language),
+      ]),
+    ),
   };
 }
 

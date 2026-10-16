@@ -22,6 +22,7 @@ const media = {
 };
 
 const bySlug: Record<string, keyof typeof media> = {
+  'ai-crawler-policy-training-search': 'intelligence',
   'geo-aeo-and-seo': 'intelligence',
   'anatomy-of-a-citable-page': 'authority',
   'measuring-ai-search-visibility': 'monitoring',

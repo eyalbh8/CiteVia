@@ -6,7 +6,7 @@ import { articles, readingMinutes, formatDate, articleWordCount } from '@/conten
 import { articleMedia } from '@/content/article-media';
 import { ArticleText } from '@/components/article-text';
 import { Breadcrumbs, JsonLd } from '@/components/ui';
-import { pageMetadata, webPageSchema } from '@/lib/seo';
+import { pageMetadata, webPageSchema, faqPageSchema } from '@/lib/seo';
 import { parseArticleText } from '@/lib/article-text';
 import { absoluteUrl, site } from '@/lib/site';
 import './article.css';
@@ -65,8 +65,12 @@ export default async function ArticlePage({ params }: Props) {
   return (
     <>
       <JsonLd
+        localize={Boolean(article.faq)}
         data={[
-          webPageSchema(article.title, article.description, path),
+          {
+            ...webPageSchema(article.title, article.description, path),
+            ...(article.faq ? faqPageSchema(article.faq.items) : {}),
+          },
           {
             '@type': 'BlogPosting',
             '@id': `${absoluteUrl(path)}#article`,
@@ -94,6 +98,7 @@ export default async function ArticlePage({ params }: Props) {
       <div className="arielos-home citevia-post">
         <article className="shell post-shell">
           <Breadcrumbs
+            localize={Boolean(article.faq)}
             items={[
               { name: 'Blog', href: '/blog' },
               { name: article.title, href: path },
@@ -111,7 +116,9 @@ export default async function ArticlePage({ params }: Props) {
               <span>
                 Updated <time dateTime={article.updated}>{formatDate(article.updated)}</time>
               </span>
-              <span>{readingMinutes(article)} min read</span>
+              <span>
+                <span data-article-minutes>{readingMinutes(article)}</span> min read
+              </span>
             </div>
           </header>
           <figure className="post-cover">
@@ -126,6 +133,7 @@ export default async function ArticlePage({ params }: Props) {
                     {section.title}
                   </a>
                 ))}
+                {article.faq && <a href="#faq">{article.faq.title}</a>}
               </nav>
               <Link className="post-back" href="/blog">
                 ← All blog posts
@@ -134,22 +142,22 @@ export default async function ArticlePage({ params }: Props) {
             <div className="post-body">
               <div className="post-takeaway">
                 <p className="eyebrow">THE SHORT ANSWER</p>
-                <p>
+                <p data-article-words>
                   <ArticleText>{article.takeaway}</ArticleText>
                 </p>
               </div>
               {article.sections.map((section) => (
                 <section id={section.id} key={section.id}>
-                  <h2>{section.title}</h2>
+                  <h2 data-article-words>{section.title}</h2>
                   {section.paragraphs.map((paragraph, index) => (
-                    <p key={index}>
+                    <p key={index} data-article-words>
                       <ArticleText>{paragraph}</ArticleText>
                     </p>
                   ))}
                   {section.bullets && (
                     <ul>
                       {section.bullets.map((bullet, index) => (
-                        <li key={index}>
+                        <li key={index} data-article-words>
                           <ArticleText>{bullet}</ArticleText>
                         </li>
                       ))}
@@ -157,19 +165,34 @@ export default async function ArticlePage({ params }: Props) {
                   )}
                   {section.example && (
                     <aside className="post-example">
-                      <h3>{section.example.title}</h3>
-                      <p>
+                      <h3 data-article-words>{section.example.title}</h3>
+                      <p data-article-words>
                         <ArticleText>{section.example.text}</ArticleText>
                       </p>
                     </aside>
                   )}
                   {section.source && (
-                    <p className="post-source">
+                    <p className="post-source" data-article-words>
                       Source: <a href={section.source.url}>{section.source.title}</a>
                     </p>
                   )}
                 </section>
               ))}
+              {article.faq && (
+                <section id="faq" aria-labelledby="article-faq-heading" className="post-faq">
+                  <h2 id="article-faq-heading" data-article-words>
+                    {article.faq.title}
+                  </h2>
+                  {article.faq.items.map(({ question, answer }, index) => (
+                    <div key={question}>
+                      <h3 id={`faq-${index + 1}`} data-article-words>
+                        {question}
+                      </h3>
+                      <p data-article-words>{answer}</p>
+                    </div>
+                  ))}
+                </section>
+              )}
               <footer className="post-review">
                 <p>
                   Written by <Link href="/about">Citevia</Link>. Updated{' '}

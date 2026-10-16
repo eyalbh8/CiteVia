@@ -2,7 +2,7 @@
 
 ## Architecture
 
-The site serves 49 content pages: home, service index, eleven services, methodology, about, blog index, ten articles, solutions index, three solutions, industry index, five industries, case-study index, six illustrative studies, resources, company facts, contact, private assessment, privacy, and website terms. A separate thank-you utility route is also available. The 47 marketing and editorial pages enter the production sitemap. Privacy, terms and thank-you retain canonicals and use `noindex, follow`.
+The site serves 50 content pages: home, service index, eleven services, methodology, about, blog index, eleven articles, solutions index, three solutions, industry index, five industries, case-study index, six illustrative studies, resources, company facts, contact, private assessment, privacy, and website terms. A separate thank-you utility route is also available. The 48 marketing and editorial pages enter the production sitemap. Privacy, terms and thank-you retain canonicals and use `noindex, follow`.
 
 Next.js server routes provide metadata and prerender the primary page content, including the supplied interactive React components. Client components handle shared navigation, five static report tabs, image dialogs and contact interaction. Pages use semantic headings, descriptive links, image alternatives, and accessible FAQ disclosures. Brand, origin, and contact details share one configuration.
 
@@ -27,7 +27,11 @@ Add an entry to `src/content/blog-articles.ts` (the three foundation guides live
 - Accurate publication and modification dates.
 - A related service appropriate to the topic.
 
-All ten articles share the same server-rendered blog template, a table of contents, a direct answer, related reading and `BlogPosting` structured data. The title, dates, author, image and word count come from the same records as the visible article. Article images are selected in `src/content/article-media.ts`; keep their alternative text descriptive. Research examples remain visibly labeled, and no independent expert review is implied.
+All articles share the same server-rendered blog template, a table of contents, a direct answer, related reading and `BlogPosting` structured data. The title, dates, author, image and word count come from the same records as the visible article. Article images are selected in `src/content/article-media.ts`; keep their alternative text descriptive. Research examples remain visibly labeled, and no independent expert review is implied.
+
+Articles published from October 16, 2026 include `faq: { title, items: [{ question, answer }] }` with four to six substantive questions. Keep FAQ answers as plain text. The template renders the same items as visible H3 headings and paragraphs and as FAQPage data on the canonical webpage node. The full-text export and word count include them. The crawl check blocks publication when new articles omit FAQs or when visible content and schema disagree.
+
+For new multilingual article copy, `src/i18n/article-copy.js` registers complete strings and the actual text fragments around Markdown links. See `src/content/ai-crawler-policy.js` for the first maintained English/Spanish/Turkish record. Add its dictionaries to `translate.js` and attach them to the article's `translations` field for language-specific reading times. The current canonical URL still serves English initially. Opted-in article and breadcrumb schemas follow the browser language, including FAQ content and visible word count; this does not create separately indexed language pages. Review language switching and directory navigation in a browser. Keep the run's demand evidence, overlap review, source checks and editorial assessment in `docs/publishing/`.
 
 Paragraphs, bullets and example text support links using `[descriptive anchor](/blog/article-slug)` and `[source title](https://source.example/page)`. `ArticleText` renders these as real HTML links. Internal links use Next.js navigation; external editorial links are ordinary followed links. Only site-relative paths and HTTP(S) destinations are accepted, with no raw HTML. Other Markdown formatting is not supported. The LLM companion preserves the links and makes internal destinations absolute. Reading times count visible words rather than URL strings.
 

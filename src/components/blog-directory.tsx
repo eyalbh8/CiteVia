@@ -80,7 +80,7 @@ export function BlogDirectory({ articles }: { articles: ArticleSummary[] }) {
               <div className="blog-card__body">
                 <div className="blog-meta">
                   <time dateTime={article.published}>{formatDate(article.published)}</time>
-                  <span>{`${article.minutes} min read`}</span>
+                  <span>{`${article.localizedMinutes[language] || article.minutes} min read`}</span>
                 </div>
                 <h3>{article.title}</h3>
                 <p>{article.description}</p>

@@ -164,6 +164,12 @@
 .citevia-post .post-body .post-source {
   font-size: 13px;
 }
+.citevia-post .post-faq h3 {
+  margin: 28px 0 12px;
+  color: var(--ink);
+  font-size: 19px;
+  line-height: 1.5;
+}
 .citevia-post .post-review {
   margin-top: 48px;
   padding: 28px 0 64px;

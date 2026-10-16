@@ -9,10 +9,28 @@ import trMarketing from './tr-marketing.js';
 import trRoutes from './tr-routes.js';
 import trRouteData from './tr-route-data.js';
 import { esSupplement, trSupplement } from './content-supplement.js';
+import { aiCrawlerTranslations, aiCrawlerFragments } from '../content/ai-crawler-policy.js';
+import { localizeArticleSchema } from './article-schema.js';
 
 const translationsByLanguage = {
-  es: { ...esRouteData, ...esRoutes, ...esMarketing, ...esHome, ...esUi, ...esSupplement },
-  tr: { ...trRouteData, ...trRoutes, ...trMarketing, ...trHome, ...trUi, ...trSupplement },
+  es: {
+    ...esRouteData,
+    ...esRoutes,
+    ...esMarketing,
+    ...esHome,
+    ...esUi,
+    ...esSupplement,
+    ...aiCrawlerTranslations.es,
+  },
+  tr: {
+    ...trRouteData,
+    ...trRoutes,
+    ...trMarketing,
+    ...trHome,
+    ...trUi,
+    ...trSupplement,
+    ...aiCrawlerTranslations.tr,
+  },
 };
 const normalizedTranslationsByLanguage = Object.fromEntries(
   Object.entries(translationsByLanguage).map(([language, translations]) => [
@@ -94,9 +112,10 @@ export function updateTextNode(node, language) {
   const wasKnownTranslation = previous && Object.values(previous.translated).includes(current);
   const english =
     previous && (current === previous.english || wasKnownTranslation) ? previous.english : current;
-  const translated = language === 'en' ? undefined : getTranslation(english, language);
+  const exact = language === 'en' ? undefined : aiCrawlerFragments[language]?.[english];
+  const translated = language === 'en' ? undefined : (exact ?? getTranslation(english, language));
   if (translated) {
-    const rendered = preserveSpace(english, translated);
+    const rendered = exact !== undefined ? exact : preserveSpace(english, translated);
     originalText.set(node, {
       english,
       translated: { ...(previous?.translated || {}), [language]: rendered },
@@ -193,6 +212,13 @@ export function translatePage(language) {
   let node;
   while ((node = walker.nextNode())) updateTextNode(node, language);
   document.body.querySelectorAll('*').forEach((element) => updateElement(element, language));
+  translateMetadata(language);
+  document.documentElement.lang = language;
+  localizeArticleSchema(language, (text) => getTranslation(text, language) || text);
+}
+
+// Next.js may refresh head metadata after the first language effect during hydration.
+export function translateMetadata(language) {
   document.head
     .querySelectorAll('meta[content]')
     .forEach((element) => updateElement(element, language));
@@ -209,12 +235,16 @@ export function translatePage(language) {
       english: englishTitle,
       translated: { ...titleState.translated, [language]: localizedTitle },
     };
-    document.title = localizedTitle;
+    if (document.title !== localizedTitle) document.title = localizedTitle;
   } else {
     titleState = { english: englishTitle, translated: titleState.translated };
-    document.title = englishTitle;
+    if (document.title !== englishTitle) document.title = englishTitle;
   }
-  document.documentElement.lang = language;
+  if (document.querySelector('script[data-localize-article]')) {
+    const locale = document.querySelector('meta[property="og:locale"]');
+    const value = { en: 'en_US', es: 'es_ES', tr: 'tr_TR' }[language] || 'en_US';
+    if (locale && locale.getAttribute('content') !== value) locale.setAttribute('content', value);
+  }
 }
 
 export function translateToSpanish(value) {

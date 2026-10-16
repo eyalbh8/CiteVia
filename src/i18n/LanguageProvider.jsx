@@ -4,6 +4,7 @@ import { createContext, useCallback, useContext, useEffect, useMemo, useState } 
 import { usePathname } from 'next/navigation';
 import {
   translatePage,
+  translateMetadata,
   updateTextNode,
   updateElement,
   translatedAttributeNames,
@@ -66,7 +67,18 @@ export function LanguageProvider({ children }) {
       attributes: true,
       attributeFilter: translatedAttributeNames,
     });
-    return () => observer.disconnect();
+    const headObserver = new MutationObserver(() => translateMetadata(language));
+    headObserver.observe(document.head, {
+      subtree: true,
+      childList: true,
+      characterData: true,
+      attributes: true,
+      attributeFilter: ['content'],
+    });
+    return () => {
+      observer.disconnect();
+      headObserver.disconnect();
+    };
   }, [language, pathname]);
 
   const value = useMemo(
