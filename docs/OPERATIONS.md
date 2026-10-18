@@ -36,6 +36,8 @@ external faces cover other characters and weights. Regenerate the checked-in sub
 with `scripts/subset-critical-fonts.py` and FontTools 4.60.1 when the source fonts change.
 Embedded faces share the complete fonts' family names and take precedence for their
 Unicode ranges, so common text throughout the first screen needs no font request.
+Only these embedded faces use `font-display: block`, allowing their inline bytes to
+decode before the first text paint instead of briefly displaying fallback glyphs.
 The full stylesheet activates during hydration, with a no-JavaScript fallback.
 Critical CSS keeps below-fold fill-image containers positioned without loading their
 typography early, so their placeholders cannot overlap the first screen.
