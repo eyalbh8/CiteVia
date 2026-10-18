@@ -34,8 +34,9 @@ critical CSS so the headline, paragraph, and badge render without font requests.
 subset includes only the homepage headline's characters; a test checks its coverage. Complete
 external faces cover other characters and weights. Regenerate the checked-in subsets
 with `scripts/subset-critical-fonts.py` and FontTools 4.60.1 when the source fonts change.
-Embedded faces use separate families scoped to the hero and `font-display: optional`,
-so later full-font downloads do not replace the first screen's text rendering.
+Embedded faces use separate families scoped to the hero and `font-display: block`,
+so the first paint uses the brand fonts once the inline bytes are decoded. These
+faces require no network request; full external fonts retain their independent policy.
 
 `scripts/build-styles.mjs` derives critical header/hero styles from the existing CSS
 sources, minifies with Lightning CSS, emits fingerprinted fonts and the complete stylesheet, and generates an ignored
