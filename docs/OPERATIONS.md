@@ -28,10 +28,9 @@ assets. Fonts and homepage images are emitted at fingerprinted URLs; mutable pub
 assets and HTML are not given immutable browser caching. Update assets through the
 source imports so changed files get new URLs.
 
-The pinned Next.js version uses `experimental.inlineCss` to deliver initial styles
-with HTML, avoiding a render-blocking stylesheet request on slow mobile networks.
-This increases the HTML response and trades separate stylesheet caching for faster
-first render. Recheck production navigation and PageSpeed when upgrading Next.js.
+Body and label fonts use `font-display: optional`: on slow first visits, metric-adjusted
+fallback fonts keep text readable without a late font swap; cached visits use the brand
+fonts. The preloaded display serif retains `swap`. Stylesheets remain independently cached.
 
 After a release, verify `/robots.txt`, the homepage robots meta tag, a font URL and an
 optimized image response. Rerun PageSpeed for mobile and desktop against the live URL.

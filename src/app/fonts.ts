@@ -39,7 +39,7 @@ export const openSauce = localFont({
     },
   ],
   variable: '--font-open-sauce',
-  display: 'swap',
+  display: 'optional',
   preload: false,
 });
 
@@ -62,7 +62,7 @@ export const poppins = localFont({
     },
   ],
   variable: '--font-poppins',
-  display: 'swap',
+  display: 'optional',
   preload: false,
 });
 

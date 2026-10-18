@@ -2,8 +2,6 @@ import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
   poweredByHeader: false,
-  // Ship the compact page styles with HTML to avoid a render-blocking round trip.
-  experimental: { inlineCss: true },
   async redirects() {
     return [
       { source: '/index.html', destination: '/', permanent: true },
