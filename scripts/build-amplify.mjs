@@ -1,6 +1,9 @@
 import { readFileSync, writeFileSync } from 'node:fs';
 import { spawnSync } from 'node:child_process';
 import { amplifyIndexable } from './deployment-policy.mjs';
+import { buildStyles } from './build-styles.mjs';
+
+buildStyles();
 
 // Amplify does not forward build variables to SSR by default. Persist only the
 // public origin/indexing policy, so generated pages and SSR share the same policy.

@@ -9,3 +9,5 @@ out/
 *.tsbuildinfo
 next-env.d.ts
 .npm-cache/
+public/site-assets/
+src/generated/site-styles.ts

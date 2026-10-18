@@ -3,10 +3,8 @@ import SiteExperience from '@/components/arielos/SiteExperience';
 import { JsonLd } from '@/components/ui';
 import { site } from '@/lib/site';
 import { organizationSchema } from '@/lib/seo';
-import { openSauce, poppins, instrument } from './fonts';
-import './site-base.css';
-import './arielos-source.css';
-import './arielos-theme.css';
+import SiteStyles from '@/components/site-styles';
+import { criticalCss, stylesheet, displayFont } from '@/generated/site-styles';
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
@@ -37,13 +35,18 @@ export const viewport: Viewport = { width: 'device-width', initialScale: 1, them
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html
-      className={`${openSauce.variable} ${poppins.variable} ${instrument.variable}`}
-      lang="en"
-      data-theme="light"
-      data-scroll-behavior="smooth"
-      suppressHydrationWarning
-    >
+    <html lang="en" data-theme="light" data-scroll-behavior="smooth" suppressHydrationWarning>
+      <head>
+        <link
+          rel="preload"
+          href={displayFont}
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        <style data-citevia-critical dangerouslySetInnerHTML={{ __html: criticalCss }} />
+        <SiteStyles href={stylesheet} />
+      </head>
       <body>
         <a className="skip-link" href="#main-content">
           Skip to content

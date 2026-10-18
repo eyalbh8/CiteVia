@@ -32,6 +32,7 @@ function ScrollEffects() {
   useEffect(() => {
     if (
       window.matchMedia('(prefers-reduced-motion: reduce)').matches ||
+      window.matchMedia('(max-width: 899px)').matches ||
       !('IntersectionObserver' in window)
     )
       return;

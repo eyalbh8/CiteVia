@@ -357,3 +357,35 @@ body:has(.arielos-home) > main {
 .arielos-home dialog.product-stage-modal::backdrop {
   background: rgba(6, 8, 20, 0.6);
 }
+
+/* Render distant sections as they approach the viewport, retaining their HTML and links. */
+@media (max-width: 899px) {
+  .home-page > .section,
+  .arielos-home > .footer {
+    content-visibility: auto;
+    contain-intrinsic-block-size: auto 800px;
+  }
+  .home-page > #context {
+    contain-intrinsic-block-size: auto 160px;
+  }
+  .home-page > #product {
+    contain-intrinsic-block-size: auto 1000px;
+  }
+  .arielos-home .hero::before,
+  .arielos-home .hero__aurora::before,
+  .arielos-home .hero__aurora::after,
+  .arielos-home .hero-field * {
+    animation: none !important;
+  }
+  .arielos-home .hero-field .hero-float.is-mobile {
+    opacity: 1;
+    transform: none;
+  }
+}
+@media print {
+  .home-page > .section,
+  .arielos-home > .footer {
+    content-visibility: visible;
+    contain-intrinsic-block-size: none;
+  }
+}
