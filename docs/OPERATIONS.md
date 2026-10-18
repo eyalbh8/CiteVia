@@ -29,8 +29,9 @@ mutable public assets and HTML are not given immutable browser caching.
 
 Body and label fonts use `font-display: optional`: on slow first visits, metric-adjusted
 fallback fonts keep text readable without a late font swap; cached visits use the brand
-fonts. Small ASCII subsets of the regular body and display-serif faces are embedded in
-critical CSS so the headline and paragraph render without font requests. Complete
+fonts. Small subsets of the regular body, heading serif, and semibold label faces are embedded in
+critical CSS so the headline, paragraph, and badge render without font requests. The serif
+subset includes only the homepage headline's characters; a test checks its coverage. Complete
 external faces cover other characters and weights. Regenerate the checked-in subsets
 with `scripts/subset-critical-fonts.py` and FontTools 4.60.1 when the source fonts change.
 
@@ -41,6 +42,9 @@ without blocking its first paint, with a `noscript` fallback. Other entry routes
 the complete stylesheet before rendering. Build, typecheck, and Amplify commands generate
 these assets automatically; `npm run dev` also watches the CSS sources. Keep new first-screen
 component classes in the generator's critical class list and verify at mobile widths.
+Transitions are enabled after the full stylesheet has painted, so initial styling does
+not trigger dozens of offscreen border and color transitions. The scroll indicator first
+measures document height when needed by scrolling or restored scroll position.
 
 After a release, verify `/robots.txt`, the homepage robots meta tag, a font URL and an
 optimized image response. Rerun PageSpeed for mobile and desktop against the live URL.

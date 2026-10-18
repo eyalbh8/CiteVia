@@ -30,3 +30,23 @@ test('generated styles use immutable assets and contain no network imports', () 
   assert.doesNotMatch(module, /@import|https?:\/\//);
   assert.doesNotMatch(module, /\.platform-bars__row/);
 });
+
+test('embedded display font covers the homepage headline', () => {
+  const subsets = JSON.parse(readFileSync('public/fonts/critical/subsets.json', 'utf8'));
+  const headingFont = subsets.find((font) => font.family === 'Citevia Instrument');
+  const codepoints = new Set(
+    headingFont.unicodeRange.split(',').map((code) => parseInt(code.slice(2), 16)),
+  );
+  const homepage = readFileSync('src/components/arielos/Homepage.jsx', 'utf8');
+  const heading = homepage
+    .match(/<h1 className="hero__headline[^>]*>([\s\S]*?)<\/h1>/)[1]
+    .replace(/<[^>]+>/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+  for (const character of heading) {
+    assert.ok(
+      codepoints.has(character.codePointAt(0)),
+      `Regenerate the heading subset for ${character}`,
+    );
+  }
+});

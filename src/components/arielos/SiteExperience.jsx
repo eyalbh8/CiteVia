@@ -23,7 +23,10 @@ function ScrollEffects() {
       });
     };
     window.addEventListener('scroll', update, { passive: true });
-    update();
+    // At the top the progress is already zero; measuring the full document here
+    // would force layout while the deferred stylesheet is being applied.
+    if (window.scrollY > 0) update();
+    else if (progress.current) progress.current.style.transform = 'scaleY(0)';
     return () => {
       cancelAnimationFrame(frame);
       window.removeEventListener('scroll', update);
