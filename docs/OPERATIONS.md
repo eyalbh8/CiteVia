@@ -42,6 +42,9 @@ without blocking its first paint, with a `noscript` fallback. Other entry routes
 the complete stylesheet before rendering. Build, typecheck, and Amplify commands generate
 these assets automatically; `npm run dev` also watches the CSS sources. Keep new first-screen
 component classes in the generator's critical class list and verify at mobile widths.
+Keep positioning rules for every `Image fill` container in critical CSS, even below the
+fold: without them, absolute images and their blur placeholders can cover the hero until
+the complete stylesheet arrives. The current containers are `service-photo` and `footer__cta`.
 Mobile transitions are limited to transform and opacity, so initial styling does
 not trigger dozens of offscreen border and color transitions. The scroll indicator first
 measures document height when needed by scrolling or restored scroll position.

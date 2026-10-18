@@ -12,7 +12,7 @@ export const styleSources = [
 
 // The first screen and persistent navigation must be complete before the full CSS arrives.
 const criticalClass =
-  /^(arielos-(home|chrome)|home-page|site-main|site-header.*|nav.*|brand.*|citevia-symbol|hero.*|shell|section|footer|button.*|floating-.*|scroll-progress|skip-link|sr-only|visually-hidden|is-.*)$/;
+  /^(arielos-(home|chrome)|home-page|site-main|site-header.*|nav.*|brand.*|citevia-symbol|hero.*|shell|section(--[a-z-]+)?|platform-marquee.*|service-photo|footer|footer__cta.*|button.*|floating-.*|scroll-progress|skip-link|sr-only|visually-hidden|is-.*)$/;
 
 export function extractCriticalCss(css) {
   const root = postcss.parse(css);

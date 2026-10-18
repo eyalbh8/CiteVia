@@ -6,6 +6,8 @@ import { readFileSync } from 'node:fs';
 test('critical CSS retains responsive navigation, shared resets and animation dependencies', () => {
   const css = extractCriticalCss(`
     .arielos-home :where(h1, p) { margin: 0 }
+    .arielos-home .service-photo, .arielos-home .footer__cta { position: relative }
+    .arielos-home .platform-marquee__icon svg { width: 24px }
     @media (max-width: 899px) {
       .arielos-home .nav-menu, .arielos-home .chart { display: flex }
       .arielos-home .hero { animation: citevia-hero 1s }
@@ -17,6 +19,8 @@ test('critical CSS retains responsive navigation, shared resets and animation de
   assert.match(css, /:where\(h1, p\)/);
   assert.match(css, /@media \(max-width: 899px\)/);
   assert.match(css, /\.nav-menu/);
+  assert.match(css, /\.service-photo, \.arielos-home \.footer__cta \{ position: relative \}/);
+  assert.match(css, /\.platform-marquee__icon svg/);
   assert.match(css, /@keyframes citevia-hero/);
   assert.doesNotMatch(css, /chart/);
 });
