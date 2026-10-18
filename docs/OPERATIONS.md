@@ -29,10 +29,13 @@ mutable public assets and HTML are not given immutable browser caching.
 
 Body and label fonts use `font-display: optional`: on slow first visits, metric-adjusted
 fallback fonts keep text readable without a late font swap; cached visits use the brand
-fonts. Only the upright display serif is preloaded; its italic face loads when used.
+fonts. Small ASCII subsets of the regular body and display-serif faces are embedded in
+critical CSS so the headline and paragraph render without font requests. Complete
+external faces cover other characters and weights. Regenerate the checked-in subsets
+with `scripts/subset-critical-fonts.py` and FontTools 4.60.1 when the source fonts change.
 
 `scripts/build-styles.mjs` derives critical header/hero styles from the existing CSS
-sources, emits fingerprinted fonts and the complete stylesheet, and generates an ignored
+sources, minifies with Lightning CSS, emits fingerprinted fonts and the complete stylesheet, and generates an ignored
 TypeScript manifest. The homepage includes critical styles in HTML and loads the rest
 without blocking its first paint, with a `noscript` fallback. Other entry routes load
 the complete stylesheet before rendering. Build, typecheck, and Amplify commands generate

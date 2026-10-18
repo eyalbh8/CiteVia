@@ -4,7 +4,7 @@ import { JsonLd } from '@/components/ui';
 import { site } from '@/lib/site';
 import { organizationSchema } from '@/lib/seo';
 import SiteStyles from '@/components/site-styles';
-import { criticalCss, stylesheet, displayFont } from '@/generated/site-styles';
+import { criticalCss, stylesheet } from '@/generated/site-styles';
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
@@ -37,13 +37,6 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en" data-theme="light" data-scroll-behavior="smooth" suppressHydrationWarning>
       <head>
-        <link
-          rel="preload"
-          href={displayFont}
-          as="font"
-          type="font/woff2"
-          crossOrigin="anonymous"
-        />
         <style data-citevia-critical dangerouslySetInnerHTML={{ __html: criticalCss }} />
         <SiteStyles href={stylesheet} />
       </head>

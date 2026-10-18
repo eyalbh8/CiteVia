@@ -26,7 +26,7 @@ test('generated styles use immutable assets and contain no network imports', () 
   const module = readFileSync('src/generated/site-styles.ts', 'utf8');
   assert.match(module, /site\.[a-f0-9]{16}\.css/);
   assert.match(module, /\.nav-menu/);
-  assert.match(module, /content-visibility: auto/);
+  assert.match(module, /data:font\/woff2;base64,/);
   assert.doesNotMatch(module, /@import|https?:\/\//);
   assert.doesNotMatch(module, /\.platform-bars__row/);
 });
