@@ -11,7 +11,7 @@ from fontTools.ttLib import TTFont
 characters = list(range(32, 127)) + [0xA0, 0xB7, 0x2014, 0x2019, 0x2192]
 sources = [
     ("Citevia Open Sauce", 400, "public/fonts/arielos/open-sauce-one-latin-400-normal.woff2", "open-sauce-ascii-400.woff2", characters),
-    ("Citevia Instrument", 400, "node_modules/@fontsource/instrument-serif/files/instrument-serif-latin-400-normal.woff2", "instrument-serif-heading-400.woff2", sorted(set(map(ord, "AI Search Marketing Infrastructure.")))),
+    ("Citevia Instrument", 400, "node_modules/@fontsource/instrument-serif/files/instrument-serif-latin-400-normal.woff2", "instrument-serif-ascii-400.woff2", characters),
     ("Citevia Poppins", 600, "public/fonts/arielos/poppins-latin-600-normal.woff2", "poppins-ascii-600.woff2", characters),
 ]
 destination = Path("public/fonts/critical")

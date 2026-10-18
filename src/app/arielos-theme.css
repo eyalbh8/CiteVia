@@ -36,17 +36,14 @@ body:has(.arielos-home) > main {
 .arielos-home .hero h1.hero__headline {
   color: #161543;
   text-shadow: none;
-  font-family: 'Citevia Instrument Critical', var(--serif);
 }
 .arielos-home .hero__copy {
   color: #535a75;
-  font-family: 'Citevia Open Sauce Critical', var(--sans);
 }
 .arielos-home .hero__badge {
   background: rgba(255, 255, 255, 0.88);
   color: #3b3980;
   border-color: rgba(57, 48, 207, 0.18);
-  font-family: 'Citevia Poppins Critical', var(--label);
 }
 .arielos-home .hero .hero__cta {
   background: var(--accent);

@@ -31,12 +31,11 @@ Body and label fonts use `font-display: optional`: on slow first visits, metric-
 fallback fonts keep text readable without a late font swap; cached visits use the brand
 fonts. Small subsets of the regular body, heading serif, and semibold label faces are embedded in
 critical CSS so the headline, paragraph, and badge render without font requests. The serif
-subset includes only the homepage headline's characters; a test checks its coverage. Complete
+subset covers common ASCII text throughout the page; a test checks the headline's coverage. Complete
 external faces cover other characters and weights. Regenerate the checked-in subsets
 with `scripts/subset-critical-fonts.py` and FontTools 4.60.1 when the source fonts change.
-Embedded faces use separate families scoped to the hero and `font-display: block`,
-so the first paint uses the brand fonts once the inline bytes are decoded. These
-faces require no network request; full external fonts retain their independent policy.
+Embedded faces share the complete fonts' family names and take precedence for their
+Unicode ranges, so common text throughout the first screen needs no font request.
 The full stylesheet activates during hydration, with a no-JavaScript fallback.
 Critical CSS keeps below-fold fill-image containers positioned without loading their
 typography early, so their placeholders cannot overlap the first screen.
