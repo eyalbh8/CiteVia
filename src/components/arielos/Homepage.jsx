@@ -1,6 +1,12 @@
 'use client';
 
 import { useEffect, useId, useRef, useState } from 'react';
+import Image from 'next/image';
+import marketPhoto from '../../../public/images/generated/market-ask-ai.jpg';
+import intelligencePhoto from '../../../public/images/generated/service-intelligence.jpg';
+import positioningPhoto from '../../../public/images/generated/service-positioning.jpg';
+import authorityPhoto from '../../../public/images/generated/service-authority.jpg';
+import monitoringPhoto from '../../../public/images/generated/service-monitoring.jpg';
 import { Link } from './Link.jsx';
 import { nayaxCase, faqs, marketStats, platforms, productTabs, servicePillars } from './data.js';
 import {
@@ -242,8 +248,9 @@ function HeroField() {
 }
 
 function Hero() {
+  const [ref, inView] = useInView();
   return (
-    <section id="top" className="hero">
+    <section id="top" ref={ref} className={`hero ${inView ? '' : 'is-motion-paused'}`.trim()}>
       <div className="hero__aurora" aria-hidden="true" />
       <HeroField />
       <div className="shell hero__inner">
@@ -317,7 +324,11 @@ function PlatformGrid() {
   const loop = [...platforms, ...platforms, ...platforms, ...platforms];
   return (
     <Section id="context" tone="paper">
-      <div className="platform-marquee" aria-label="AI platforms considered in our work">
+      <div
+        className="platform-marquee"
+        role="group"
+        aria-label="AI platforms considered in our work"
+      >
         <div className="platform-marquee__track">
           {loop.map((platform, i) => (
             <span
@@ -523,6 +534,7 @@ function MarketStats() {
         <ServicePhoto
           src="/images/generated/market-ask-ai.jpg"
           alt="A person asking an AI assistant for a recommendation at night"
+          sizes="(max-width: 496px) calc(100vw - 36px), 460px"
         >
           <GlassPrompt
             prompts={[
@@ -742,7 +754,7 @@ function GlassPrompt({ prompts }) {
   }, [inView, chars, deleting, index, text, prompts.length]);
 
   return (
-    <div className="glass-card glass-card--prompt" ref={ref}>
+    <div className="glass-card glass-card--prompt" ref={ref} data-animating={inView}>
       <span className="visually-hidden">{prompts.map((p) => p.text).join('. ')}</span>
       <span className="glass-card__icon" key={icon} aria-hidden="true">
         <PlatformIcon id={icon} />
@@ -796,6 +808,7 @@ function GlassBars({ title, rows, live = false, counter }) {
     <div
       className={`glass-card glass-card--bars ${live ? 'glass-card--live' : ''}`.trim()}
       ref={ref}
+      data-animating={inView}
     >
       <div className="glass-card__head">
         <p className="glass-card__title">{title}</p>
@@ -827,7 +840,10 @@ function GlassBars({ title, rows, live = false, counter }) {
               {row.label}
             </span>
             <span className="glass-bar__track">
-              <span className="glass-bar__fill" style={{ width: `${data.values[i]}%` }} />
+              <span
+                className="glass-bar__fill"
+                style={{ transform: `scaleX(${data.values[i] / 100})` }}
+              />
             </span>
             <span className="glass-bar__value">
               <AnimatedNumber value={data.values[i]} decimals={decimals} />%
@@ -860,7 +876,7 @@ function GlassAnswer({ answers }) {
   }, [running, answers.length]);
 
   return (
-    <div className="glass-card glass-card--answer" ref={ref}>
+    <div className="glass-card glass-card--answer" ref={ref} data-animating={inView}>
       <div
         className={`glass-answer__tabs ${running ? 'is-running' : ''}`.trim()}
         aria-hidden="true"
@@ -897,14 +913,27 @@ function GlassAnswer({ answers }) {
   );
 }
 
-function ServicePhoto({ src, alt, children }) {
+function ServicePhoto({
+  src,
+  alt,
+  children,
+  sizes = '(max-width: 716px) calc(100vw - 36px), (max-width: 899px) 680px, (max-width: 1288px) 46vw, 600px',
+}) {
   return (
     <div className="service-photo">
-      <img src={src} alt={alt} loading="lazy" />
+      <Image src={servicePhotos[src] || src} alt={alt} fill sizes={sizes} />
       {children}
     </div>
   );
 }
+
+const servicePhotos = {
+  '/images/generated/market-ask-ai.jpg': marketPhoto,
+  '/images/generated/service-intelligence.jpg': intelligencePhoto,
+  '/images/generated/service-positioning.jpg': positioningPhoto,
+  '/images/generated/service-authority.jpg': authorityPhoto,
+  '/images/generated/service-monitoring.jpg': monitoringPhoto,
+};
 
 const serviceMedia = {
   '01': {

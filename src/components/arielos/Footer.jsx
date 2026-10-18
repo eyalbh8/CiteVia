@@ -2,6 +2,8 @@
 
 import { useHomeSettings } from './settings.jsx';
 import { useState } from 'react';
+import Image from 'next/image';
+import advisorPhoto from '../../../public/images/generated/cta-advisor.jpg';
 import { Link, useLocation } from './Link.jsx';
 import { assessmentHref, footerIndustryItems, footerNavItems, footerServiceItems } from './data.js';
 import { AssessmentLink, BrandMark } from './UI.jsx';
@@ -33,12 +35,13 @@ export default function Footer() {
   return (
     <footer className="footer">
       <div className="footer__cta">
-        <img
+        <Image
           className="footer__cta-bg"
-          src="/images/generated/cta-advisor.jpg"
+          src={advisorPhoto}
           alt=""
           aria-hidden="true"
-          loading="lazy"
+          fill
+          sizes="100vw"
         />
         <div className="hero__aurora" aria-hidden="true" />
         <div className="shell">

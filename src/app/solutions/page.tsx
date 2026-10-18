@@ -1,3 +1,4 @@
+import '@/app/legacy.css';
 import Link from 'next/link';
 import { Breadcrumbs, PageIntro, Cta, JsonLd } from '@/components/ui';
 import { ArrowIcon } from '@/components/icons';

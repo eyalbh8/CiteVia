@@ -1,3 +1,4 @@
+import '@/app/legacy.css';
 import { Breadcrumbs, PageIntro, Cta, JsonLd } from '@/components/ui';
 import { CaseStudyCard } from '@/components/case-study-card';
 import { caseStudies } from '@/content/case-studies';

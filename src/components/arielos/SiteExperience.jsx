@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import { HomeSettings } from './settings.jsx';
 import { LanguageProvider } from '@/i18n/LanguageProvider.jsx';
 import Nav from './Nav.jsx';
@@ -9,7 +9,7 @@ import Footer from './Footer.jsx';
 import FloatingCal from './FloatingCal.jsx';
 
 function ScrollEffects() {
-  const [progress, setProgress] = useState(0);
+  const progress = useRef(null);
   const pathname = usePathname();
   useEffect(() => {
     let frame;
@@ -17,7 +17,9 @@ function ScrollEffects() {
       cancelAnimationFrame(frame);
       frame = requestAnimationFrame(() => {
         const max = document.documentElement.scrollHeight - window.innerHeight;
-        setProgress(max > 0 ? window.scrollY / max : 0);
+        if (progress.current) {
+          progress.current.style.transform = `scaleY(${max > 0 ? window.scrollY / max : 0})`;
+        }
       });
     };
     window.addEventListener('scroll', update, { passive: true });
@@ -43,20 +45,21 @@ function ScrollEffects() {
       },
       { rootMargin: '0px 0px -5% 0px' },
     );
-    document
-      .querySelectorAll(
+    // Read every position before changing classes to avoid repeated forced layouts.
+    const candidates = Array.from(
+      document.querySelectorAll(
         '.arielos-home .section-header, .arielos-home .market-stats li, .arielos-home .industry-card, .arielos-home .service-row, .arielos-home .research-card, .arielos-home .contact-lead__layout > *, .arielos-home .page-card',
-      )
-      .forEach((el) => {
-        if (el.getBoundingClientRect().top < window.innerHeight) return;
-        el.classList.add('reveal');
-        observer.observe(el);
-      });
+      ),
+    ).filter((el) => el.getBoundingClientRect().top >= window.innerHeight);
+    candidates.forEach((el) => {
+      el.classList.add('reveal');
+      observer.observe(el);
+    });
     return () => observer.disconnect();
   }, [pathname]);
   return (
     <div className="scroll-progress" aria-hidden="true">
-      <span style={{ height: `${progress * 100}%` }} />
+      <span ref={progress} style={{ transform: 'scaleY(0)' }} />
     </div>
   );
 }

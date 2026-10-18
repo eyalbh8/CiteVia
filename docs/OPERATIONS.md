@@ -14,6 +14,23 @@ Keep secrets in host environment settings or ignored `.env.local` files. Commit 
 
 Metadata, sitemap, and LLM text routes are pre-rendered at build time. Rebuild when changing published content, the production origin, or indexing settings, and keep the runtime environment consistent with the build. The contact and assessment pages are server-rendered so its delivery label follows the current webhook setting.
 
+## Amplify production
+
+The `main` branch of `eyalbh8/CiteVia` uses `amplify.yml` and `npm run build:amplify`.
+The build enables indexing only for `main` without an `AWS_PULL_REQUEST_ID`, fixes the
+canonical origin to `https://citevia.io`, and writes these two public settings to the
+ignored `.env.production` so prerendered pages and SSR agree. Other branches and pull
+request previews remain non-indexable. Generic local builds still use `SITE_INDEXABLE`.
+No secrets are copied by the build script.
+
+`customHttp.yml` preserves one-year immutable caching for fingerprinted `/_next/static/`
+assets. Fonts and homepage images are emitted at fingerprinted URLs; mutable public
+assets and HTML are not given immutable browser caching. Update assets through the
+source imports so changed files get new URLs.
+
+After a release, verify `/robots.txt`, the homepage robots meta tag, a font URL and an
+optimized image response. Rerun PageSpeed for mobile and desktop against the live URL.
+
 ## Contact delivery
 
 The default form is an **email draft flow**. It validates details, opens the visitor’s email application, and says that they must send the message themselves. It never claims a lead was delivered by the website. The shared Contact Us form appears on `/contact` and above the footer on other pages. It requires name, email, and company name; phone is optional. Floating contact and Cal.com links stay available on every page, including mobile.

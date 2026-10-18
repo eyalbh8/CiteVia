@@ -74,12 +74,8 @@ export function PlatformBars({ platforms, className = '' }) {
               </span>
               <span>{platform.name}</span>
             </div>
-            <div className="platform-bars__bar-container">
-              <div
-                className="platform-bars__bar"
-                style={{ width: `${percent}%` }}
-                aria-label={`${value.toLocaleString()}`}
-              />
+            <div className="platform-bars__bar-container" aria-hidden="true">
+              <div className="platform-bars__bar" style={{ width: `${percent}%` }} />
             </div>
             <div className="platform-bars__value">
               {value.toLocaleString()}
@@ -97,7 +93,11 @@ export function PlatformBars({ platforms, className = '' }) {
 export function BrandMentionBars({ brands }) {
   const max = Math.max(...brands.map((brand) => brand.mentions));
   return (
-    <div className="platform-bars brand-mention-bars" aria-label="AI mentions by brand">
+    <div
+      className="platform-bars brand-mention-bars"
+      role="group"
+      aria-label="AI mentions by brand"
+    >
       {brands.map((brand) => (
         <div key={brand.brand} className="platform-bars__row">
           <div className="platform-bars__label">{brand.brand}</div>
@@ -156,7 +156,7 @@ export function DonutChart({ data, total, className = '' }) {
 
   return (
     <div className={`donut-chart ${className}`.trim()}>
-      <svg viewBox="0 0 200 200" className="donut-chart__svg">
+      <svg viewBox="0 0 200 200" className="donut-chart__svg" aria-hidden="true">
         <circle cx="100" cy="100" r="80" fill="none" stroke="var(--line)" strokeWidth="40" />
         {slices.map((slice, idx) => {
           const radius = 80;
@@ -174,7 +174,6 @@ export function DonutChart({ data, total, className = '' }) {
               strokeWidth="40"
               strokeDasharray={strokeDasharray}
               transform={`rotate(${rotation} 100 100)`}
-              aria-label={`${slice.type}: ${slice.count.toLocaleString()}`}
             />
           );
         })}
@@ -197,7 +196,7 @@ export function IntentBar({ data, className = '' }) {
   let accum = 0;
   return (
     <div className={`intent-bar ${className}`.trim()}>
-      <div className="intent-bar__container">
+      <div className="intent-bar__container" aria-hidden="true">
         {data.map((item) => {
           const width = (item.percent / total) * 100;
           const segment = (
@@ -208,7 +207,6 @@ export function IntentBar({ data, className = '' }) {
                 width: `${width}%`,
                 background: item.color,
               }}
-              aria-label={`${item.intent}: ${item.percent}%`}
             />
           );
           accum += width;

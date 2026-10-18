@@ -3,8 +3,7 @@ import SiteExperience from '@/components/arielos/SiteExperience';
 import { JsonLd } from '@/components/ui';
 import { site } from '@/lib/site';
 import { organizationSchema } from '@/lib/seo';
-import '@fontsource/instrument-serif/400.css';
-import '@fontsource/instrument-serif/400-italic.css';
+import { openSauce, poppins, instrument } from './fonts';
 import './site-base.css';
 import './arielos-source.css';
 import './arielos-theme.css';
@@ -38,7 +37,13 @@ export const viewport: Viewport = { width: 'device-width', initialScale: 1, them
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" data-theme="light" data-scroll-behavior="smooth" suppressHydrationWarning>
+    <html
+      className={`${openSauce.variable} ${poppins.variable} ${instrument.variable}`}
+      lang="en"
+      data-theme="light"
+      data-scroll-behavior="smooth"
+      suppressHydrationWarning
+    >
       <body>
         <a className="skip-link" href="#main-content">
           Skip to content

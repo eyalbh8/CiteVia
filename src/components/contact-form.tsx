@@ -4,7 +4,7 @@ import { useState, type FormEvent } from 'react';
 import Link from 'next/link';
 import { contactInterests, validateContact } from '@/lib/contact';
 import { ArrowIcon } from './icons';
-import { useLanguage, translateToSpanish, translateToTurkish } from '@/i18n/LanguageProvider.jsx';
+import { useLanguage } from '@/i18n/LanguageProvider.jsx';
 
 export function ContactForm({
   email,
@@ -15,7 +15,7 @@ export function ContactForm({
   directDelivery: boolean;
   assessment?: boolean;
 }) {
-  const { language } = useLanguage();
+  const { language, translateToSpanish, translateToTurkish } = useLanguage();
   const [pending, setPending] = useState(false);
   const [status, setStatus] = useState<{ message: string; error: boolean; mailto?: string } | null>(
     null,

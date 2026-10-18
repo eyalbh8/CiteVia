@@ -1,3 +1,4 @@
+import '@/app/legacy.css';
 import { ServicePage as SourceServicePage } from '@/components/arielos/Pages';
 import { getServiceOffering } from '@/components/arielos/content/services';
 import Link from 'next/link';

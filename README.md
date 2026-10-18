@@ -69,7 +69,9 @@ GitHub Actions runs both indexable production and non-indexable preview checks. 
 
 Deploy as a **Next.js application** on a compatible Node.js host or Vercel. The contact handler and image optimization require a server; this project does not use static export. Use `npm run build` and `npm start`.
 
-Before the production build:
+Amplify deployments from `eyalbh8/CiteVia` use the checked-in `amplify.yml`; `main` enables indexing automatically and preview branches remain blocked. See `docs/OPERATIONS.md`.
+
+For other hosts, before the production build:
 
 1. Set `SITE_URL` to the confirmed public origin. The brand default is `https://citevia.io`; the contact address is independently `eyal@citevia.com`.
 2. Set `SITE_INDEXABLE=true` for the public production site only. The default is `false`; previews receive `noindex`, blocked robots rules, and an empty sitemap. Vercel preview deployments remain non-indexable even if the flag is set.

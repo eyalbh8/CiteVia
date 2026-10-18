@@ -4,7 +4,7 @@ import { useRef, useState } from 'react';
 import { Link } from './Link.jsx';
 import { useHomeSettings } from './settings.jsx';
 import { validateContact } from '@/lib/contact';
-import { useLanguage, translateToSpanish, translateToTurkish } from '@/i18n/LanguageProvider.jsx';
+import { useLanguage } from '@/i18n/LanguageProvider.jsx';
 const initialAssessmentValues = {
   name: '',
   email: '',
@@ -68,7 +68,7 @@ function Field({ id, label, hint, error, children, className = '' }) {
 
 export default function AssessmentPage({ directDelivery = false }) {
   const { email } = useHomeSettings();
-  const { language } = useLanguage();
+  const { language, translateToSpanish, translateToTurkish } = useLanguage();
   const [values, setValues] = useState(initialAssessmentValues);
   const [errors, setErrors] = useState({});
   const [status, setStatus] = useState('idle');

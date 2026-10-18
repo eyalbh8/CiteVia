@@ -5,12 +5,12 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { formatDate, type ArticleSummary } from '@/content/articles';
 import { articleMedia } from '@/content/article-media';
-import { useLanguage, translateToSpanish, translateToTurkish } from '@/i18n/LanguageProvider.jsx';
+import { useLanguage } from '@/i18n/LanguageProvider.jsx';
 
 export function BlogDirectory({ articles }: { articles: ArticleSummary[] }) {
   const [category, setCategory] = useState('ALL');
   const [query, setQuery] = useState('');
-  const { language } = useLanguage();
+  const { language, translateToSpanish, translateToTurkish } = useLanguage();
   const categories = ['ALL', ...new Set(articles.map((article) => article.category))];
   const matches = articles.filter(
     (article) =>

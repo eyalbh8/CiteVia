@@ -1,2 +1,255 @@
-@import './globals.css' layer(legacy);
-@import './marketing.css' layer(legacy);
+@layer legacy {
+  :root {
+    color-scheme: light;
+    --bg: #ffffff;
+    --bg-soft: #f5f7ff;
+    --surface: #ffffff;
+    --surface-hover: #f3f4ff;
+    --text: #151940;
+    --muted: #545d7c;
+    --subtle: #66708b;
+    --border: #e0e5f1;
+    --accent: #00cde6;
+    --accent-text: #3429bd;
+    --violet: #4130e9;
+    --button: #3930e9;
+    --button-text: #ffffff;
+    --header: rgba(255, 255, 255, 0.94);
+    --max: 1220px;
+  }
+
+  :root[data-theme='dark'] {
+    color-scheme: dark;
+    --bg: #060b20;
+    --bg-soft: #0a1028;
+    --surface: #0e1631;
+    --surface-hover: #131d3c;
+    --text: #f3f5ff;
+    --muted: #a0acc6;
+    --subtle: #8190b0;
+    --border: #222b47;
+    --accent: #20d8ef;
+    --accent-text: #77e6f1;
+    --violet: #9282ff;
+    --button: #6ae6f5;
+    --button-text: #061820;
+    --header: rgba(6, 11, 32, 0.92);
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+  }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter Variable', Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  button,
+  input,
+  select,
+  textarea {
+    font: inherit;
+  }
+  button,
+  summary,
+  a {
+    -webkit-tap-highlight-color: transparent;
+  }
+  button,
+  summary {
+    cursor: pointer;
+  }
+  img,
+  svg {
+    display: block;
+    max-width: 100%;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  p {
+    margin: 0;
+  }
+  h1,
+  h2,
+  h3 {
+    font-family: 'Manrope Variable', 'Inter Variable', Arial, sans-serif;
+    font-weight: 600;
+    line-height: 1.16;
+    letter-spacing: -0.04em;
+    text-wrap: balance;
+  }
+  h1 {
+    font-size: clamp(44px, 5.5vw, 76px);
+  }
+  h2 {
+    font-size: clamp(30px, 3.3vw, 45px);
+  }
+  h3 {
+    font-size: 22px;
+  }
+  button {
+    color: inherit;
+  }
+  ::selection {
+    background: #3930e9;
+    color: #fff;
+  }
+  :focus-visible {
+    outline: 2px solid var(--accent-text);
+    outline-offset: 5px;
+  }
+  .container {
+    max-width: var(--max);
+    padding-inline: 28px;
+    margin-inline: auto;
+  }
+  .section {
+    padding-block: 104px;
+  }
+  .section-tinted {
+    background: var(--bg-soft);
+    border-block: 1px solid var(--border);
+  }
+  .muted {
+    color: var(--muted);
+  }
+  .eyebrow,
+  .small-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    line-height: 1.6;
+  }
+  .eyebrow {
+    display: inline-flex;
+    gap: 10px;
+    align-items: center;
+    color: var(--accent-text);
+    margin-bottom: 20px;
+  }
+  .small-label {
+    color: var(--subtle);
+    font-size: 9px;
+    letter-spacing: 0.1em;
+  }
+  .signal-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    background: var(--accent);
+    box-shadow: 0 0 12px color-mix(in srgb, var(--accent) 35%, transparent);
+  }
+  .gradient-text {
+    background: linear-gradient(95deg, #3730f5 0%, #056feb 58%, #008fa8 100%);
+    background-clip: text;
+    color: transparent;
+  }
+  [data-theme='dark'] .gradient-text {
+    background-image: linear-gradient(95deg, #aaa0ff, #59c9fb 55%, #3ae6dc);
+  }
+  .button {
+    min-height: 48px;
+    padding: 13px 21px;
+    border-radius: 7px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.45;
+    border: 1px solid transparent;
+    transition:
+      background 0.2s,
+      transform 0.2s;
+  }
+  .button:hover {
+    transform: translateY(-2px);
+  }
+  .button-primary {
+    color: var(--button-text);
+    background: var(--button);
+  }
+  .button-primary:hover {
+    background: color-mix(in srgb, var(--button) 85%, var(--text));
+  }
+  .button-small {
+    min-height: 40px;
+    padding: 10px 16px;
+  }
+  .button-text {
+    padding-inline: 10px;
+  }
+  .button-text:hover {
+    background: var(--surface);
+  }
+  .button-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+  }
+  .text-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text);
+  }
+  .text-link svg {
+    transition: transform 0.2s;
+  }
+  .text-link:hover svg {
+    transform: translateX(4px);
+  }
+  .text-link:hover {
+    color: var(--accent-text);
+  }
+  .skip-link {
+    position: fixed;
+    z-index: 100;
+    top: 10px;
+    left: 15px;
+    padding: 12px 20px;
+    transform: translateY(-150%);
+    color: var(--button-text);
+    background: var(--button);
+    border-radius: 5px;
+  }
+  .skip-link:focus {
+    transform: translateY(0);
+  }
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}

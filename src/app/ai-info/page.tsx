@@ -1,3 +1,4 @@
+import '@/app/legacy.css';
 import Link from 'next/link';
 import { Breadcrumbs, PageIntro, JsonLd } from '@/components/ui';
 import { services } from '@/content/services';

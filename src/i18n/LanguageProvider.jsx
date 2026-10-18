@@ -1,32 +1,54 @@
 'use client';
 
-import { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react';
-import { usePathname } from 'next/navigation';
 import {
-  translatePage,
-  translateMetadata,
-  updateTextNode,
-  updateElement,
-  translatedAttributeNames,
-  excludedTextParents,
-} from './translate.js';
-export { translateToSpanish, translateToTurkish } from './translate.js';
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from 'react';
+import { usePathname } from 'next/navigation';
 
-const LanguageContext = createContext({ language: 'en', setLanguage: () => {} });
+import { loadTranslations, loadedTranslations } from './load-translations.js';
+
+const identity = (text) => text;
+const LanguageContext = createContext({
+  language: 'en',
+  setLanguage: () => {},
+  translateToSpanish: identity,
+  translateToTurkish: identity,
+});
 
 export function LanguageProvider({ children }) {
   const pathname = usePathname();
   const [language, setLanguage] = useState('en');
+  const selection = useRef(0);
   useEffect(() => {
     try {
       const saved = window.localStorage.getItem('citevia-language');
-      if (saved === 'es' || saved === 'tr') setLanguage(saved);
+      if (saved === 'es' || saved === 'tr') {
+        const request = selection.current;
+        loadTranslations()
+          .then(() => {
+            if (selection.current === request) setLanguage(saved);
+          })
+          .catch(() => {});
+      }
     } catch {
       // Language switching still works when browser storage is unavailable.
     }
   }, []);
-  const selectLanguage = useCallback((nextLanguage) => {
+  const selectLanguage = useCallback(async (nextLanguage) => {
     if (nextLanguage === 'en' || nextLanguage === 'es' || nextLanguage === 'tr') {
+      const request = ++selection.current;
+      try {
+        if (nextLanguage !== 'en') await loadTranslations();
+      } catch {
+        return; // Keep the current language if its dictionary cannot be loaded.
+      }
+      if (selection.current !== request) return;
       setLanguage(nextLanguage);
       try {
         window.localStorage.setItem('citevia-language', nextLanguage);
@@ -37,7 +59,19 @@ export function LanguageProvider({ children }) {
   }, []);
 
   useEffect(() => {
+    const translations = loadedTranslations();
+    if (!translations) return undefined;
+    const {
+      translatePage,
+      translateMetadata,
+      updateTextNode,
+      updateElement,
+      translatedAttributeNames,
+      excludedTextParents,
+    } = translations;
     translatePage(language);
+    // English is already rendered by the server; no observer is needed after restoring it.
+    if (language === 'en') return undefined;
     const observer = new MutationObserver((records) => {
       for (const record of records) {
         if (record.type === 'characterData') updateTextNode(record.target, language);
@@ -82,7 +116,12 @@ export function LanguageProvider({ children }) {
   }, [language, pathname]);
 
   const value = useMemo(
-    () => ({ language, setLanguage: selectLanguage }),
+    () => ({
+      language,
+      setLanguage: selectLanguage,
+      translateToSpanish: loadedTranslations()?.translateToSpanish || identity,
+      translateToTurkish: loadedTranslations()?.translateToTurkish || identity,
+    }),
     [language, selectLanguage],
   );
   return <LanguageContext.Provider value={value}>{children}</LanguageContext.Provider>;

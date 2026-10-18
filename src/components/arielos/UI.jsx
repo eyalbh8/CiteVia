@@ -3,6 +3,7 @@
 import { Link } from './Link.jsx';
 import React from 'react';
 import Image from 'next/image';
+import brandMark from '../../../public/logo/citevia-mark-on-white.png';
 import { assessmentHref } from './data.js';
 import { citationsData, promptsData } from './data/workspaceData.js';
 
@@ -12,31 +13,37 @@ export const reducedMotion = () =>
 export function useInView() {
   const ref = React.useRef(null);
   const [inView, setInView] = React.useState(false);
+  const [pageVisible, setPageVisible] = React.useState(true);
   React.useEffect(() => {
+    const update = () => setPageVisible(!document.hidden);
+    update();
+    document.addEventListener('visibilitychange', update);
+    return () => document.removeEventListener('visibilitychange', update);
+  }, []);
+  React.useEffect(() => {
+    const target = ref.current;
+    if (!target) return undefined;
     if (!('IntersectionObserver' in window)) {
       setInView(true);
       return undefined;
     }
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          setInView(true);
-          observer.disconnect();
-        }
+        setInView(entry.isIntersecting);
       },
       { threshold: 0.35 },
     );
-    observer.observe(ref.current);
+    observer.observe(target);
     return () => observer.disconnect();
   }, []);
-  return [ref, inView];
+  return [ref, inView && pageVisible];
 }
 
 export function AnimatedNumber({ value, decimals = 0 }) {
   const [shown, setShown] = React.useState(value);
   const from = React.useRef(value);
   React.useEffect(() => {
-    if (reducedMotion()) {
+    if (reducedMotion() || from.current === value) {
       from.current = value;
       setShown(value);
       return undefined;
@@ -384,7 +391,7 @@ export function FaqAccordion({ items, initialCount = 6 }) {
 export function BrandMark() {
   return (
     <span className="citevia-symbol" aria-hidden="true">
-      <Image src="/logo/citevia-mark-on-white.png" alt="" width={1254} height={1254} sizes="60px" />
+      <Image src={brandMark} alt="" sizes="60px" />
     </span>
   );
 }

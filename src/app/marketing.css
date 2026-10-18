@@ -1,6 +1,6 @@
 /* Editorial marketing system: Citevia's white, indigo, and cyan palette. */
 :root {
-  --serif: 'Instrument Serif', Georgia, serif;
+  --serif: var(--font-instrument), Georgia, serif;
   --max: 1320px;
 }
 html {
