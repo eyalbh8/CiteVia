@@ -39,6 +39,9 @@ so the first paint uses the brand fonts once the inline bytes are decoded. These
 faces require no network request; full external fonts retain their independent policy.
 The deferred stylesheet activates from its native load event, before React hydration;
 the React handler also covers client rendering and cached stylesheets.
+`CriticalStyles` is a small SSR-rendered client boundary: the styles are still in the
+initial document head, while their hydration copy lives in a cacheable JS module
+instead of being repeated in every HTML response's RSC payload.
 
 `scripts/build-styles.mjs` derives critical header/hero styles from the existing CSS
 sources, minifies with Lightning CSS, emits fingerprinted fonts and the complete stylesheet, and generates an ignored
