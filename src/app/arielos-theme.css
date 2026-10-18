@@ -360,6 +360,11 @@ body:has(.arielos-home) > main {
 
 /* Keep mobile's first screen stable and avoid continuous decorative animation. */
 @media (max-width: 899px) {
+  .arielos-home *,
+  .arielos-home *::before,
+  .arielos-home *::after {
+    transition-property: transform, opacity !important;
+  }
   .arielos-home .hero::before,
   .arielos-home .hero__aurora::before,
   .arielos-home .hero__aurora::after,

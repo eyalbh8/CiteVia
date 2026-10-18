@@ -42,7 +42,7 @@ without blocking its first paint, with a `noscript` fallback. Other entry routes
 the complete stylesheet before rendering. Build, typecheck, and Amplify commands generate
 these assets automatically; `npm run dev` also watches the CSS sources. Keep new first-screen
 component classes in the generator's critical class list and verify at mobile widths.
-Transitions are enabled after the full stylesheet has painted, so initial styling does
+Mobile transitions are limited to transform and opacity, so initial styling does
 not trigger dozens of offscreen border and color transitions. The scroll indicator first
 measures document height when needed by scrolling or restored scroll position.
 
