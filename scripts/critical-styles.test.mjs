@@ -7,6 +7,7 @@ test('critical CSS retains responsive navigation, shared resets and animation de
   const css = extractCriticalCss(`
     .arielos-home :where(h1, p) { margin: 0 }
     .arielos-home .service-photo, .arielos-home .footer__cta { position: relative }
+    .arielos-home .footer__cta h2 { font-family: deferred-font }
     .arielos-home .platform-marquee__icon svg { width: 24px }
     @media (max-width: 899px) {
       .arielos-home .nav-menu, .arielos-home .chart { display: flex }
@@ -23,6 +24,7 @@ test('critical CSS retains responsive navigation, shared resets and animation de
   assert.match(css, /\.platform-marquee__icon svg/);
   assert.match(css, /@keyframes citevia-hero/);
   assert.doesNotMatch(css, /chart/);
+  assert.doesNotMatch(css, /deferred-font/);
 });
 
 test('generated styles use immutable assets and contain no network imports', () => {

@@ -15,17 +15,10 @@ export default function SiteStyles({ href }: { href: string }) {
     <>
       <link
         ref={link}
-        data-citevia-styles=""
-        suppressHydrationWarning
         rel="stylesheet"
         href={href}
         media={loaded || pathname !== '/' ? 'all' : 'print'}
         onLoad={() => setLoaded(true)}
-      />
-      <script
-        dangerouslySetInnerHTML={{
-          __html: `(()=>{const l=document.querySelector('link[data-citevia-styles]');if(!l)return;const apply=()=>{l.media='all'};if(l.sheet)apply();else l.addEventListener('load',apply,{once:true})})()`,
-        }}
       />
       <noscript>
         <link rel="stylesheet" href={href} />

@@ -12,7 +12,12 @@ export const styleSources = [
 
 // The first screen and persistent navigation must be complete before the full CSS arrives.
 const criticalClass =
-  /^(arielos-(home|chrome)|home-page|site-main|site-header.*|nav.*|brand.*|citevia-symbol|hero.*|shell|section(--[a-z-]+)?|platform-marquee.*|service-photo|footer|footer__cta.*|button.*|floating-.*|scroll-progress|skip-link|sr-only|visually-hidden|is-.*)$/;
+  /^(arielos-(home|chrome)|home-page|site-main|site-header.*|nav.*|brand.*|citevia-symbol|hero.*|shell|section(--[a-z-]+)?|platform-marquee.*|footer|button.*|floating-.*|scroll-progress|skip-link|sr-only|visually-hidden|is-.*)$/;
+
+const positionedImageContainers = new Set([
+  '.arielos-home .service-photo',
+  '.arielos-home .footer__cta',
+]);
 
 export function extractCriticalCss(css) {
   const root = postcss.parse(css);
@@ -24,7 +29,20 @@ export function extractCriticalCss(css) {
       return classes.every((name) => criticalClass.test(name));
     });
     if (selectors.length) rule.selectors = selectors;
-    else rule.remove();
+    else {
+      // Fill images need containing blocks immediately, but these offscreen
+      // sections must not pull their typography into the first-screen font chain.
+      const containers = rule.selectors.filter((selector) =>
+        positionedImageContainers.has(selector),
+      );
+      if (!containers.length) rule.remove();
+      else {
+        rule.selectors = containers;
+        rule.walkDecls((decl) => {
+          if (decl.prop !== 'position') decl.remove();
+        });
+      }
+    }
   });
   const animations = new Set();
   root.walkDecls(/^animation(-name)?$/, (decl) => {
