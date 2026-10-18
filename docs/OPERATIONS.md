@@ -37,6 +37,8 @@ with `scripts/subset-critical-fonts.py` and FontTools 4.60.1 when the source fon
 Embedded faces use separate families scoped to the hero and `font-display: block`,
 so the first paint uses the brand fonts once the inline bytes are decoded. These
 faces require no network request; full external fonts retain their independent policy.
+The deferred stylesheet activates from its native load event, before React hydration;
+the React handler also covers client rendering and cached stylesheets.
 
 `scripts/build-styles.mjs` derives critical header/hero styles from the existing CSS
 sources, minifies with Lightning CSS, emits fingerprinted fonts and the complete stylesheet, and generates an ignored
