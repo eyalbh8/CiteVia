@@ -1,7 +1,9 @@
 import type { Article } from './articles';
 import { aiCrawlerPolicy } from './ai-crawler-policy.js';
+import { multilingualSeo } from './multilingual-seo.js';
 
 export const newArticles: Article[] = [
+  multilingualSeo,
   aiCrawlerPolicy,
   {
     slug: 'ai-visibility-audit-playbook',

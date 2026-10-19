@@ -10,6 +10,10 @@ import trRoutes from './tr-routes.js';
 import trRouteData from './tr-route-data.js';
 import { esSupplement, trSupplement } from './content-supplement.js';
 import { aiCrawlerTranslations, aiCrawlerFragments } from '../content/ai-crawler-policy.js';
+import {
+  multilingualSeoTranslations,
+  multilingualSeoFragments,
+} from '../content/multilingual-seo.js';
 import { localizeArticleSchema } from './article-schema.js';
 
 const translationsByLanguage = {
@@ -21,6 +25,7 @@ const translationsByLanguage = {
     ...esUi,
     ...esSupplement,
     ...aiCrawlerTranslations.es,
+    ...multilingualSeoTranslations.es,
   },
   tr: {
     ...trRouteData,
@@ -30,7 +35,12 @@ const translationsByLanguage = {
     ...trUi,
     ...trSupplement,
     ...aiCrawlerTranslations.tr,
+    ...multilingualSeoTranslations.tr,
   },
+};
+const articleFragments = {
+  es: { ...aiCrawlerFragments.es, ...multilingualSeoFragments.es },
+  tr: { ...aiCrawlerFragments.tr, ...multilingualSeoFragments.tr },
 };
 const normalizedTranslationsByLanguage = Object.fromEntries(
   Object.entries(translationsByLanguage).map(([language, translations]) => [
@@ -112,7 +122,7 @@ export function updateTextNode(node, language) {
   const wasKnownTranslation = previous && Object.values(previous.translated).includes(current);
   const english =
     previous && (current === previous.english || wasKnownTranslation) ? previous.english : current;
-  const exact = language === 'en' ? undefined : aiCrawlerFragments[language]?.[english];
+  const exact = language === 'en' ? undefined : articleFragments[language]?.[english];
   const translated = language === 'en' ? undefined : (exact ?? getTranslation(english, language));
   if (translated) {
     const rendered = exact !== undefined ? exact : preserveSpace(english, translated);
