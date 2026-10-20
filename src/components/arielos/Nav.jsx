@@ -44,7 +44,12 @@ function NavGroup({ item, onNavigate }) {
       className={`nav-group ${expanded ? 'is-open' : ''}`.trim()}
       ref={groupRef}
       onBlur={(event) => {
-        if (!event.currentTarget.contains(event.relatedTarget)) setExpanded(false);
+        // Close only when focus moves to another element outside the group.
+        // iOS Safari blurs with no relatedTarget on every tap, which would
+        // unmount the submenu before the tap's click reaches its target.
+        if (event.relatedTarget && !event.currentTarget.contains(event.relatedTarget)) {
+          setExpanded(false);
+        }
       }}
       onMouseEnter={() => {
         if (hoverCapable()) setExpanded(true);
@@ -240,7 +245,11 @@ export default function Nav() {
                 className="nav-language-control"
                 ref={languageMenuRef}
                 onBlur={(event) => {
-                  if (!event.currentTarget.contains(event.relatedTarget)) {
+                  // Close only when focus moves to another element outside the
+                  // control. iOS Safari fires blur with no relatedTarget on every
+                  // tap, which closed the menu before the option's click fired.
+                  // Taps outside are handled by the document pointerdown listener.
+                  if (event.relatedTarget && !event.currentTarget.contains(event.relatedTarget)) {
                     setLanguageMenuOpen(false);
                   }
                 }}
