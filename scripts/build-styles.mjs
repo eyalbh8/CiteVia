@@ -98,6 +98,11 @@ export function buildStyles() {
   }
   for (const weight of [500, 600, 700]) {
     font('Citevia Poppins', `public/fonts/arielos/poppins-latin-${weight}-normal.woff2`, weight);
+    font(
+      'Citevia Poppins',
+      `node_modules/@fontsource/poppins/files/poppins-latin-ext-${weight}-normal.woff2`,
+      weight,
+    );
   }
   font(
     'Citevia Instrument',
@@ -113,7 +118,18 @@ export function buildStyles() {
     'italic',
     'swap',
   );
-  // First-screen fonts retain kerning; complete faces cover other glyphs.
+  // Turkish letters outside the latin files (Ğ, İ, Ş) for the weights not embedded below.
+  for (const style of ['normal', 'italic']) {
+    font(
+      'Citevia Instrument',
+      `node_modules/@fontsource/instrument-serif/files/instrument-serif-latin-ext-400-${style}.woff2`,
+      400,
+      style,
+      'swap',
+    );
+  }
+  // First-screen fonts (ASCII, Spanish and Turkish letters) retain kerning;
+  // complete faces cover other glyphs.
   const subsets = JSON.parse(readFileSync('public/fonts/critical/subsets.json', 'utf8'));
   for (const { family, file, weight, unicodeRange } of subsets) {
     const data = readFileSync(`public/fonts/critical/${file}`).toString('base64');

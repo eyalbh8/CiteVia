@@ -30,10 +30,11 @@ mutable public assets and HTML are not given immutable browser caching.
 Body and label fonts use `font-display: optional`: on slow first visits, metric-adjusted
 fallback fonts keep text readable without a late font swap; cached visits use the brand
 fonts. Small subsets of the regular body, heading serif, and semibold label faces are embedded in
-critical CSS so the headline, paragraph, and badge render without font requests. The serif
-subset covers common ASCII text throughout the page; a test checks the headline's coverage. Complete
-external faces cover other characters and weights. Regenerate the checked-in subsets
-with `scripts/subset-critical-fonts.py` and FontTools 4.60.1 when the source fonts change.
+critical CSS so the headline, paragraph, and badge render without font requests. The subsets
+cover ASCII plus the accented letters Spanish and Turkish use, since those languages are
+applied in the browser; a test checks the headline's coverage. Complete external faces cover
+other characters and weights. Regenerate the checked-in subsets with
+`scripts/subset-critical-fonts.py` and FontTools 4.60.1 when the source fonts change.
 Embedded faces share the complete fonts' family names and take precedence for their
 Unicode ranges, so common text throughout the first screen needs no font request.
 Only these embedded faces use `font-display: block`, allowing their inline bytes to

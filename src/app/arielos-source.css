@@ -461,6 +461,27 @@ body:has(.arielos-home).nav-open {
   padding: 0;
   list-style: none;
 }
+@media (min-width: 900px) and (max-width: 1099px) {
+  /* Narrow desktops: the translated labels are longer, so tighten the pill
+     instead of letting the assessment button spill outside it. */
+  .arielos-home .nav {
+    gap: 16px;
+  }
+  .arielos-home .nav-menu {
+    gap: 18px;
+  }
+  .arielos-home .nav-links {
+    gap: 16px;
+  }
+  .arielos-home .nav-links a,
+  .arielos-home .nav-links .nav-language,
+  .arielos-home .nav-assessment {
+    font-size: 13px;
+  }
+  .arielos-home .nav-assessment {
+    padding-inline: 16px;
+  }
+}
 @media (min-width: 900px) {
   .arielos-home .nav-submenu {
     position: absolute;
@@ -714,7 +735,8 @@ body:has(.arielos-home).nav-open {
   font-family: var(--serif);
   font-size: clamp(16px, 1.3vw, 24px);
   font-style: italic;
-  white-space: nowrap;
+  max-width: var(--hero-gutter);
+  line-height: 1.15;
   opacity: 0;
   animation: citevia-hero-word 13.6s ease-in-out infinite;
 }
@@ -734,8 +756,15 @@ body:has(.arielos-home).nav-open {
   }
 }
 
+.arielos-home .hero {
+  /* Decorative floats and ghost words stay in the gutters beside the centred
+     900px headline column, so longer Spanish and Turkish labels wrap instead
+     of running under the copy. */
+  --hero-gutter: max(150px, calc((100vw - 900px) / 2 - 72px));
+}
 .arielos-home .hero-float {
   position: absolute;
+  max-width: var(--hero-gutter);
   color: rgba(255, 255, 255, 0.88);
   text-align: left;
   opacity: 0;
@@ -793,7 +822,8 @@ body:has(.arielos-home).nav-open {
   height: 13px;
 }
 .arielos-home .hero-prompt__text {
-  white-space: nowrap;
+  min-width: 0;
+  line-height: 1.3;
   animation: citevia-hero-type var(--cycle) steps(24) var(--delay) infinite;
 }
 @keyframes citevia-hero-type {
@@ -3189,8 +3219,17 @@ html[lang='tr'] .arielos-home .hero h1.hero__headline {
   font-weight: 600;
   letter-spacing: 0.08em;
 }
+@supports (grid-template-rows: subgrid) {
+  .arielos-home .method-grid li {
+    display: grid;
+    grid-template-rows: subgrid;
+    grid-row: span 3;
+    row-gap: 0;
+    align-content: start;
+  }
+}
 .arielos-home .method-grid h3 {
-  margin: auto 0 13px;
+  margin: 22px 0 13px;
   font: 700 28px var(--display);
   letter-spacing: -0.015em;
   color: var(--ink);
@@ -3639,6 +3678,31 @@ html[lang='tr'] .arielos-home .hero h1.hero__headline {
 .arielos-home .form-field--wide {
   grid-column: 1 / -1;
 }
+/* Labels, hints, controls and errors share rows across the grid, so a field
+   with a hint (or a label that wraps) no longer pushes its control out of line
+   with the neighbouring column. */
+@supports (grid-template-rows: subgrid) {
+  .arielos-home .form-grid .form-field {
+    display: grid;
+    grid-template-rows: subgrid;
+    grid-row: span 4;
+    row-gap: 0;
+    align-content: start;
+  }
+  .arielos-home .form-grid .form-field > label {
+    grid-row: 1;
+  }
+  .arielos-home .form-grid .form-field > .field-hint {
+    grid-row: 2;
+    align-self: end;
+  }
+  .arielos-home .form-grid .form-field > :not(label):not(.field-hint):not(.field-error) {
+    grid-row: 3;
+  }
+  .arielos-home .form-grid .form-field > .field-error {
+    grid-row: 4;
+  }
+}
 .arielos-home .form-field > label {
   display: block;
   margin-bottom: 9px;
@@ -3690,20 +3754,23 @@ html[lang='tr'] .arielos-home .hero h1.hero__headline {
 .arielos-home .error-summary {
   margin-bottom: 48px;
   padding: 23px 25px;
+  border: 1px solid rgba(255, 122, 110, 0.4);
   border-left: 4px solid #ff7a6e;
   border-radius: var(--r-sm);
-  background: #241318;
+  background: #fff4f2;
 }
 .arielos-home .error-summary h2 {
   margin: 0 0 11px;
+  color: var(--ink);
   font: 700 24px var(--display);
 }
 .arielos-home .error-summary ul {
   margin: 0;
   padding-left: 20px;
+  color: var(--ink);
 }
 .arielos-home .error-summary a {
-  color: #ffb4aa;
+  color: #b42318;
   font-size: 13px;
 }
 .arielos-home .form-honeypot {

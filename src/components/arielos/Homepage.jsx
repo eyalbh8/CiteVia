@@ -123,8 +123,10 @@ const heroMetrics = [
 
 const heroWords = [
   { word: 'Citations', x: 18, y: 12 },
-  { word: 'Entities', x: 80, y: 44 },
-  { word: 'Retrieval', x: 12, y: 50 },
+  // Keep these two in the right-hand gutter: their Spanish and Turkish
+  // translations are long enough to run under the headline column otherwise.
+  { word: 'Entities', x: 83, y: 52 },
+  { word: 'Retrieval', x: 84, y: 62 },
   { word: 'Share of voice', x: 74, y: 94 },
   { word: 'Grounding', x: 30, y: 94 },
   { word: 'Sentiment', x: 88, y: 70 },

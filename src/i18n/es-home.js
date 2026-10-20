@@ -2,8 +2,10 @@
 // Keys intentionally match the English copy verbatim for lookup by the i18n layer.
 const esHome = {
   'Built to adapt · Built to compound': 'Hecho para adaptarse · Hecho para crecer',
-  'AI Search Marketing': 'Marketing para búsquedas con IA',
-  'Infrastructure.': 'Infraestructura.',
+  // The homepage headline is two text nodes around a <br>, so these two keys
+  // must read as one sentence: “Infraestructura de marketing para búsquedas con IA.”
+  'AI Search Marketing': 'Infraestructura de marketing',
+  'Infrastructure.': 'para búsquedas con IA.',
   'Citevia builds custom AI Search marketing infrastructure for brands that want to lead the next iteration of the Internet. Data tells us where to act — our infrastructure lets us execute faster, learn continuously, and compound results over time.':
     'Citevia crea infraestructuras de marketing para búsquedas con IA a medida para marcas que quieren liderar la próxima etapa de Internet. Los datos nos indican dónde actuar; nuestra infraestructura nos permite ejecutar con más rapidez, aprender continuamente y multiplicar los resultados con el tiempo.',
   'Book a meeting': 'Agenda una reunión',
