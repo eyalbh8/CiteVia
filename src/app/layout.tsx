@@ -38,6 +38,11 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en" data-theme="light" data-scroll-behavior="smooth" suppressHydrationWarning>
       <head>
+        <script
+          async
+          src="https://api.citevia.io/v1/traffic/tracker.js"
+          data-project-id="account_624c05657f26d8bc21b705a597227bd7"
+        />
         <CriticalStyles />
         <SiteStyles href={stylesheet} />
       </head>
