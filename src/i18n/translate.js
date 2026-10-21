@@ -15,6 +15,7 @@ import {
   multilingualSeoFragments,
 } from '../content/multilingual-seo.js';
 import { localizeArticleSchema } from './article-schema.js';
+import { faqSchemaTranslations, faqSchemaFragments } from '../content/faq-schema-ai-search.js';
 
 const translationsByLanguage = {
   es: {
@@ -26,6 +27,7 @@ const translationsByLanguage = {
     ...esSupplement,
     ...aiCrawlerTranslations.es,
     ...multilingualSeoTranslations.es,
+    ...faqSchemaTranslations.es,
   },
   tr: {
     ...trRouteData,
@@ -36,11 +38,12 @@ const translationsByLanguage = {
     ...trSupplement,
     ...aiCrawlerTranslations.tr,
     ...multilingualSeoTranslations.tr,
+    ...faqSchemaTranslations.tr,
   },
 };
 const articleFragments = {
-  es: { ...aiCrawlerFragments.es, ...multilingualSeoFragments.es },
-  tr: { ...aiCrawlerFragments.tr, ...multilingualSeoFragments.tr },
+  es: { ...aiCrawlerFragments.es, ...multilingualSeoFragments.es, ...faqSchemaFragments.es },
+  tr: { ...aiCrawlerFragments.tr, ...multilingualSeoFragments.tr, ...faqSchemaFragments.tr },
 };
 const normalizedTranslationsByLanguage = Object.fromEntries(
   Object.entries(translationsByLanguage).map(([language, translations]) => [
@@ -67,6 +70,16 @@ export const translatedAttributeNames = [
   'content',
 ];
 export const excludedTextParents = 'script,style,code,pre,textarea,input,svg,[translate="no"]';
+const humanReadableMetadata = new Set([
+  'description',
+  'application-name',
+  'og:title',
+  'og:description',
+  'og:image:alt',
+  'twitter:title',
+  'twitter:description',
+  'twitter:image:alt',
+]);
 
 function normalize(value) {
   return value.replace(/\s+/g, ' ').trim();
@@ -179,6 +192,13 @@ export function updateElement(element, language) {
   }
 
   for (const name of translatedAttributeNames) {
+    // Protocol values (article, summary_large_image, URLs, dates, robots) are not prose.
+    if (
+      name === 'content' &&
+      tagName === 'meta' &&
+      !humanReadableMetadata.has(element.getAttribute('property') || element.getAttribute('name'))
+    )
+      continue;
     const value = element.getAttribute(name);
     if (!value) continue;
     let perElement = originalAttributes.get(element);

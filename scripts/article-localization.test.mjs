@@ -2,12 +2,14 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { aiCrawlerPolicy, aiCrawlerTranslations } from '../src/content/ai-crawler-policy.js';
 import { multilingualSeo, multilingualSeoTranslations } from '../src/content/multilingual-seo.js';
+import { faqSchemaAiSearch, faqSchemaTranslations } from '../src/content/faq-schema-ai-search.js';
 import { createArticleCopy } from '../src/i18n/article-copy.js';
 import { translateSchemaValue } from '../src/i18n/article-schema.js';
 import {
   translateToSpanish,
   translateToTurkish,
   updateTextNode,
+  updateElement,
   translateMetadata,
 } from '../src/i18n/translate.js';
 
@@ -28,6 +30,7 @@ test('article copy registers complete paragraphs, link anchors and surrounding n
 for (const [article, articleTranslations] of [
   [aiCrawlerPolicy, aiCrawlerTranslations],
   [multilingualSeo, multilingualSeoTranslations],
+  [faqSchemaAiSearch, faqSchemaTranslations],
 ]) {
   test(`${article.slug}: new article strings survive language switching including Markdown fragments and FAQs`, () => {
     for (const english of Object.keys(articleTranslations.es)) {
@@ -136,3 +139,49 @@ for (const [article, articleTranslations] of [
     delete globalThis.document;
   });
 }
+
+test('metadata translation changes prose while preserving protocol values', () => {
+  const previousElement = globalThis.Element;
+  class MetaElement {
+    tagName = 'META';
+    constructor(attributes) {
+      this.attributes = new Map(Object.entries(attributes));
+    }
+    getAttribute(name) {
+      return this.attributes.get(name) || null;
+    }
+    setAttribute(name, value) {
+      this.attributes.set(name, value);
+    }
+  }
+  globalThis.Element = MetaElement;
+  try {
+    const prose = new MetaElement({ name: 'description', content: faqSchemaAiSearch.description });
+    const protocol = [
+      new MetaElement({ property: 'og:type', content: 'article' }),
+      new MetaElement({ name: 'twitter:card', content: 'summary_large_image' }),
+      new MetaElement({ name: 'robots', content: 'index, follow' }),
+      new MetaElement({
+        property: 'og:url',
+        content: 'https://citevia.io/blog/faq-schema-ai-search',
+      }),
+      new MetaElement({ property: 'article:published_time', content: '2026-10-21' }),
+    ];
+    const original = protocol.map((element) => element.getAttribute('content'));
+    for (const language of ['es', 'tr', 'en', 'es', 'en']) {
+      updateElement(prose, language);
+      assert.equal(
+        prose.getAttribute('content'),
+        faqSchemaTranslations[language]?.[faqSchemaAiSearch.description] ||
+          faqSchemaAiSearch.description,
+      );
+      protocol.forEach((element, index) => {
+        updateElement(element, language);
+        assert.equal(element.getAttribute('content'), original[index]);
+      });
+    }
+  } finally {
+    if (previousElement) globalThis.Element = previousElement;
+    else delete globalThis.Element;
+  }
+});
