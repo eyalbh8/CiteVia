@@ -1,4 +1,8 @@
 import test from 'node:test';
+import {
+  serviceAreaBusinessSeo,
+  serviceAreaTranslations,
+} from '../src/content/service-area-business-seo.js';
 import assert from 'node:assert/strict';
 import { aiCrawlerPolicy, aiCrawlerTranslations } from '../src/content/ai-crawler-policy.js';
 import { multilingualSeo, multilingualSeoTranslations } from '../src/content/multilingual-seo.js';
@@ -28,6 +32,7 @@ test('article copy registers complete paragraphs, link anchors and surrounding n
 });
 
 for (const [article, articleTranslations] of [
+  [serviceAreaBusinessSeo, serviceAreaTranslations],
   [aiCrawlerPolicy, aiCrawlerTranslations],
   [multilingualSeo, multilingualSeoTranslations],
   [faqSchemaAiSearch, faqSchemaTranslations],

@@ -1,4 +1,8 @@
 import esUi from './es-ui.js';
+import {
+  serviceAreaTranslations,
+  serviceAreaFragments,
+} from '../content/service-area-business-seo.js';
 import esHome from './es-home.js';
 import esMarketing from './es-marketing.js';
 import esRoutes from './es-routes.js';
@@ -28,6 +32,7 @@ const translationsByLanguage = {
     ...aiCrawlerTranslations.es,
     ...multilingualSeoTranslations.es,
     ...faqSchemaTranslations.es,
+    ...serviceAreaTranslations.es,
   },
   tr: {
     ...trRouteData,
@@ -39,11 +44,22 @@ const translationsByLanguage = {
     ...aiCrawlerTranslations.tr,
     ...multilingualSeoTranslations.tr,
     ...faqSchemaTranslations.tr,
+    ...serviceAreaTranslations.tr,
   },
 };
 const articleFragments = {
-  es: { ...aiCrawlerFragments.es, ...multilingualSeoFragments.es, ...faqSchemaFragments.es },
-  tr: { ...aiCrawlerFragments.tr, ...multilingualSeoFragments.tr, ...faqSchemaFragments.tr },
+  es: {
+    ...aiCrawlerFragments.es,
+    ...multilingualSeoFragments.es,
+    ...faqSchemaFragments.es,
+    ...serviceAreaFragments.es,
+  },
+  tr: {
+    ...aiCrawlerFragments.tr,
+    ...multilingualSeoFragments.tr,
+    ...faqSchemaFragments.tr,
+    ...serviceAreaFragments.tr,
+  },
 };
 const normalizedTranslationsByLanguage = Object.fromEntries(
   Object.entries(translationsByLanguage).map(([language, translations]) => [

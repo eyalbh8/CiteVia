@@ -22,6 +22,7 @@ const media = {
 };
 
 const bySlug: Record<string, keyof typeof media> = {
+  'service-area-business-seo-ai-search': 'discovery',
   'faq-schema-ai-search': 'authority',
   'multilingual-seo-ai-search': 'positioning',
   'ai-crawler-policy-training-search': 'intelligence',

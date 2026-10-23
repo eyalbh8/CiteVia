@@ -1,9 +1,11 @@
 import type { Article } from './articles';
+import { serviceAreaBusinessSeo } from './service-area-business-seo.js';
 import { aiCrawlerPolicy } from './ai-crawler-policy.js';
 import { multilingualSeo } from './multilingual-seo.js';
 import { faqSchemaAiSearch } from './faq-schema-ai-search.js';
 
 export const newArticles: Article[] = [
+  serviceAreaBusinessSeo,
   faqSchemaAiSearch,
   multilingualSeo,
   aiCrawlerPolicy,
