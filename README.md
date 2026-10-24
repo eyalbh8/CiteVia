@@ -25,6 +25,7 @@ Open <http://localhost:3000>. No external credentials are needed. The contact fo
 - `src/content/case-studies.ts` and `src/content/sector-case-studies.ts`: six clearly labeled illustrative studies; three include synthetic before-and-after figures.
 - `src/content/industries.ts`: five sector pages with buyer questions, barriers, and evidence.
 - `src/content/methodology.ts`: six delivery stages and their inputs and outputs.
+- `src/content/social-media-leads.js`: comment-led lead generation across six platforms, with Reddit and Instagram first, fictional sample leads, and illustrative case studies.
 - `src/content/demo-report.ts`: static synthetic dashboard figures, with no analytics API dependency.
 - `src/app/marketing.css`: the editorial layout and responsive white/dark design system.
 - `src/content/resources.ts`: glossary definitions and resource FAQs.
@@ -42,6 +43,8 @@ The historical Zyqon brief is retained in `docs/legacy-brand-brief.md`; its clai
 ## Content and discovery
 
 Browse `/industries`, `/methodology`, `/private-ai-visibility-assessment`, `/solutions`, `/case-studies`, `/blog`, `/resources`, and `/ai-info`. The Blog page at `/blog` presents a featured guide and all ten articles with keyword search, topic filters, publication dates and reading times. Blog links appear in the shared navigation, footer and homepage. All article links render in the initial HTML. Each post uses a shared reading layout with a table of contents, contextual internal and external links, source-backed examples, an author byline, updated date and BlogPosting metadata. The copy follows Yoast-style editorial criteria; no Yoast plugin score is claimed. Example studies are labeled on cards, pages, metadata, and text exports.
+
+`/social-media-leads` and its homepage feature introduce leads from relevant comments on Reddit, Instagram, LinkedIn, X, YouTube and Medium. Reddit and Instagram lead the page and channel order. The top navigation and footer link to the service, which is also included in the sitemap and text exports. Lead samples and case-study metrics are explicitly illustrative.
 
 `/robots.txt` and `/sitemap.xml` follow the production indexing policy. `/llms.txt` provides a concise content index and `/llms-full.txt` provides readable source content. Both text files are generated during the build, use `SITE_URL`, and carry `noindex, follow` to keep the HTML pages canonical. They are supplemental reading formats, not ranking guarantees. See `docs/CONTENT-AND-SEARCH.md` for publishing and source notes.
 

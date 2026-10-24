@@ -18,7 +18,7 @@ export const site = {
   url: origin.origin,
   email: process.env.CONTACT_EMAIL || 'eyal@citevia.com',
   description:
-    'Citevia connects AI search strategy, SEO, content, reputation, and measurement to help brands become easier to find, understand, and choose.',
+    'Citevia connects AI search strategy, social media lead generation, SEO, content, reputation, and measurement to help brands become easier to find, understand, and choose.',
   bookingUrl: process.env.BOOKING_URL || defaultBookingUrl,
   indexable:
     process.env.SITE_INDEXABLE === 'true' &&
@@ -33,6 +33,7 @@ export function absoluteUrl(path = '/') {
 }
 
 export const navigation = [
+  { href: '/social-media-leads', label: 'Social media leads' },
   { href: '/blog', label: 'Blog' },
   { href: '/services', label: 'All services' },
   { href: '/methodology', label: 'Methodology' },

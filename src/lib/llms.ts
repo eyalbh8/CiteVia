@@ -10,6 +10,13 @@ import { caseStudies } from '@/content/case-studies';
 import { faqs as homepageFaqs, serviceFaqs } from '@/components/arielos/data';
 import { methodologyFaqs } from '@/components/arielos/pageContent';
 import { glossary, resourceFaqs } from '@/content/resources';
+import {
+  socialLeadIntro,
+  socialLeadChannels,
+  socialLeadSteps,
+  socialLeadFaqs,
+  socialLeadCases,
+} from '@/content/social-media-leads';
 
 const introduction = `# Citevia\n\n> ${site.description}\n\nWebsite: ${site.url}\nContact: ${site.email}\n\nCitevia provides services. Project scope is agreed with the business. Example case studies are constructed educational scenarios, not client engagements or achieved performance results. The homepage Nayax ranking, mentions and sentiment are transcribed from a supplied static screenshot. Other homepage reporting views remain illustrative; case-study metrics are synthetic and no live analytics API is connected. Independent search rankings and AI recommendations are not guaranteed.\n`;
 const bullets = (items: string[]) => items.map((item) => `- ${item}`).join('\n');
@@ -32,7 +39,7 @@ export function llmsIndex() {
           .map((page) => `- [${page.title}](${absoluteUrl(page.path)}): ${page.description}`)
           .join('\n')}`,
     ),
-    `## Optional\n\n- [Full-text companion](${absoluteUrl('/llms-full.txt')}): Published methodology, services and FAQs, solutions, example studies, blog articles, and resource definitions.\n- [Sitemap](${absoluteUrl('/sitemap.xml')}): Canonical public pages when production indexing is enabled.\n- [Privacy notice](${absoluteUrl('/privacy')}): How website inquiries and delivery are handled.\n- [Website terms](${absoluteUrl('/terms')}): Website use and content limitations.`,
+    `## Optional\n\n- [Full-text companion](${absoluteUrl('/llms-full.txt')}): Published methodology, services and FAQs, social media lead generation, solutions, example studies, blog articles, and resource definitions.\n- [Sitemap](${absoluteUrl('/sitemap.xml')}): Canonical public pages when production indexing is enabled.\n- [Privacy notice](${absoluteUrl('/privacy')}): How website inquiries and delivery are handled.\n- [Website terms](${absoluteUrl('/terms')}): Website use and content limitations.`,
     '',
   ].join('\n\n');
 }
@@ -42,6 +49,29 @@ export function llmsFullText() {
     introduction,
     `## Homepage questions\n\n${homepageFaqs.map((faq) => `### ${faq.q}\n\n${faq.a}`).join('\n\n')}`,
     'This text companion is generated from the same published content records as the website. Canonical page links identify the original context.',
+    `## ${socialLeadIntro.title}`,
+    `Canonical: ${absoluteUrl('/social-media-leads')}`,
+    socialLeadIntro.description,
+    'Reddit and Instagram are the priority channels. LinkedIn, X, YouTube and Medium can be included when relevant to the audience.',
+    '### Channels',
+    ...socialLeadChannels.map((channel) => `#### ${channel.name}\n\n${channel.description}`),
+    '### How social media lead generation works',
+    ...socialLeadSteps.map((step) => `#### ${step.title}\n\n${step.body}`),
+    '### Illustrative social media case studies',
+    'These are constructed scenarios with synthetic metrics, not real client engagements or achieved results. Sample comments and lead records are fictional demonstrations.',
+    ...socialLeadCases.map((item) =>
+      [
+        `#### Illustrative example: ${item.title}`,
+        `Channel: ${item.channel}\nSector: ${item.sector}`,
+        `Challenge: ${item.challenge}`,
+        `Approach: ${item.approach}`,
+        'Synthetic example metrics:',
+        ...item.metrics.map((metric) => `${metric.value}: ${metric.label}`),
+        `Measurement: ${item.measurement}`,
+      ].join('\n\n'),
+    ),
+    '### Social media lead generation questions',
+    ...socialLeadFaqs.map((faq) => `#### ${faq.q}\n\n${faq.a}`),
     '## Methodology',
     ...methodology.map(
       (step) =>

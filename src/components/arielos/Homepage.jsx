@@ -19,6 +19,7 @@ import {
 import { insightArticles } from './content/insights.js';
 import { serviceNavItems } from './content/services.js';
 import BookMeeting from './BookMeeting.jsx';
+import { SocialLeadsPreview } from './SocialMediaLeads.jsx';
 import {
   AssessmentLink,
   ResearchGrid,
@@ -277,6 +278,15 @@ function Hero() {
           <span>Book a meeting</span>
           <span aria-hidden="true">→</span>
         </BookMeeting>
+        <Link
+          to="/social-media-leads"
+          className="hero-social-link hero__in"
+          style={{ animationDelay: '.5s' }}
+        >
+          <span>Reddit + Instagram</span>
+          <span>Turn comments into lead opportunities</span>
+          <span aria-hidden="true">→</span>
+        </Link>
         <span className="hero-demo-note">
           Nayax visibility snapshot · animated reporting concepts.
         </span>
@@ -1170,6 +1180,7 @@ export default function Homepage() {
   return (
     <>
       <Hero />
+      <SocialLeadsPreview />
       <PlatformGrid />
       <ProductTheater />
       <MarketStats />

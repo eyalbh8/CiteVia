@@ -69,6 +69,14 @@ export const contentIndex = [
     group: 'Services',
     updated: site.updated,
   },
+  {
+    path: '/social-media-leads',
+    title: 'Social media lead generation',
+    description:
+      'Turn relevant comments into qualified conversations, with Reddit and Instagram first, followed by LinkedIn, X, YouTube and Medium.',
+    group: 'Services',
+    updated: '2026-10-24',
+  },
   ...services.map((item) => ({
     path: `/services/${item.slug}`,
     title: item.name,

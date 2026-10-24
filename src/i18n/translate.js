@@ -20,6 +20,7 @@ import {
 } from '../content/multilingual-seo.js';
 import { localizeArticleSchema } from './article-schema.js';
 import { faqSchemaTranslations, faqSchemaFragments } from '../content/faq-schema-ai-search.js';
+import { socialMediaLeadTranslations } from './social-media-leads.js';
 
 const translationsByLanguage = {
   es: {
@@ -33,6 +34,7 @@ const translationsByLanguage = {
     ...multilingualSeoTranslations.es,
     ...faqSchemaTranslations.es,
     ...serviceAreaTranslations.es,
+    ...socialMediaLeadTranslations.es,
   },
   tr: {
     ...trRouteData,
@@ -45,6 +47,7 @@ const translationsByLanguage = {
     ...multilingualSeoTranslations.tr,
     ...faqSchemaTranslations.tr,
     ...serviceAreaTranslations.tr,
+    ...socialMediaLeadTranslations.tr,
   },
 };
 const articleFragments = {

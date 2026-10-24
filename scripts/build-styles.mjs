@@ -8,6 +8,7 @@ export const styleSources = [
   'src/app/site-base.css',
   'src/app/arielos-source.css',
   'src/app/arielos-theme.css',
+  'src/app/social-leads.css',
 ];
 
 // The first screen and persistent navigation must be complete before the full CSS arrives.
