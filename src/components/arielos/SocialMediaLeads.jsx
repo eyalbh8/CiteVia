@@ -78,50 +78,53 @@ function ChannelBadge({ channel }) {
   );
 }
 
-function FeaturedChannels() {
+function ChannelList() {
   return (
-    <div className="social-featured-channels" aria-label="Featured channels">
-      {socialLeadChannels.slice(0, 2).map((channel) => (
+    <div className="social-channel-list" aria-label="Social platforms">
+      {socialLeadChannels.map((channel) => (
         <ChannelBadge key={channel.id} channel={channel} />
       ))}
-      <span className="social-featured-channels__note">Built around buying intent</span>
     </div>
   );
 }
 
-function ConversationPreview({ channel }) {
+function ConversationPreview({ channel, compact = false }) {
   return (
-    <article className={`social-conversation social-conversation--${channel.id}`}>
+    <article className={`social-conversation${compact ? ' social-conversation--compact' : ''}`}>
       <div className="social-conversation__top">
         <ChannelBadge channel={channel} />
-        <span className="social-intent">{channel.intent}</span>
+        {!compact && <span className="social-intent">{channel.intent}</span>}
       </div>
-      <p className="social-conversation__context">{channel.context}</p>
+      {!compact && <p className="social-conversation__context">{channel.context}</p>}
       <h3>{channel.question}</h3>
-      <div className="social-conversation__reply">
-        <span className="social-reply-mark" aria-hidden="true">
-          ↳
-        </span>
-        <div>
-          <span className="social-small-label">Example brand reply</span>
-          <p>{channel.reply}</p>
+      {!compact && (
+        <div className="social-conversation__reply">
+          <span className="social-reply-mark" aria-hidden="true">
+            ↳
+          </span>
+          <div>
+            <span className="social-small-label">Example brand reply</span>
+            <p>{channel.reply}</p>
+          </div>
         </div>
-      </div>
+      )}
     </article>
   );
 }
 
-function ConversationPair() {
+function ConversationHighlights() {
   return (
-    <div className="social-conversation-pair">
+    <div className="social-conversation-highlights">
       <div className="social-preview-label">
         <span className="social-pulse" aria-hidden="true" />
         <span>The right conversation. A useful reply.</span>
       </div>
-      {socialLeadChannels.slice(0, 2).map((channel) => (
-        <ConversationPreview key={channel.id} channel={channel} />
-      ))}
-      <p className="social-disclosure">Illustrative conversations and replies. Not live posts.</p>
+      <div className="social-highlights-grid">
+        {socialLeadChannels.map((channel) => (
+          <ConversationPreview key={channel.id} channel={channel} compact />
+        ))}
+      </div>
+      <p className="social-disclosure">Fictional conversation examples across six platforms.</p>
     </div>
   );
 }
@@ -132,11 +135,9 @@ export function SocialLeadsPreview() {
       <div className="social-intro-grid">
         <div className="social-intro-copy">
           <p className="eyebrow">Social media leads</p>
-          <FeaturedChannels />
+          <ChannelList />
           <h2>Your next customer is already in the comments.</h2>
-          <p className="social-lede">
-            Turn Reddit and Instagram conversations into lead opportunities.
-          </p>
+          <p className="social-lede">Turn social conversations into lead opportunities.</p>
           <p className="social-body">
             We find people asking for recommendations, comparing products, and looking for help.
             Then we create useful, relevant comments that give them a reason to discover your brand.
@@ -145,21 +146,15 @@ export function SocialLeadsPreview() {
             <span>Explore social media leads</span>
             <span aria-hidden="true">→</span>
           </Link>
-          <div className="social-more-channels">
-            <span>Also on</span>
-            {socialLeadChannels.slice(2).map((channel) => (
-              <ChannelBadge key={channel.id} channel={channel} />
-            ))}
-          </div>
         </div>
-        <ConversationPair />
+        <ConversationHighlights />
       </div>
     </Section>
   );
 }
 
 function OpportunitySamples() {
-  const [selected, setSelected] = useState('reddit');
+  const [selected, setSelected] = useState('all');
   return (
     <Section id="social-lead-samples" className="social-samples-section">
       <SectionHeader
@@ -168,6 +163,14 @@ function OpportunitySamples() {
         copy="Explore how the approach changes across six channels. Each sample is a fictional conversation and a proposed reply, using [Brand] as a placeholder."
       />
       <div className="social-sample-filters" role="group" aria-label="Choose a sample platform">
+        <button
+          type="button"
+          aria-pressed={selected === 'all'}
+          aria-controls="social-samples-all"
+          onClick={() => setSelected('all')}
+        >
+          All platforms
+        </button>
         {socialLeadChannels.map((channel) => (
           <button
             key={channel.id}
@@ -178,6 +181,11 @@ function OpportunitySamples() {
           >
             <ChannelBadge channel={channel} />
           </button>
+        ))}
+      </div>
+      <div id="social-samples-all" className="social-sample-overview" hidden={selected !== 'all'}>
+        {socialLeadChannels.map((channel) => (
+          <ConversationPreview key={channel.id} channel={channel} />
         ))}
       </div>
       {socialLeadChannels.map((channel) => (
@@ -234,15 +242,13 @@ export default function SocialMediaLeads() {
           <div className="social-intro-grid">
             <div className="social-intro-copy">
               <p className="eyebrow">Social media lead generation</p>
-              <FeaturedChannels />
+              <ChannelList />
               <h1>Your next customer is already in the comments.</h1>
-              <p className="social-lede">
-                Turn Reddit and Instagram conversations into lead opportunities.
-              </p>
+              <p className="social-lede">Turn social conversations into lead opportunities.</p>
               <p className="social-body">
                 Citevia helps your brand join the conversations that matter: recommendations,
-                comparisons, and questions from people looking for a solution. Start with Reddit and
-                Instagram. Reach further with LinkedIn, X, YouTube, and Medium.
+                comparisons, and questions from people looking for a solution across Reddit,
+                Instagram, LinkedIn, X, YouTube, and Medium.
               </p>
               <div className="social-actions">
                 <Link to="/contact" className="button button--primary">
@@ -254,7 +260,7 @@ export default function SocialMediaLeads() {
                 </a>
               </div>
             </div>
-            <ConversationPair />
+            <ConversationHighlights />
           </div>
         </div>
       </section>
@@ -262,17 +268,13 @@ export default function SocialMediaLeads() {
       <Section className="social-channel-section">
         <SectionHeader
           eyebrow="Your audience. Their channels."
-          title="Reddit + Instagram first. More ways to be discovered."
+          title="Six platforms. More ways to be discovered."
           copy="We build the channel mix around your audience, your offer, and the conversations worth joining."
         />
         <div className="social-channel-grid">
-          {socialLeadChannels.map((channel, index) => (
-            <article
-              key={channel.id}
-              className={`social-channel-card${index < 2 ? ' social-channel-card--featured' : ''}`}
-            >
+          {socialLeadChannels.map((channel) => (
+            <article key={channel.id} className="social-channel-card">
               <ChannelBadge channel={channel} />
-              {index < 2 && <span className="social-priority">Priority channel</span>}
               <p>{channel.description}</p>
             </article>
           ))}
@@ -362,7 +364,7 @@ export default function SocialMediaLeads() {
 
       <Section className="social-final-section">
         <div className="social-final">
-          <FeaturedChannels />
+          <ChannelList />
           <h2>Be part of the next buying conversation.</h2>
           <p>Let’s map your audience, your channels, and the questions your brand can answer.</p>
           <Link to="/contact" className="button button--primary">

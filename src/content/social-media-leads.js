@@ -1,7 +1,7 @@
 export const socialLeadIntro = {
   title: 'Social media lead generation',
   description:
-    'Turn relevant comments on Reddit and Instagram into lead opportunities. Citevia also helps you reach buyers on LinkedIn, X, YouTube, and Medium.',
+    'Turn relevant comments on Reddit, Instagram, LinkedIn, X, YouTube, and Medium into lead opportunities with Citevia.',
 };
 
 export const socialLeadChannels = [
@@ -113,7 +113,7 @@ export const socialLeadFunnel = [
 export const socialLeadCases = [
   {
     id: 'saas',
-    channel: 'Reddit + LinkedIn',
+    channel: 'Reddit + LinkedIn + X',
     sector: 'B2B software',
     title: 'From a tool comparison to a demo conversation',
     challenge:
@@ -130,13 +130,13 @@ export const socialLeadCases = [
   },
   {
     id: 'consumer',
-    channel: 'Instagram + Reddit',
+    channel: 'Instagram + YouTube + Medium',
     sector: 'Consumer brand',
     title: 'From a product question to a purchase enquiry',
     challenge:
       'A travel accessories brand wants to meet buyers researching their next carry-on bag.',
     approach:
-      'Answer questions about size, packing, and airline fit beneath relevant travel content. Direct interested buyers to the right product information when the platform permits it.',
+      'Answer questions about size, packing, and airline fit within relevant travel content. Direct interested buyers to the right product information when the platform permits it.',
     metrics: [
       { value: '55', label: 'Relevant conversations' },
       { value: '20', label: 'Approved replies' },
@@ -150,7 +150,7 @@ export const socialLeadCases = [
 export const socialLeadFaqs = [
   {
     q: 'Which platforms do you work with?',
-    a: 'Reddit and Instagram are the starting point. We also work across LinkedIn, X, YouTube, and Medium, with the channel mix shaped around where your buyers ask questions and look for recommendations.',
+    a: 'We work across Reddit, Instagram, LinkedIn, X, YouTube, and Medium, with the channel mix shaped around where your buyers ask questions and look for recommendations.',
   },
   {
     q: 'How can a comment generate a lead?',

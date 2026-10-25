@@ -12,7 +12,7 @@ const localizedCopy = {
   es: {
     intro: [
       'Generación de clientes potenciales en redes sociales',
-      'Convierte los comentarios relevantes en Reddit e Instagram en oportunidades comerciales. Citevia también te ayuda a llegar a compradores en LinkedIn, X, YouTube y Medium.',
+      'Convierte los comentarios relevantes en Reddit, Instagram, LinkedIn, X, YouTube y Medium en oportunidades comerciales con Citevia.',
     ],
     channels: [
       [
@@ -115,7 +115,7 @@ const localizedCopy = {
     faqs: [
       [
         '¿Con qué plataformas trabajáis?',
-        'Reddit e Instagram son el punto de partida. También trabajamos en LinkedIn, X, YouTube y Medium, con una combinación de canales basada en dónde hacen preguntas tus compradores y buscan recomendaciones.',
+        'Trabajamos en Reddit, Instagram, LinkedIn, X, YouTube y Medium, con una combinación de canales basada en dónde hacen preguntas tus compradores y buscan recomendaciones.',
       ],
       [
         '¿Cómo puede un comentario generar un cliente potencial?',
@@ -142,7 +142,7 @@ const localizedCopy = {
   tr: {
     intro: [
       'Sosyal medyadan potansiyel müşteri kazanımı',
-      'Reddit ve Instagram’daki ilgili yorumları potansiyel müşteri fırsatlarına dönüştürün. Citevia, LinkedIn, X, YouTube ve Medium’daki alıcılara ulaşmanıza da yardımcı olur.',
+      'Reddit, Instagram, LinkedIn, X, YouTube ve Medium’daki ilgili yorumları Citevia ile potansiyel müşteri fırsatlarına dönüştürün.',
     ],
     channels: [
       [
@@ -231,7 +231,7 @@ const localizedCopy = {
         challenge:
           'Bir seyahat aksesuarı markası, bir sonraki kabin çantasını araştıran alıcılarla buluşmak istiyor.',
         approach:
-          'İlgili seyahat içeriklerinin altında boyut, eşya yerleşimi ve havayolu ölçülerine uygunluk sorularını yanıtlayın. Platform izin verdiğinde ilgili alıcıları doğru ürün bilgisine yönlendirin.',
+          'İlgili seyahat içeriklerinde boyut, eşya yerleşimi ve havayolu ölçülerine uygunluk sorularını yanıtlayın. Platform izin verdiğinde ilgili alıcıları doğru ürün bilgisine yönlendirin.',
         labels: ['İlgili sohbet', 'Onaylanan yanıt', 'Ürün talebi'],
         measurement:
           'İlişkilendirilebilen ürün sayfası ziyaretlerini ve talepleri takip edin; kaynak ilişkilendirmesi mümkün olduğunda satın alımları ayrı kaydedin.',
@@ -240,7 +240,7 @@ const localizedCopy = {
     faqs: [
       [
         'Hangi platformlarla çalışıyorsunuz?',
-        'Başlangıç noktası Reddit ve Instagram’dır. LinkedIn, X, YouTube ve Medium’da da çalışırız. Kanal dağılımını, alıcılarınızın nerede soru sorduğuna ve tavsiye aradığına göre belirleriz.',
+        'Reddit, Instagram, LinkedIn, X, YouTube ve Medium’da çalışırız. Kanal dağılımını, alıcılarınızın nerede soru sorduğuna ve tavsiye aradığına göre belirleriz.',
       ],
       [
         'Bir yorum nasıl potansiyel müşteri kazandırabilir?',
@@ -298,14 +298,14 @@ function buildContentTranslations(copy) {
 const interfaceCopy = [
   ['Social media leads', 'Leads en redes sociales', 'Sosyal medya müşteri kazanımı'],
   [
-    'Social Media Leads — Reddit & Instagram',
-    'Leads en redes sociales — Reddit e Instagram',
-    'Sosyal medyadan müşteri kazanımı — Reddit ve Instagram',
+    'Social Media Lead Generation',
+    'Generación de clientes potenciales en redes sociales',
+    'Sosyal medyadan potansiyel müşteri kazanımı',
   ],
   [
-    'Social Media Leads — Reddit & Instagram | Citevia',
-    'Leads en redes sociales — Reddit e Instagram | Citevia',
-    'Sosyal medyadan müşteri kazanımı — Reddit ve Instagram | Citevia',
+    'Social Media Lead Generation | Citevia',
+    'Generación de clientes potenciales en redes sociales | Citevia',
+    'Sosyal medyadan potansiyel müşteri kazanımı | Citevia',
   ],
   [
     'Citevia connects AI search strategy, social media lead generation, SEO, content, reputation, and measurement to help brands become easier to find, understand, and choose.',
@@ -317,8 +317,8 @@ const interfaceCopy = [
     'Convierte comentarios en oportunidades comerciales',
     'Yorumları potansiyel müşteri fırsatlarına dönüştürün',
   ],
-  ['Featured channels', 'Canales destacados', 'Öne çıkan kanallar'],
-  ['Built around buying intent', 'Basado en la intención de compra', 'Satın alma niyetine odaklı'],
+  ['Social platforms', 'Plataformas sociales', 'Sosyal platformlar'],
+  ['Six social platforms', 'Seis plataformas sociales', 'Altı sosyal platform'],
   ['Example brand reply', 'Ejemplo de respuesta de marca', 'Örnek marka yanıtı'],
   [
     'The right conversation. A useful reply.',
@@ -326,19 +326,14 @@ const interfaceCopy = [
     'Doğru sohbet. Yararlı bir yanıt.',
   ],
   [
-    'Illustrative conversations and replies. Not live posts.',
-    'Conversaciones y respuestas ilustrativas. No son publicaciones reales.',
-    'Açıklayıcı sohbet ve yanıt örnekleri. Gerçek gönderiler değildir.',
-  ],
-  [
     'Your next customer is already in the comments.',
     'Tu próximo cliente ya está en los comentarios.',
     'Bir sonraki müşteriniz şimdiden yorumlarda.',
   ],
   [
-    'Turn Reddit and Instagram conversations into lead opportunities.',
-    'Convierte las conversaciones de Reddit e Instagram en oportunidades comerciales.',
-    'Reddit ve Instagram sohbetlerini potansiyel müşteri fırsatlarına dönüştürün.',
+    'Turn social conversations into lead opportunities.',
+    'Convierte las conversaciones en redes sociales en oportunidades comerciales.',
+    'Sosyal medya sohbetlerini potansiyel müşteri fırsatlarına dönüştürün.',
   ],
   [
     'We find people asking for recommendations, comparing products, and looking for help. Then we create useful, relevant comments that give them a reason to discover your brand.',
@@ -350,7 +345,6 @@ const interfaceCopy = [
     'Descubre los leads en redes sociales',
     'Sosyal medyadan müşteri kazanımını keşfedin',
   ],
-  ['Also on', 'También en', 'Diğer kanallar'],
   ['See the opportunity', 'Descubre la oportunidad', 'Fırsatı görün'],
   [
     'From a question to a conversation.',
@@ -363,6 +357,12 @@ const interfaceCopy = [
     'Yaklaşımın altı kanalda nasıl değiştiğini keşfedin. Her örnek, yer tutucu olarak [Brand] kullanılan kurgusal bir sohbet ve önerilen bir yanıttır.',
   ],
   ['Choose a sample platform', 'Elige una plataforma de ejemplo', 'Örnek platform seçin'],
+  ['All platforms', 'Todas las plataformas', 'Tüm platformlar'],
+  [
+    'Fictional conversation examples across six platforms.',
+    'Ejemplos de conversaciones ficticias en seis plataformas.',
+    'Altı platformdan kurgusal sohbet örnekleri.',
+  ],
   ['Illustrative opportunity', 'Oportunidad ilustrativa', 'Açıklayıcı fırsat örneği'],
   [
     'A sample campaign, made visible.',
@@ -380,9 +380,9 @@ const interfaceCopy = [
     'Bir fırsat, ancak biri ilgili bir talepte bulunduğunda potansiyel müşteriye dönüşür. Yayımlanan yorumlar ve nitelikli potansiyel müşteriler ayrı raporlanır.',
   ],
   [
-    'Citevia helps your brand join the conversations that matter: recommendations, comparisons, and questions from people looking for a solution. Start with Reddit and Instagram. Reach further with LinkedIn, X, YouTube, and Medium.',
-    'Citevia ayuda a tu marca a participar en las conversaciones que importan: recomendaciones, comparaciones y preguntas de personas que buscan una solución. Empieza por Reddit e Instagram. Amplía tu alcance con LinkedIn, X, YouTube y Medium.',
-    'Citevia, markanızın önemli sohbetlere katılmasına yardımcı olur: çözüm arayan kişilerin tavsiyeleri, karşılaştırmaları ve soruları. Reddit ve Instagram ile başlayın. LinkedIn, X, YouTube ve Medium ile daha fazla kişiye ulaşın.',
+    'Citevia helps your brand join the conversations that matter: recommendations, comparisons, and questions from people looking for a solution across Reddit, Instagram, LinkedIn, X, YouTube, and Medium.',
+    'Citevia ayuda a tu marca a participar en las conversaciones que importan: recomendaciones, comparaciones y preguntas de personas que buscan una solución en Reddit, Instagram, LinkedIn, X, YouTube y Medium.',
+    'Citevia, Reddit, Instagram, LinkedIn, X, YouTube ve Medium’da çözüm arayan insanların tavsiye istediği, seçenekleri karşılaştırdığı ve soru sorduğu önemli sohbetlere markanızın katılmasına yardımcı olur.',
   ],
   ['Discuss my campaign', 'Hablemos de mi campaña', 'Kampanyamı görüşelim'],
   ['Explore the samples', 'Explora los ejemplos', 'Örnekleri keşfedin'],
@@ -392,16 +392,15 @@ const interfaceCopy = [
     'Hedef kitleniz. Kullandıkları kanallar.',
   ],
   [
-    'Reddit + Instagram first. More ways to be discovered.',
-    'Primero Reddit e Instagram. Más formas de que te descubran.',
-    'Önce Reddit + Instagram. Keşfedilmek için daha fazla yol.',
+    'Six platforms. More ways to be discovered.',
+    'Seis plataformas. Más formas de que te descubran.',
+    'Altı platform. Keşfedilmek için daha fazla yol.',
   ],
   [
     'We build the channel mix around your audience, your offer, and the conversations worth joining.',
     'Definimos la combinación de canales según tu audiencia, tu oferta y las conversaciones en las que merece la pena participar.',
     'Kanal dağılımını hedef kitlenize, teklifinize ve katılmaya değer sohbetlere göre oluştururuz.',
   ],
-  ['Priority channel', 'Canal prioritario', 'Öncelikli kanal'],
   ['How it works', 'Cómo funciona', 'Nasıl çalışır'],
   [
     'Find the intent. Earn the next step.',

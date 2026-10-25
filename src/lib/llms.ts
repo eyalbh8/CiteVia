@@ -52,7 +52,7 @@ export function llmsFullText() {
     `## ${socialLeadIntro.title}`,
     `Canonical: ${absoluteUrl('/social-media-leads')}`,
     socialLeadIntro.description,
-    'Reddit and Instagram are the priority channels. LinkedIn, X, YouTube and Medium can be included when relevant to the audience.',
+    'Citevia works across Reddit, Instagram, LinkedIn, X, YouTube, and Medium, with the channel mix shaped around the audience.',
     '### Channels',
     ...socialLeadChannels.map((channel) => `#### ${channel.name}\n\n${channel.description}`),
     '### How social media lead generation works',

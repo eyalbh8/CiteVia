@@ -73,7 +73,7 @@ export const contentIndex = [
     path: '/social-media-leads',
     title: 'Social media lead generation',
     description:
-      'Turn relevant comments into qualified conversations, with Reddit and Instagram first, followed by LinkedIn, X, YouTube and Medium.',
+      'Turn relevant comments on Reddit, Instagram, LinkedIn, X, YouTube, and Medium into lead opportunities with Citevia.',
     group: 'Services',
     updated: '2026-10-24',
   },

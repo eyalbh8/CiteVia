@@ -283,7 +283,7 @@ function Hero() {
           className="hero-social-link hero__in"
           style={{ animationDelay: '.5s' }}
         >
-          <span>Reddit + Instagram</span>
+          <span>Six social platforms</span>
           <span>Turn comments into lead opportunities</span>
           <span aria-hidden="true">→</span>
         </Link>

@@ -55,17 +55,17 @@
   margin: 0 0 28px;
   max-width: 600px;
 }
-.arielos-home .social-featured-channels,
-.arielos-home .social-more-channels,
 .arielos-home .social-actions {
   display: flex;
   gap: 12px;
   align-items: center;
   flex-wrap: wrap;
 }
-.arielos-home .social-featured-channels__note {
-  color: var(--muted);
-  font-size: 11px;
+.arielos-home .social-channel-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  max-width: 460px;
 }
 .arielos-home .social-channel {
   display: inline-flex;
@@ -91,34 +91,25 @@
 .arielos-home .social-channel--youtube svg {
   color: #c92f35;
 }
-.arielos-home .social-featured-channels > .social-channel {
+.arielos-home .social-channel-list > .social-channel {
+  justify-content: center;
   padding: 9px 12px;
   background: #fff;
   border: 1px solid #dedbec;
   border-radius: 8px;
 }
-.arielos-home .social-more-channels {
-  margin-top: 25px;
-  gap: 10px 16px;
-}
-.arielos-home .social-more-channels > span:first-child {
-  color: var(--muted);
-  font-size: 11px;
-}
-.arielos-home .social-more-channels .social-channel {
-  font-size: 11px;
-  font-weight: 500;
-}
-.arielos-home .social-more-channels .social-channel svg {
-  width: 15px;
-  height: 15px;
-}
-.arielos-home .social-conversation-pair {
+.arielos-home .social-conversation-highlights {
   padding: 25px;
   background: radial-gradient(ellipse at 0 0, #e3e0ff, transparent 80%), #efedf8;
   border: 1px solid #e0dcef;
   border-radius: 22px;
   min-width: 0;
+}
+.arielos-home .social-highlights-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  grid-auto-rows: 1fr;
 }
 .arielos-home .social-preview-label {
   display: flex;
@@ -144,8 +135,8 @@
   background: #fff;
   box-shadow: 0 8px 24px #29195506;
 }
-.arielos-home .social-conversation-pair .social-conversation + .social-conversation {
-  margin-top: 14px;
+.arielos-home .social-conversation--compact {
+  padding: 18px;
 }
 .arielos-home .social-conversation__top {
   display: flex;
@@ -173,6 +164,11 @@
   letter-spacing: -0.02em;
   color: #302944;
   text-wrap: pretty;
+}
+.arielos-home .social-conversation--compact h3 {
+  margin-top: 14px;
+  font-size: 12px;
+  font-weight: 500;
 }
 .arielos-home .social-conversation__reply {
   display: flex;
@@ -243,7 +239,7 @@
 }
 .arielos-home .social-channel-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 16px;
 }
 .arielos-home .social-channel-card {
@@ -251,6 +247,7 @@
   border-radius: 14px;
   padding: 25px;
   position: relative;
+  background: #f8f7fe;
 }
 .arielos-home .social-channel-card p {
   color: var(--muted);
@@ -258,32 +255,13 @@
   line-height: 1.8;
   margin: 20px 0 0;
 }
-.arielos-home .social-channel-card--featured {
-  grid-column: span 2;
-  background: #f8f7fe;
-  padding: 30px;
-}
-.arielos-home .social-channel-card--featured .social-channel {
-  font-size: 22px;
+.arielos-home .social-channel-card .social-channel {
+  font-size: 20px;
   gap: 12px;
 }
-.arielos-home .social-channel-card--featured .social-channel svg {
-  width: 31px;
-  height: 31px;
-}
-.arielos-home .social-channel-card--featured p {
-  max-width: 470px;
-  font-size: 15px;
-}
-.arielos-home .social-priority {
-  display: inline-block;
-  color: #776699;
-  background: #eeebf8;
-  font: 500 9px/1.6 var(--label);
-  border-radius: 4px;
-  padding: 4px 8px;
-  margin-left: 16px;
-  vertical-align: middle;
+.arielos-home .social-channel-card .social-channel svg {
+  width: 28px;
+  height: 28px;
 }
 .arielos-home .social-process-section {
   background: #f8f8fc;
@@ -329,9 +307,19 @@
   border-radius: 8px;
   min-height: 46px;
   cursor: pointer;
+  color: #292442;
+  font: 600 13px/1.4 var(--label);
   transition:
     background 0.15s,
     border-color 0.15s;
+}
+.arielos-home .social-sample-overview {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+.arielos-home .social-sample-overview .social-conversation {
+  background: #faf9fe;
 }
 .arielos-home .social-sample-filters button[aria-pressed='true'] {
   border-color: #7661ca;
@@ -564,8 +552,8 @@
   border-radius: 22px;
   padding: 60px 32px;
 }
-.arielos-home .social-final .social-featured-channels {
-  justify-content: center;
+.arielos-home .social-final .social-channel-list {
+  margin-inline: auto;
 }
 .arielos-home .social-final h2 {
   max-width: 680px;
@@ -603,7 +591,7 @@
   .arielos-home .social-intro-grid {
     gap: 30px;
   }
-  .arielos-home .social-conversation-pair {
+  .arielos-home .social-conversation-highlights {
     padding: 18px;
   }
   .arielos-home .social-conversation {
@@ -616,13 +604,8 @@
   .arielos-home .social-channel-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-  .arielos-home .social-channel-card--featured {
-    grid-column: auto;
-  }
-  .arielos-home .social-priority {
-    display: block;
-    width: fit-content;
-    margin: 13px 0 0;
+  .arielos-home .social-sample-overview {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 @media (max-width: 760px) {
@@ -644,18 +627,14 @@
     font-size: clamp(40px, 8vw, 58px);
     max-width: 550px;
   }
-  .arielos-home .social-featured-channels__note {
-    flex-basis: 100%;
-  }
-  .arielos-home .social-channel-card,
-  .arielos-home .social-channel-card--featured {
+  .arielos-home .social-channel-card {
     padding: 22px;
   }
-  .arielos-home .social-channel-card--featured .social-channel {
+  .arielos-home .social-channel-card .social-channel {
     font-size: 18px;
     gap: 8px;
   }
-  .arielos-home .social-channel-card--featured .social-channel svg {
+  .arielos-home .social-channel-card .social-channel svg {
     width: 24px;
     height: 24px;
   }
@@ -688,13 +667,24 @@
   .arielos-home .social-final {
     padding: 40px 24px;
   }
+  .arielos-home .social-channel-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .arielos-home .social-sample-overview {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+@media (min-width: 761px) and (max-width: 1050px) {
+  .arielos-home .social-highlights-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
 }
 @media (max-width: 380px) {
   .arielos-home .social-channel-grid,
   .arielos-home .social-process {
     grid-template-columns: minmax(0, 1fr);
   }
-  .arielos-home .social-conversation-pair {
+  .arielos-home .social-conversation-highlights {
     padding: 13px;
   }
   .arielos-home .social-conversation {
@@ -708,5 +698,8 @@
   }
   .arielos-home .social-case__metrics {
     gap: 10px;
+  }
+  .arielos-home .social-highlights-grid {
+    grid-template-columns: minmax(0, 1fr);
   }
 }

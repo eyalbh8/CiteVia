@@ -4,7 +4,7 @@ import { breadcrumbSchema, faqPageSchema, pageMetadata, webPageSchema } from '@/
 import { socialLeadIntro, socialLeadFaqs } from '@/content/social-media-leads';
 
 export const metadata = pageMetadata({
-  title: 'Social Media Leads — Reddit & Instagram',
+  title: 'Social Media Lead Generation',
   description: socialLeadIntro.description,
   path: '/social-media-leads',
 });
