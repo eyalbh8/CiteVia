@@ -1,1 +1,1 @@
-export const defaultBookingUrl = 'https://cal.com/eyal-BC';
+export const defaultBookingUrl = 'https://cal.com/citevia-info/30min';

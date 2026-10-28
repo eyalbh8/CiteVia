@@ -12,7 +12,7 @@ cp .env.example .env.local
 npm run dev
 ```
 
-Open <http://localhost:3000>. No external credentials are needed. The contact form prepares an email to **eyal@citevia.com** unless a delivery webhook is configured.
+Open <http://localhost:3000>. No external credentials are needed. The contact form prepares an email to **info@citevia.io** unless a delivery webhook is configured.
 
 ## Project structure
 
@@ -76,7 +76,7 @@ Amplify deployments from `eyalbh8/CiteVia` use the checked-in `amplify.yml`; `ma
 
 For other hosts, before the production build:
 
-1. Set `SITE_URL` to the confirmed public origin. The brand default is `https://citevia.io`; the contact address is independently `eyal@citevia.com`.
+1. Set `SITE_URL` to the confirmed public origin. The brand default is `https://citevia.io`; the contact address is independently `info@citevia.io`.
 2. Set `SITE_INDEXABLE=true` for the public production site only. The default is `false`; previews receive `noindex`, blocked robots rules, and an empty sitemap. Vercel preview deployments remain non-indexable even if the flag is set.
 3. Configure the optional booking URL and contact webhook if direct delivery is desired.
 4. Verify business information and privacy practices, then follow `docs/OPERATIONS.md`.

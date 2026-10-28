@@ -37,8 +37,8 @@ const esRoutes = {
   'Citevia example case studies': 'Casos de estudio de ejemplo de Citevia',
   'Citevia resource library': 'Biblioteca de recursos de Citevia',
   'Citevia solutions': 'Soluciones de Citevia',
-  'Contact Citevia to discuss your B2B brand’s AI visibility, GEO strategy, content, and technical SEO. Email eyal@citevia.com.':
-    'Contacta con Citevia para hablar sobre la visibilidad en IA, la estrategia GEO, los contenidos y el SEO técnico de tu marca B2B. Escribe a eyal@citevia.com.',
+  'Contact Citevia to discuss your B2B brand’s AI visibility, GEO strategy, content, and technical SEO. Email info@citevia.io.':
+    'Contacta con Citevia para hablar sobre la visibilidad en IA, la estrategia GEO, los contenidos y el SEO técnico de tu marca B2B. Escribe a info@citevia.io.',
   'A factual reference for Citevia: its website, contact address, search and marketing services, editorial approach, and the status of illustrative example studies.':
     'Una referencia factual sobre Citevia: su sitio web, datos de contacto, servicios de búsqueda y marketing, enfoque editorial y estado de los estudios ilustrativos de ejemplo.',
   'Practical guides and research on SEO, GEO, AEO, content strategy, and measuring your visibility in AI search.':

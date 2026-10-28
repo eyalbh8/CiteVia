@@ -36,8 +36,8 @@ const trRoutesPart1 = {
   'Citevia example case studies': 'Citevia Örnek Vaka Çalışmaları',
   'Citevia resource library': 'Citevia Kaynak Kütüphanesi',
   'Citevia solutions': 'Citevia Çözümleri',
-  'Contact Citevia to discuss your B2B brand’s AI visibility, GEO strategy, content, and technical SEO. Email eyal@citevia.com.':
-    'B2B markanızın yapay zekâ görünürlüğünü, GEO stratejisini, içeriğini ve teknik SEO’sunu görüşmek için Citevia ile iletişime geçin. eyal@citevia.com adresine e-posta gönderin.',
+  'Contact Citevia to discuss your B2B brand’s AI visibility, GEO strategy, content, and technical SEO. Email info@citevia.io.':
+    'B2B markanızın yapay zekâ görünürlüğünü, GEO stratejisini, içeriğini ve teknik SEO’sunu görüşmek için Citevia ile iletişime geçin. info@citevia.io adresine e-posta gönderin.',
   'A factual reference for Citevia: its website, contact address, search and marketing services, editorial approach, and the status of illustrative example studies.':
     'Citevia hakkında olgusal bir kaynak: web sitesi, iletişim adresi, arama ve pazarlama hizmetleri, yayın yaklaşımı ve örnek vaka çalışmalarının durumu.',
   'Practical guides and research on SEO, GEO, AEO, content strategy, and measuring your visibility in AI search.':

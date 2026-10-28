@@ -6,8 +6,8 @@ Keep secrets in host environment settings or ignored `.env.local` files. Commit 
 
 - `SITE_URL`: the single public HTTPS origin, without a path. Used in canonical URLs, JSON-LD, social metadata, robots, and the sitemap. Confirm the public domain before enabling indexing.
 - `SITE_INDEXABLE`: set to `true` only for a public production build and its runtime. Default is `false`. Development and Vercel preview environments are always non-indexable.
-- `CONTACT_EMAIL`: defaults to `eyal@citevia.com`.
-- `BOOKING_URL`: optional override for the public Cal.com URL (`https://cal.com/eyal-BC`) in `src/lib/booking.ts`. Booking links open in a new tab. The private-assessment CTA remains separate.
+- `CONTACT_EMAIL`: defaults to `info@citevia.io`.
+- `BOOKING_URL`: optional override for the public Cal.com URL (`https://cal.com/citevia-info/30min`) in `src/lib/booking.ts`. Booking links open in a new tab. The private-assessment CTA remains separate.
 - `CONTACT_WEBHOOK_URL`: optional HTTPS endpoint for lead delivery.
 - `CONTACT_WEBHOOK_TOKEN`: optional server-only bearer token.
 - `GOOGLE_SITE_VERIFICATION`, `BING_SITE_VERIFICATION`: optional verification values emitted as metadata. Verify the domain in the respective service.

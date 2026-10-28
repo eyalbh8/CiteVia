@@ -4,7 +4,7 @@ import { createContext, useContext } from 'react';
 import { defaultBookingUrl } from '@/lib/booking';
 
 export const HomeSettings = createContext({
-  email: 'eyal@citevia.com',
+  email: 'info@citevia.io',
   bookingUrl: defaultBookingUrl,
   directDelivery: false,
 });

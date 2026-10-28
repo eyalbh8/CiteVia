@@ -16,7 +16,7 @@ export const site = {
   name: 'Citevia',
   domain: origin.hostname,
   url: origin.origin,
-  email: process.env.CONTACT_EMAIL || 'eyal@citevia.com',
+  email: process.env.CONTACT_EMAIL || 'info@citevia.io',
   description:
     'Citevia connects AI search strategy, social media lead generation, SEO, content, reputation, and measurement to help brands become easier to find, understand, and choose.',
   bookingUrl: process.env.BOOKING_URL || defaultBookingUrl,
