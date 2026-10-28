@@ -95,6 +95,20 @@ export default function Footer() {
         <div className="footer__bottom">
           <span>© {new Date().getFullYear()} Citevia. All rights reserved.</span>
           <div>
+            <a
+              href="https://www.linkedin.com/company/citevia/posts/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              LinkedIn
+            </a>
+            <a
+              href="https://www.instagram.com/citevia.io/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Instagram
+            </a>
             <Link to="/privacy">Privacy</Link>
             <Link to="/terms">Terms</Link>
             <a href="/sitemap.xml">Sitemap</a>
