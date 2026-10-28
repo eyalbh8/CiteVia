@@ -1,4 +1,5 @@
 import esUi from './es-ui.js';
+import { pdfSeoTranslations, pdfSeoFragments } from '../content/pdf-seo-ai-search.js';
 import {
   serviceAreaTranslations,
   serviceAreaFragments,
@@ -35,6 +36,7 @@ const translationsByLanguage = {
     ...faqSchemaTranslations.es,
     ...serviceAreaTranslations.es,
     ...socialMediaLeadTranslations.es,
+    ...pdfSeoTranslations.es,
   },
   tr: {
     ...trRouteData,
@@ -48,6 +50,7 @@ const translationsByLanguage = {
     ...faqSchemaTranslations.tr,
     ...serviceAreaTranslations.tr,
     ...socialMediaLeadTranslations.tr,
+    ...pdfSeoTranslations.tr,
   },
 };
 const articleFragments = {
@@ -56,12 +59,14 @@ const articleFragments = {
     ...multilingualSeoFragments.es,
     ...faqSchemaFragments.es,
     ...serviceAreaFragments.es,
+    ...pdfSeoFragments.es,
   },
   tr: {
     ...aiCrawlerFragments.tr,
     ...multilingualSeoFragments.tr,
     ...faqSchemaFragments.tr,
     ...serviceAreaFragments.tr,
+    ...pdfSeoFragments.tr,
   },
 };
 const normalizedTranslationsByLanguage = Object.fromEntries(

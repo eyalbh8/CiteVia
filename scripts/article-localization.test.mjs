@@ -1,4 +1,5 @@
 import test from 'node:test';
+import { pdfSeoAiSearch, pdfSeoTranslations } from '../src/content/pdf-seo-ai-search.js';
 import {
   serviceAreaBusinessSeo,
   serviceAreaTranslations,
@@ -32,6 +33,7 @@ test('article copy registers complete paragraphs, link anchors and surrounding n
 });
 
 for (const [article, articleTranslations] of [
+  [pdfSeoAiSearch, pdfSeoTranslations],
   [serviceAreaBusinessSeo, serviceAreaTranslations],
   [aiCrawlerPolicy, aiCrawlerTranslations],
   [multilingualSeo, multilingualSeoTranslations],
