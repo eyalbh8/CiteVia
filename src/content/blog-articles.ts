@@ -1,4 +1,5 @@
 import type { Article } from './articles';
+import { productDataAiSearch } from './product-data-ai-search.js';
 import { pdfSeoAiSearch } from './pdf-seo-ai-search.js';
 import { serviceAreaBusinessSeo } from './service-area-business-seo.js';
 import { aiCrawlerPolicy } from './ai-crawler-policy.js';
@@ -6,6 +7,7 @@ import { multilingualSeo } from './multilingual-seo.js';
 import { faqSchemaAiSearch } from './faq-schema-ai-search.js';
 
 export const newArticles: Article[] = [
+  productDataAiSearch,
   pdfSeoAiSearch,
   serviceAreaBusinessSeo,
   faqSchemaAiSearch,

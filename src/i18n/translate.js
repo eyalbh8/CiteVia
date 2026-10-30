@@ -1,4 +1,8 @@
 import esUi from './es-ui.js';
+import {
+  productDataTranslations,
+  productDataFragments,
+} from '../content/product-data-ai-search.js';
 import { pdfSeoTranslations, pdfSeoFragments } from '../content/pdf-seo-ai-search.js';
 import {
   serviceAreaTranslations,
@@ -37,6 +41,7 @@ const translationsByLanguage = {
     ...serviceAreaTranslations.es,
     ...socialMediaLeadTranslations.es,
     ...pdfSeoTranslations.es,
+    ...productDataTranslations.es,
   },
   tr: {
     ...trRouteData,
@@ -51,6 +56,7 @@ const translationsByLanguage = {
     ...serviceAreaTranslations.tr,
     ...socialMediaLeadTranslations.tr,
     ...pdfSeoTranslations.tr,
+    ...productDataTranslations.tr,
   },
 };
 const articleFragments = {
@@ -60,6 +66,7 @@ const articleFragments = {
     ...faqSchemaFragments.es,
     ...serviceAreaFragments.es,
     ...pdfSeoFragments.es,
+    ...productDataFragments.es,
   },
   tr: {
     ...aiCrawlerFragments.tr,
@@ -67,6 +74,7 @@ const articleFragments = {
     ...faqSchemaFragments.tr,
     ...serviceAreaFragments.tr,
     ...pdfSeoFragments.tr,
+    ...productDataFragments.tr,
   },
 };
 const normalizedTranslationsByLanguage = Object.fromEntries(

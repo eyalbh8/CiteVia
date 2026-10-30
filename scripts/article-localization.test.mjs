@@ -1,4 +1,8 @@
 import test from 'node:test';
+import {
+  productDataAiSearch,
+  productDataTranslations,
+} from '../src/content/product-data-ai-search.js';
 import { pdfSeoAiSearch, pdfSeoTranslations } from '../src/content/pdf-seo-ai-search.js';
 import {
   serviceAreaBusinessSeo,
@@ -33,6 +37,7 @@ test('article copy registers complete paragraphs, link anchors and surrounding n
 });
 
 for (const [article, articleTranslations] of [
+  [productDataAiSearch, productDataTranslations],
   [pdfSeoAiSearch, pdfSeoTranslations],
   [serviceAreaBusinessSeo, serviceAreaTranslations],
   [aiCrawlerPolicy, aiCrawlerTranslations],
