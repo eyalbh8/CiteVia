@@ -26,6 +26,7 @@ import {
 import { localizeArticleSchema } from './article-schema.js';
 import { faqSchemaTranslations, faqSchemaFragments } from '../content/faq-schema-ai-search.js';
 import { socialMediaLeadTranslations } from './social-media-leads.js';
+import { partnerTranslations } from './partners.js';
 
 const translationsByLanguage = {
   es: {
@@ -42,6 +43,7 @@ const translationsByLanguage = {
     ...socialMediaLeadTranslations.es,
     ...pdfSeoTranslations.es,
     ...productDataTranslations.es,
+    ...partnerTranslations.es,
   },
   tr: {
     ...trRouteData,
@@ -57,6 +59,7 @@ const translationsByLanguage = {
     ...socialMediaLeadTranslations.tr,
     ...pdfSeoTranslations.tr,
     ...productDataTranslations.tr,
+    ...partnerTranslations.tr,
   },
 };
 const articleFragments = {

@@ -52,7 +52,7 @@ export default function Footer() {
           <AssessmentLink placement="footer-cta">Private assessment</AssessmentLink>
         </div>
       </div>
-      {pathname !== '/contact' && <ContactLead />}
+      {pathname !== '/contact' && pathname !== '/partners' && <ContactLead />}
       <div className="shell">
         <div className="footer__main">
           <div className="footer__brand">

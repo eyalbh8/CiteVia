@@ -4,6 +4,7 @@ export const contactInterests = [
   'GEO strategy',
   'Content and technical SEO',
   'Ongoing GEO support',
+  'Partner referral',
   'Something else',
 ] as const;
 export type ContactInput = {
@@ -74,4 +75,27 @@ export function validateContact(input: unknown): { data?: ContactInput; error?: 
   if (result.message.length > 3000)
     return { error: 'Please keep your message under 3,000 characters.' };
   return { data: result };
+}
+
+export function validatePartnerReferral(input: Record<string, unknown>) {
+  const leadCompany = typeof input.leadCompany === 'string' ? input.leadCompany.trim() : '';
+  const leadName = typeof input.leadName === 'string' ? input.leadName.trim() : '';
+  const leadEmail = typeof input.leadEmail === 'string' ? input.leadEmail.trim() : '';
+  const notes = typeof input.notes === 'string' ? input.notes.trim() : '';
+  if (leadCompany.length < 2 || leadCompany.length > 150)
+    return { error: 'Please enter the lead’s company name (2–150 characters).' };
+  if (leadName.length < 2 || leadName.length > 100)
+    return { error: 'Please enter the lead’s contact name (2–100 characters).' };
+  if (leadEmail.length > 254 || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(leadEmail))
+    return { error: 'Please enter a valid email address for the lead.' };
+  if (notes.length > 1500) return { error: 'Please keep referral notes under 1,500 characters.' };
+  return validateContact({
+    name: input.name,
+    email: input.email,
+    company: leadCompany,
+    companyFax: input.companyFax,
+    website: '',
+    interest: 'Partner referral',
+    message: `Partner referral\n\nLead contact: ${leadName}\nLead email: ${leadEmail}${notes ? `\n\nReferral notes:\n${notes}` : ''}`,
+  });
 }

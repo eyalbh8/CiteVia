@@ -67,6 +67,15 @@ optimized image response. Rerun PageSpeed for mobile and desktop against the liv
 
 The default form is an **email draft flow**. It validates details, opens the visitor’s email application, and says that they must send the message themselves. It never claims a lead was delivered by the website. The shared Contact Us form appears on `/contact` and above the footer on other pages. It requires name, email, and company name; phone is optional. Floating contact and Cal.com links stay available on every page, including mobile.
 
+The `/partners` page has a dedicated referral form instead of the shared footer contact form.
+It collects the partner’s name and email plus the lead’s company, contact name, email, and
+optional context. It uses the same email draft or optional webhook delivery, with interest
+`Partner referral`; the payload’s name and email identify the referring partner, company
+identifies the lead’s business, and message contains the lead’s contact details and context.
+The page describes a 10% commission on monthly payments when a referred lead becomes a paying
+client. It does not calculate or pay commissions. Partners appears before Contact us in the
+desktop navigation and mobile menu, and in the footer.
+
 To enable direct delivery, configure an HTTPS webhook accepting this JSON:
 
 ```json

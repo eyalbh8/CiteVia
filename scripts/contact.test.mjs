@@ -8,7 +8,7 @@ const source = await readFile(new URL('../src/lib/contact.ts', import.meta.url),
 const { outputText } = ts.transpileModule(source, {
   compilerOptions: { target: ts.ScriptTarget.ES2022, module: ts.ModuleKind.ESNext },
 });
-const { validateContact } = await import(
+const { validateContact, validatePartnerReferral } = await import(
   `data:text/javascript;base64,${Buffer.from(outputText).toString('base64')}`
 );
 const contact = {
@@ -52,4 +52,38 @@ test('assessment requests remain valid without the optional contact phone field'
   assert.equal(result.error, undefined);
   assert.equal(result.data.role, 'Founder / owner');
   assert.equal(result.data.phone, '');
+});
+
+const referral = {
+  name: 'Alex Partner',
+  email: 'partner@example.com',
+  leadCompany: 'Example Lead',
+  leadName: 'Jordan Client',
+  leadEmail: 'lead@example.com',
+  notes: 'Interested in SEO.',
+  companyFax: '',
+};
+
+test('referrals preserve partner attribution and lead details in the contact delivery payload', () => {
+  const { data, error } = validatePartnerReferral(referral);
+  assert.equal(error, undefined);
+  assert.equal(data.name, referral.name);
+  assert.equal(data.email, referral.email);
+  assert.equal(data.company, referral.leadCompany);
+  assert.equal(data.interest, 'Partner referral');
+  for (const detail of [referral.leadName, referral.leadEmail, referral.notes])
+    assert.ok(data.message.includes(detail));
+  assert.equal(validateContact(data).error, undefined);
+});
+
+test('referrals reject missing lead details, invalid email, and oversized context', () => {
+  for (const change of [
+    { leadName: '' },
+    { leadCompany: '' },
+    { leadEmail: 'invalid' },
+    { email: 'invalid' },
+    { notes: 'x'.repeat(1501) },
+  ])
+    assert.ok(validatePartnerReferral({ ...referral, ...change }).error);
+  assert.equal(validatePartnerReferral({ ...referral, notes: '' }).error, undefined);
 });

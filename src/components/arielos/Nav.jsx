@@ -6,7 +6,7 @@ import { assessmentHref, primaryNavItems } from './data.js';
 import { BrandMark } from './UI.jsx';
 import { useLanguage } from '@/i18n/LanguageProvider.jsx';
 
-const hoverCapable = () => window.matchMedia('(hover: hover) and (min-width: 900px)').matches;
+const hoverCapable = () => window.matchMedia('(hover: hover) and (min-width: 1100px)').matches;
 
 function NavGroup({ item, onNavigate }) {
   const [expanded, setExpanded] = useState(false);
@@ -140,7 +140,7 @@ export default function Nav() {
 
   useEffect(() => {
     const closeOnWide = () => {
-      if (window.innerWidth >= 900) setOpen(false);
+      if (window.innerWidth >= 1100) setOpen(false);
     };
     window.addEventListener('resize', closeOnWide);
     return () => window.removeEventListener('resize', closeOnWide);

@@ -3,18 +3,6 @@ export const assessmentHref = '/private-ai-visibility-assessment';
 
 export const primaryNavItems = [
   {
-    label: 'Social media leads',
-    href: '/social-media-leads',
-  },
-  {
-    label: 'Contact us',
-    href: '/contact',
-  },
-  {
-    label: 'Blog',
-    href: '/blog',
-  },
-  {
     label: 'Services',
     href: '/services',
     children: [
@@ -52,6 +40,22 @@ export const primaryNavItems = [
     label: 'Methodology',
     href: '/methodology',
   },
+  {
+    label: 'Social media leads',
+    href: '/social-media-leads',
+  },
+  {
+    label: 'Blog',
+    href: '/blog',
+  },
+  {
+    label: 'Partners',
+    href: '/partners',
+  },
+  {
+    label: 'Contact us',
+    href: '/contact',
+  },
 ];
 
 export const footerServiceItems = [
@@ -86,6 +90,7 @@ export const footerServiceItems = [
 ];
 
 export const footerNavItems = [
+  { label: 'Partners', href: '/partners' },
   { label: 'Social media leads', href: '/social-media-leads' },
   { label: 'Resources & glossary', href: '/resources' },
   { label: 'Company facts', href: '/ai-info' },

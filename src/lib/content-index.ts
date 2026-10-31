@@ -56,6 +56,14 @@ export const contentIndex = [
     updated: site.updated,
   },
   {
+    path: '/partners',
+    title: 'Referral partners',
+    description:
+      'Refer a lead to Citevia and earn 10% of the client’s monthly payment when they become a paying client.',
+    group: 'Company',
+    updated: '2026-10-31',
+  },
+  {
     path: '/ai-info',
     title: 'Company facts',
     description: 'Factual company and content reference.',
