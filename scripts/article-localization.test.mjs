@@ -1,3 +1,7 @@
+import {
+  javascriptSeoAiSearch,
+  javascriptSeoTranslations,
+} from '../src/content/javascript-seo-ai-search.js';
 import test from 'node:test';
 import {
   productDataAiSearch,
@@ -37,6 +41,7 @@ test('article copy registers complete paragraphs, link anchors and surrounding n
 });
 
 for (const [article, articleTranslations] of [
+  [javascriptSeoAiSearch, javascriptSeoTranslations],
   [productDataAiSearch, productDataTranslations],
   [pdfSeoAiSearch, pdfSeoTranslations],
   [serviceAreaBusinessSeo, serviceAreaTranslations],
