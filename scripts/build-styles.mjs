@@ -9,6 +9,7 @@ export const styleSources = [
   'src/app/arielos-source.css',
   'src/app/arielos-theme.css',
   'src/app/social-leads.css',
+  'src/app/campaigns.css',
   'src/app/partners.css',
 ];
 

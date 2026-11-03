@@ -20,6 +20,7 @@ import { insightArticles } from './content/insights.js';
 import { serviceNavItems } from './content/services.js';
 import BookMeeting from './BookMeeting.jsx';
 import { SocialLeadsPreview } from './SocialMediaLeads.jsx';
+import { CampaignsPreview } from './Campaigns.jsx';
 import {
   AssessmentLink,
   ResearchGrid,
@@ -1181,6 +1182,7 @@ export default function Homepage() {
     <>
       <Hero />
       <SocialLeadsPreview />
+      <CampaignsPreview />
       <PlatformGrid />
       <ProductTheater />
       <MarketStats />

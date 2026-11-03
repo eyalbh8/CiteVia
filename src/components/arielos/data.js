@@ -6,6 +6,7 @@ export const primaryNavItems = [
     label: 'Services',
     href: '/services',
     children: [
+      { label: 'Campaign management', href: '/campaigns' },
       {
         label: 'CRO',
         href: '/services/conversion-rate-optimization',
@@ -59,6 +60,7 @@ export const primaryNavItems = [
 ];
 
 export const footerServiceItems = [
+  { label: 'Campaign management', href: '/campaigns' },
   {
     label: 'CRO',
     href: '/services/conversion-rate-optimization',

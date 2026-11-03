@@ -31,6 +31,7 @@ import { localizeArticleSchema } from './article-schema.js';
 import { faqSchemaTranslations, faqSchemaFragments } from '../content/faq-schema-ai-search.js';
 import { socialMediaLeadTranslations } from './social-media-leads.js';
 import { partnerTranslations } from './partners.js';
+import { campaignTranslations } from './campaigns.js';
 import articleImages from '../content/article-images.json' with { type: 'json' };
 
 const imageTranslations = (language) =>
@@ -55,6 +56,7 @@ const translationsByLanguage = {
     ...productDataTranslations.es,
     ...javascriptSeoTranslations.es,
     ...partnerTranslations.es,
+    ...campaignTranslations.es,
     ...imageTranslations('es'),
   },
   tr: {
@@ -73,6 +75,7 @@ const translationsByLanguage = {
     ...productDataTranslations.tr,
     ...javascriptSeoTranslations.tr,
     ...partnerTranslations.tr,
+    ...campaignTranslations.tr,
     ...imageTranslations('tr'),
   },
 };

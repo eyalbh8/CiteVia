@@ -1,0 +1,334 @@
+/* Paid campaigns, in the shared Citevia design system. */
+.arielos-home .campaign-home-section,
+.arielos-home .campaign-page-hero {
+  background: radial-gradient(ellipse at 0 100%, #edebff, transparent 65%), #fafaff;
+  border-bottom: 1px solid var(--line);
+}
+.arielos-home .campaign-page-hero {
+  padding: 130px 0 85px;
+}
+.arielos-home .campaign-intro-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+  gap: clamp(32px, 6vw, 90px);
+  align-items: center;
+}
+.arielos-home .campaign-intro-copy h1,
+.arielos-home .campaign-intro-copy h2 {
+  font: 400 clamp(44px, 5.2vw, 76px)/1.04 var(--serif);
+  letter-spacing: -0.035em;
+  color: #1b1943;
+  margin: 20px 0 24px;
+  text-wrap: balance;
+}
+.arielos-home .campaign-intro-copy em,
+.arielos-home .campaign-final em {
+  font-weight: 400;
+  color: var(--accent);
+}
+.arielos-home .campaign-lede {
+  font-size: 16px;
+  line-height: 1.85;
+  color: var(--muted);
+  max-width: 550px;
+  margin: 0 0 30px;
+}
+.arielos-home .campaign-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.arielos-home .campaign-text-link {
+  display: inline-flex;
+  gap: 14px;
+  color: var(--accent);
+  font-size: 13px;
+  padding-block: 12px;
+  text-decoration: none;
+}
+.arielos-home .campaign-text-link:hover {
+  text-decoration: underline;
+}
+.arielos-home .campaign-board {
+  background: radial-gradient(ellipse at 100% 0, #4c4287, transparent 75%), #242044;
+  color: #fff;
+  border: 1px solid #39305c;
+  border-radius: 22px;
+  padding: clamp(24px, 3vw, 42px);
+  box-shadow: 0 22px 65px #28204412;
+  min-width: 0;
+}
+.arielos-home .campaign-board__eyebrow {
+  color: #d1c8ee;
+  font: 500 11px/1.6 var(--label);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin: 0 0 25px;
+}
+.arielos-home .campaign-board__channels {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+.arielos-home .campaign-board__channels li {
+  display: flex;
+  align-items: center;
+  background: #ffffff08;
+  border: 1px solid #ffffff1c;
+  border-radius: 10px;
+  padding: 17px 14px;
+  min-width: 0;
+}
+.arielos-home .campaign-channel-name {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font: 600 16px/1.4 var(--sans);
+}
+.arielos-home .campaign-channel-name small {
+  display: block;
+  font: 400 10px/1.5 var(--sans);
+  opacity: 0.65;
+  margin-top: 2px;
+}
+.arielos-home .campaign-channel-icon {
+  display: inline-flex;
+  flex: none;
+}
+.arielos-home .campaign-channel-icon svg {
+  width: 25px;
+  height: 25px;
+}
+.arielos-home .campaign-board__footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 20px;
+  justify-content: space-between;
+  border-top: 1px solid #ffffff20;
+  margin-top: 25px;
+  padding-top: 20px;
+  font: 400 10px/1.6 var(--label);
+  color: #d1c8ee;
+}
+.arielos-home .campaign-channel-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+.arielos-home .campaign-channel-card {
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: clamp(24px, 3vw, 36px);
+  background: #fff;
+}
+.arielos-home .campaign-channel-card:first-child {
+  background: #f5f4ff;
+  border-color: #c8c2f3;
+}
+.arielos-home .campaign-channel-card__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.arielos-home .campaign-channel-card .campaign-channel-name {
+  color: #30264f;
+  font-size: 20px;
+}
+.arielos-home .campaign-index {
+  color: #8c829d;
+  font: 400 13px/1 var(--label);
+}
+.arielos-home .campaign-channel-card h3 {
+  color: #30264f;
+  font: 400 29px/1.2 var(--serif);
+  letter-spacing: -0.02em;
+  margin: 0 0 14px;
+}
+.arielos-home .campaign-channel-card p {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.85;
+  margin: 0;
+}
+.arielos-home .campaign-formats {
+  display: inline-block;
+  color: #5d4b85;
+  font: 500 10px/1.7 var(--label);
+  border-top: 1px solid var(--line);
+  padding-top: 17px;
+  margin-top: 22px;
+}
+.arielos-home .campaign-channel-card p.campaign-availability {
+  color: #756b87;
+  font-size: 11px;
+  line-height: 1.75;
+  margin-top: 16px;
+}
+.arielos-home .campaign-availability a {
+  color: var(--accent);
+  white-space: nowrap;
+}
+.arielos-home .campaign-channel-note {
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.8;
+  margin: 24px 0 0;
+}
+.arielos-home .campaign-process-section {
+  background: #f8f8fc;
+  border-block: 1px solid var(--line);
+}
+.arielos-home .campaign-process {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 28px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.arielos-home .campaign-step-number {
+  display: block;
+  font: 400 36px/1 var(--serif);
+  color: #8b7dc2;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--line);
+}
+.arielos-home .campaign-process h3,
+.arielos-home .campaign-deliverables h3 {
+  color: #30264f;
+  font: 600 16px/1.5 var(--sans);
+  margin: 22px 0 12px;
+  letter-spacing: -0.025em;
+}
+.arielos-home .campaign-process p,
+.arielos-home .campaign-deliverables p {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.85;
+  margin: 0;
+}
+.arielos-home .campaign-deliverables {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 36px;
+}
+.arielos-home .campaign-deliverables article > span {
+  color: var(--accent);
+  font-size: 28px;
+}
+.arielos-home .campaign-related {
+  border-top: 1px solid var(--line);
+  margin-top: 40px;
+  padding-top: 25px;
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 14px 25px;
+}
+.arielos-home .campaign-related p {
+  flex-basis: 100%;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.7;
+  margin: 0;
+}
+.arielos-home .campaign-related a {
+  color: var(--accent);
+  font-size: 12px;
+  text-decoration: none;
+  padding-block: 5px;
+}
+.arielos-home .campaign-related a:hover {
+  text-decoration: underline;
+}
+.arielos-home .campaign-faq-section,
+.arielos-home .campaign-final-section {
+  padding-top: 0;
+}
+.arielos-home .campaign-final {
+  padding: 60px 30px;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  background: linear-gradient(120deg, #eeebff, #f6f5fc);
+  text-align: center;
+}
+.arielos-home .campaign-final h2 {
+  font: 400 clamp(38px, 4.6vw, 64px)/1.08 var(--serif);
+  color: #1b1943;
+  letter-spacing: -0.035em;
+  margin: 22px auto;
+  text-wrap: balance;
+}
+.arielos-home .campaign-final > p:not(.eyebrow) {
+  max-width: 550px;
+  margin: 0 auto 28px;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.85;
+}
+@media (max-width: 1050px) {
+  .arielos-home .campaign-channel-name {
+    font-size: 14px;
+    gap: 9px;
+  }
+  .arielos-home .campaign-board__channels li {
+    padding: 14px 10px;
+  }
+  .arielos-home .campaign-process {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 32px;
+  }
+}
+@media (max-width: 760px) {
+  .arielos-home .campaign-page-hero {
+    padding: 105px 0 50px;
+  }
+  .arielos-home .campaign-intro-grid,
+  .arielos-home .campaign-channel-grid,
+  .arielos-home .campaign-deliverables {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 30px;
+  }
+  .arielos-home .campaign-intro-copy h1,
+  .arielos-home .campaign-intro-copy h2 {
+    font-size: clamp(42px, 9vw, 64px);
+    max-width: 550px;
+  }
+  .arielos-home .campaign-lede {
+    font-size: 15px;
+  }
+  .arielos-home .campaign-board {
+    padding: 24px;
+  }
+  .arielos-home .campaign-channel-name {
+    font-size: 15px;
+  }
+  .arielos-home .campaign-final {
+    padding: 40px 22px;
+  }
+}
+@media (max-width: 380px) {
+  .arielos-home .campaign-board {
+    padding: 20px 16px;
+  }
+  .arielos-home .campaign-board__channels {
+    gap: 8px;
+  }
+  .arielos-home .campaign-channel-name {
+    font-size: 13px;
+    gap: 8px;
+  }
+  .arielos-home .campaign-channel-icon svg {
+    width: 21px;
+    height: 21px;
+  }
+  .arielos-home .campaign-process {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

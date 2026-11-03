@@ -1,0 +1,296 @@
+import {
+  campaignIntro,
+  campaignChannels,
+  campaignSteps,
+  campaignDeliverables,
+  campaignFaqs,
+} from '../content/campaigns.js';
+
+const copy = [
+  ['Campaigns', 'Campañas', 'Kampanyalar'],
+  ['Campaign management', 'Gestión de campañas', 'Kampanya yönetimi'],
+  [campaignIntro.title, 'Estrategia y gestión de campañas', 'Kampanya stratejisi ve yönetimi'],
+  [
+    'Campaign Management — ChatGPT, Social & Search',
+    'Gestión de campañas — ChatGPT, redes y búsqueda',
+    'Kampanya Yönetimi — ChatGPT, Sosyal Medya ve Arama',
+  ],
+  [
+    campaignIntro.description,
+    'Planifica y lanza campañas en ChatGPT, Reddit, Instagram, Facebook, LinkedIn, Google, YouTube y TikTok con Citevia. Estrategia, creatividad, lanzamiento y medición en un solo lugar.',
+    'Citevia ile ChatGPT, Reddit, Instagram, Facebook, LinkedIn, Google, YouTube ve TikTok’ta kampanyalar planlayın ve yürütün. Strateji, kreatif, lansman ve ölçüm tek bir yerde.',
+  ],
+  [campaignIntro.heading, 'Campañas donde', 'Kararların alındığı yerde'],
+  [campaignIntro.emphasis, 'se toman decisiones.', 'kampanyalar.'],
+  [
+    campaignIntro.copy,
+    'Desde una pregunta en ChatGPT hasta un descubrimiento en Instagram. Planificamos, creamos y gestionamos campañas que conectan tu marca con las personas dispuestas a dar el siguiente paso.',
+    'ChatGPT’teki bir sorudan Instagram’daki bir keşfe. Markanızı bir sonraki adımı atmaya hazır insanlarla buluşturan kampanyalar planlıyor, oluşturuyor ve yönetiyoruz.',
+  ],
+  [
+    'One strategy. The right channels.',
+    'Una estrategia. Los canales adecuados.',
+    'Tek strateji. Doğru kanallar.',
+  ],
+  ['Campaign platforms', 'Plataformas de campañas', 'Kampanya platformları'],
+  ['Strategy', 'Estrategia', 'Strateji'],
+  ['Creative', 'Creatividad', 'Kreatif'],
+  ['Media', 'Medios', 'Medya'],
+  ['Measurement', 'Medición', 'Ölçüm'],
+  ['Explore our campaigns', 'Explora nuestras campañas', 'Kampanyalarımızı keşfedin'],
+  ['Plan my campaign', 'Planifica mi campaña', 'Kampanyamı planlayın'],
+  ['Find your channels', 'Encuentra tus canales', 'Kanallarınızı bulun'],
+  ['Built for each platform', 'Diseñadas para cada plataforma', 'Her platforma özel'],
+  [
+    'Your audience is out there. Let’s reach them.',
+    'Tu audiencia está ahí fuera. Lleguemos a ella.',
+    'Hedef kitleniz orada. Onlara ulaşalım.',
+  ],
+  [
+    'A consistent strategy, with creative and execution shaped for each channel. We recommend the mix that fits your audience and your goals.',
+    'Una estrategia coherente, con creatividad y ejecución adaptadas a cada canal. Recomendamos la combinación que se ajuste a tu audiencia y a tus objetivos.',
+    'Her kanala uyarlanmış kreatif ve uygulamayla tutarlı bir strateji. Hedef kitlenize ve amaçlarınıza uygun kanal karmasını öneriyoruz.',
+  ],
+  ['ChatGPT ads', 'Anuncios de ChatGPT', 'ChatGPT reklamları'],
+  ['ChatGPT Ads', 'Anuncios en ChatGPT', 'ChatGPT Reklamları'],
+  [
+    campaignChannels[0].role,
+    'Llega a quienes exploran opciones',
+    'Seçenekleri araştıran insanlara ulaşın',
+  ],
+  [
+    campaignChannels[0].description,
+    'Hazte visible mientras las personas investigan, comparan y valoran su próxima compra. Adaptamos tu mensaje, página de destino y campaña a momentos de decisión relevantes en ChatGPT.',
+    'İnsanlar araştırırken, karşılaştırırken ve bir sonraki alışverişini değerlendirirken görünür olun. Mesajınızı, açılış sayfanızı ve kampanyanızı ChatGPT’teki ilgili karar anlarına göre şekillendiriyoruz.',
+  ],
+  [
+    campaignChannels[0].note,
+    'Sujeto a la elegibilidad del anunciante y a la disponibilidad del mercado. Los anuncios de pago están separados de las respuestas de ChatGPT y no influyen en las recomendaciones orgánicas.',
+    'Reklamveren uygunluğuna ve pazardaki kullanılabilirliğe tabidir. Ücretli reklamlar ChatGPT’nin yanıtlarından ayrıdır ve organik önerileri etkilemez.',
+  ],
+  [
+    campaignChannels[1].role,
+    'Conecta a través de intereses compartidos',
+    'Ortak ilgi alanlarıyla bağ kurun',
+  ],
+  [
+    campaignChannels[1].description,
+    'Llega a comunidades relevantes con contenido útil y adaptado al contexto. Creamos campañas de pago en torno a los intereses, preguntas y conversaciones que importan a tu audiencia.',
+    'Faydalı ve bağlama uygun kreatiflerle ilgili topluluklara ulaşın. Hedef kitleniz için önemli olan ilgi alanları, sorular ve sohbetler etrafında ücretli kampanyalar oluşturuyoruz.',
+  ],
+  [
+    campaignChannels[1].formats,
+    'Anuncios de imagen, vídeo y en conversaciones',
+    'Görsel, video ve sohbet yerleşimleri',
+  ],
+  [campaignChannels[2].role, 'Convierte el descubrimiento en deseo', 'Keşfi isteğe dönüştürün'],
+  [
+    campaignChannels[2].description,
+    'Da vida a tu oferta con historias visuales. Desarrollamos contenido creativo para Instagram y probamos mensajes que lleven a las personas desde su primera impresión hasta tu web.',
+    'Görsel hikâyelerle teklifinize hayat verin. Instagram’a özel kreatifler geliştiriyor, insanları ilk izlenimden web sitenize taşıyan mesajları test ediyoruz.',
+  ],
+  [
+    campaignChannels[2].formats,
+    'Campañas en el feed, Stories y Reels',
+    'Akış, Hikâyeler ve Reels kampanyaları',
+  ],
+  [
+    campaignChannels[3].role,
+    'Genera demanda y recupera el interés',
+    'Talep oluşturun, ilgilenenleri geri kazanın',
+  ],
+  [
+    campaignChannels[3].description,
+    'Presenta tu oferta a audiencias relevantes y vuelve a conectar con visitantes interesados. Planificamos captación, generación de contactos y retargeting en torno a tus objetivos de negocio.',
+    'Teklifinizi ilgili kitlelere sunun ve ilgilenen ziyaretçilerle yeniden bağ kurun. Yeni müşteri kazanımı, potansiyel müşteri oluşturma ve yeniden hedeflemeyi iş hedeflerinize göre planlıyoruz.',
+  ],
+  [
+    campaignChannels[3].formats,
+    'Campañas de notoriedad, contactos y ventas',
+    'Bilinirlik, potansiyel müşteri ve satış kampanyaları',
+  ],
+  [
+    campaignChannels[4].role,
+    'Inicia las conversaciones de negocio adecuadas',
+    'Doğru iş görüşmelerini başlatın',
+  ],
+  [
+    campaignChannels[4].description,
+    'Llega a audiencias profesionales por cargo, sector y contexto empresarial. Conectamos una propuesta de negocio clara con contenido y campañas diseñadas para generar consultas relevantes.',
+    'Profesyonel kitlelere görev, sektör ve şirket bağlamına göre ulaşın. Net bir iş teklifini, ilgili talepler oluşturmak üzere tasarlanmış içerik ve kampanyalarla buluşturuyoruz.',
+  ],
+  [
+    campaignChannels[4].formats,
+    'Contenido patrocinado y generación de contactos',
+    'Sponsorlu içerik ve potansiyel müşteri oluşturma',
+  ],
+  [
+    campaignChannels[5].role,
+    'Capta la intención activa de compra',
+    'Aktif satın alma niyetini yakalayın',
+  ],
+  [
+    campaignChannels[5].description,
+    'Conecta con personas que buscan lo que ofreces. Alineamos las campañas de búsqueda, los anuncios y las páginas de destino con necesidades concretas, y refinamos la estrategia con datos de conversión.',
+    'Sunduğunuz şeyi arayan insanlarla buluşun. Arama kampanyalarını, reklam metinlerini ve açılış sayfalarını belirli ihtiyaçlara göre düzenliyor, ardından dönüşüm verileriyle yaklaşımı geliştiriyoruz.',
+  ],
+  [
+    campaignChannels[5].formats,
+    'Campañas de búsqueda y display',
+    'Arama ve görüntülü reklam kampanyaları',
+  ],
+  [
+    campaignChannels[6].role,
+    'Haz que tu historia merezca verse',
+    'Hikâyenizi izlemeye değer kılın',
+  ],
+  [
+    campaignChannels[6].description,
+    'Explica tu producto, presenta tu marca y genera interés a través del vídeo. Conectamos el concepto creativo, la audiencia y el siguiente paso en una campaña enfocada.',
+    'Videoyla ürününüzü anlatın, markanızı tanıtın ve değerlendirme sürecini destekleyin. Kreatif fikri, hedef kitleyi ve bir sonraki adımı odaklı bir kampanyada buluşturuyoruz.',
+  ],
+  [
+    campaignChannels[6].formats,
+    'Campañas de vídeo para notoriedad y acción',
+    'Video bilinirlik ve aksiyon kampanyaları',
+  ],
+  [
+    campaignChannels[7].role,
+    'Crea para la forma en que la gente descubre',
+    'İnsanların keşfetme biçimine uygun içerik üretin',
+  ],
+  [
+    campaignChannels[7].description,
+    'Usa vídeos cortos diseñados para el feed. Desarrollamos conceptos propios de la plataforma y probamos distintos ganchos, mensajes y llamadas a la acción para aprender qué conecta.',
+    'Akışa özel kısa videolar kullanın. Platforma uygun fikirler geliştiriyor; neyin ilgi çektiğini öğrenmek için farklı açılışlar, mesajlar ve eylem çağrılarını test ediyoruz.',
+  ],
+  [campaignChannels[7].formats, 'Campañas de vídeo en el feed', 'Akış içi video kampanyaları'],
+  [
+    'The final channel mix and ad formats depend on your objectives, audience, account eligibility, and market availability.',
+    'La combinación final de canales y formatos depende de tus objetivos, audiencia, elegibilidad de la cuenta y disponibilidad del mercado.',
+    'Nihai kanal karması ve reklam formatları hedeflerinize, kitlenize, hesap uygunluğuna ve pazardaki kullanılabilirliğe bağlıdır.',
+  ],
+  ['From plan to performance', 'Del plan al rendimiento', 'Plandan performansa'],
+  [
+    'One team, from the first idea to the next decision.',
+    'Un equipo, desde la primera idea hasta la siguiente decisión.',
+    'İlk fikirden bir sonraki karara kadar tek ekip.',
+  ],
+  [campaignSteps[0].title, 'Encuentra la oportunidad adecuada', 'Doğru fırsatı bulun'],
+  [
+    campaignSteps[0].body,
+    'Define tu audiencia, oferta, mercados y objetivos. Elige los canales adecuados, con un presupuesto de prueba claro y una definición compartida del éxito.',
+    'Hedef kitlenizi, teklifinizi, pazarlarınızı ve amaçlarınızı belirleyin. Net bir test bütçesi ve ortak başarı tanımıyla uygun kanalları seçin.',
+  ],
+  [campaignSteps[1].title, 'Construye la campaña', 'Kampanyayı oluşturun'],
+  [
+    campaignSteps[1].body,
+    'Desarrolla el mensaje, la creatividad, el plan de audiencias y el recorrido de la página de destino. Configura el seguimiento de conversiones disponible antes del lanzamiento.',
+    'Mesajı, kreatifi, kitle planını ve açılış sayfası yolculuğunu geliştirin. Yayına almadan önce kullanılabilir dönüşüm takibini kurun.',
+  ],
+  [campaignSteps[2].title, 'Lanza, prueba y aprende', 'Yayına alın, test edin ve öğrenin'],
+  [
+    campaignSteps[2].body,
+    'Gestiona la difusión, controla el gasto y prueba contenidos y audiencias. Usa la evidencia para decidir qué cambiar y dónde invertir después.',
+    'Reklam dağıtımını yönetin, harcamaları izleyin, kreatifleri ve kitleleri test edin. Neyi değiştireceğinize ve sonraki yatırımı nereye yapacağınıza verilerle karar verin.',
+  ],
+  [campaignSteps[3].title, 'Informa sobre lo que importa', 'Önemli olanı raporlayın'],
+  [
+    campaignSteps[3].body,
+    'Revisa los contactos cualificados, las ventas y los costes de adquisición cuando se puedan medir. Comparte conclusiones claras, límites de atribución y próximos pasos.',
+    'Ölçülebildiği yerlerde nitelikli müşteri adaylarını, satışları ve edinme maliyetlerini inceleyin. Net bulguları, ilişkilendirme sınırlarını ve sonraki adımları paylaşın.',
+  ],
+  ['What we bring', 'Qué aportamos', 'Sunduklarımız'],
+  ['More than a media buy.', 'Más que una compra de medios.', 'Medya satın almanın ötesinde.'],
+  [campaignDeliverables[0].title, 'Un plan de medios claro', 'Net bir medya planı'],
+  [
+    campaignDeliverables[0].body,
+    'Selección de canales, prioridades de audiencia, asignación de presupuesto y una hoja de ruta práctica para las pruebas.',
+    'Kanal seçimi, kitle öncelikleri, bütçe dağılımı ve uygulanabilir bir test yol haritası.',
+  ],
+  [campaignDeliverables[1].title, 'Creatividad con un propósito', 'Amaca yönelik kreatif'],
+  [
+    campaignDeliverables[1].body,
+    'Mensajes, elementos visuales y recomendaciones de páginas de destino adaptados a cada plataforma y a tu oferta.',
+    'Teklifiniz etrafında oluşturulmuş, platforma özel mesajlar, görseller ve açılış sayfası önerileri.',
+  ],
+  [
+    campaignDeliverables[2].title,
+    'Medición que puedes aprovechar',
+    'Kullanabileceğiniz ölçüm verileri',
+  ],
+  [
+    campaignDeliverables[2].body,
+    'Informes de campañas vinculados a los resultados del negocio, con recomendaciones para la siguiente decisión.',
+    'Bir sonraki karar için öneriler içeren, iş sonuçlarıyla bağlantılı kampanya raporları.',
+  ],
+  [
+    'Connect your campaigns with the rest of your growth strategy.',
+    'Conecta tus campañas con el resto de tu estrategia de crecimiento.',
+    'Kampanyalarınızı büyüme stratejinizin geri kalanıyla birleştirin.',
+  ],
+  ['Explore AI visibility', 'Explora la visibilidad en IA', 'Yapay zekâ görünürlüğünü keşfedin'],
+  ['Campaign questions', 'Preguntas sobre campañas', 'Kampanya soruları'],
+  [
+    'A few things to know before we start.',
+    'Algunas cosas que conviene saber antes de empezar.',
+    'Başlamadan önce bilmeniz gerekenler.',
+  ],
+  [
+    campaignFaqs[0].q,
+    '¿Podéis gestionar campañas de pago en ChatGPT?',
+    'ChatGPT’te ücretli kampanyalar yürütebilir misiniz?',
+  ],
+  [
+    campaignFaqs[0].a,
+    'Sí, podemos ayudarte a planificar y gestionar anuncios en ChatGPT cuando tu negocio y mercado objetivo sean elegibles. Confirmamos el acceso actual a la plataforma antes de incluir anuncios de pago en el plan de medios. Comprar un anuncio no permite influir en las respuestas de ChatGPT ni en sus recomendaciones orgánicas.',
+    'Evet, işletmeniz ve hedef pazarınız uygun olduğunda ChatGPT reklamlarını planlamanıza ve yönetmenize yardımcı olabiliriz. Ücretli yerleşimleri medya planına eklemeden önce güncel platform erişimini doğrularız. Reklam satın almak, ChatGPT’nin yanıtları veya organik önerileri üzerinde etki satın almak anlamına gelmez.',
+  ],
+  [
+    campaignFaqs[1].q,
+    '¿Tenemos que anunciarnos en todas las plataformas?',
+    'Her platformda reklam vermemiz gerekiyor mu?',
+  ],
+  [
+    campaignFaqs[1].a,
+    'No. Recomendamos una combinación de canales enfocada en tu audiencia, oferta, objetivos y presupuesto. Una campaña puede comenzar en una sola plataforma y ampliarse cuando los resultados lo justifiquen.',
+    'Hayır. Hedef kitlenize, teklifinize, amaçlarınıza ve bütçenize göre odaklı bir kanal karması öneriyoruz. Bir kampanya tek platformla başlayabilir ve sonuçlar desteklediğinde genişleyebilir.',
+  ],
+  [campaignFaqs[2].q, '¿Qué incluye la gestión de campañas?', 'Kampanya yönetimi neleri kapsar?'],
+  [
+    campaignFaqs[2].a,
+    'El alcance acordado puede incluir estrategia, configuración de cuentas, investigación de audiencias, desarrollo creativo, recomendaciones de páginas de destino, lanzamiento, optimización e informes. La inversión publicitaria y los honorarios de gestión se acuerdan por separado antes del lanzamiento.',
+    'Kararlaştırılan kapsam; strateji, hesap kurulumu, kitle araştırması, kreatif geliştirme, açılış sayfası önerileri, lansman, optimizasyon ve raporlamayı içerebilir. Reklam harcaması ve yönetim ücretleri lansmandan önce ayrı ayrı kararlaştırılır.',
+  ],
+  [
+    campaignFaqs[3].q,
+    '¿Cómo se conecta con la visibilidad en IA y los contactos en redes sociales?',
+    'Bu hizmet yapay zekâ görünürlüğü ve sosyal medya müşteri adaylarıyla nasıl bağlantılı?',
+  ],
+  [
+    campaignFaqs[3].a,
+    'Las campañas de pago distribuyen tu mensaje a través de espacios publicitarios. El trabajo de visibilidad en IA ayuda a mejorar cómo se encuentra y se entiende tu marca en respuestas orgánicas, mientras que la generación de contactos en redes sociales parte de conversaciones públicas relevantes. Podemos coordinar estos servicios en un único plan de captación e informar sobre cada uno por separado.',
+    'Ücretli kampanyalar mesajınızı reklam yerleşimleriyle dağıtır. Yapay zekâ görünürlüğü çalışmaları markanızın organik yanıtlarda nasıl bulunup anlaşıldığını iyileştirmeye yardımcı olurken, sosyal medya müşteri adayı oluşturma ilgili herkese açık sohbetlerle başlar. Bu hizmetleri tek bir edinim planında koordine edebilir ve her birini ayrı raporlayabiliriz.',
+  ],
+  [
+    'Let’s build your next campaign',
+    'Creemos tu próxima campaña',
+    'Bir sonraki kampanyanızı oluşturalım',
+  ],
+  [
+    'Right audience. Clear message.',
+    'La audiencia adecuada. Un mensaje claro.',
+    'Doğru kitle. Net mesaj.',
+  ],
+  ['A reason to act.', 'Un motivo para actuar.', 'Harekete geçmek için bir neden.'],
+  [
+    'Tell us what you want to grow. We’ll help you find the channels, creative, and campaign plan to get started.',
+    'Cuéntanos qué quieres hacer crecer. Te ayudaremos a encontrar los canales, la creatividad y el plan de campaña para empezar.',
+    'Neyi büyütmek istediğinizi bize anlatın. Başlamak için doğru kanalları, kreatifleri ve kampanya planını bulmanıza yardımcı olalım.',
+  ],
+];
+
+export const campaignTranslations = {
+  es: Object.fromEntries(copy.map(([english, spanish]) => [english, spanish])),
+  tr: Object.fromEntries(copy.map(([english, , turkish]) => [english, turkish])),
+};

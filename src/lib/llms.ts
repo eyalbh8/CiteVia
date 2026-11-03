@@ -11,6 +11,13 @@ import { faqs as homepageFaqs, serviceFaqs } from '@/components/arielos/data';
 import { methodologyFaqs } from '@/components/arielos/pageContent';
 import { glossary, resourceFaqs } from '@/content/resources';
 import {
+  campaignIntro,
+  campaignChannels,
+  campaignSteps,
+  campaignDeliverables,
+  campaignFaqs,
+} from '@/content/campaigns';
+import {
   socialLeadIntro,
   socialLeadChannels,
   socialLeadSteps,
@@ -39,7 +46,7 @@ export function llmsIndex() {
           .map((page) => `- [${page.title}](${absoluteUrl(page.path)}): ${page.description}`)
           .join('\n')}`,
     ),
-    `## Optional\n\n- [Full-text companion](${absoluteUrl('/llms-full.txt')}): Published methodology, services and FAQs, social media lead generation, solutions, example studies, blog articles, and resource definitions.\n- [Sitemap](${absoluteUrl('/sitemap.xml')}): Canonical public pages when production indexing is enabled.\n- [Privacy notice](${absoluteUrl('/privacy')}): How website inquiries and delivery are handled.\n- [Website terms](${absoluteUrl('/terms')}): Website use and content limitations.`,
+    `## Optional\n\n- [Full-text companion](${absoluteUrl('/llms-full.txt')}): Published methodology, services and FAQs, campaign management, social media lead generation, solutions, example studies, blog articles, and resource definitions.\n- [Sitemap](${absoluteUrl('/sitemap.xml')}): Canonical public pages when production indexing is enabled.\n- [Privacy notice](${absoluteUrl('/privacy')}): How website inquiries and delivery are handled.\n- [Website terms](${absoluteUrl('/terms')}): Website use and content limitations.`,
     '',
   ].join('\n\n');
 }
@@ -49,6 +56,26 @@ export function llmsFullText() {
     introduction,
     `## Homepage questions\n\n${homepageFaqs.map((faq) => `### ${faq.q}\n\n${faq.a}`).join('\n\n')}`,
     'This text companion is generated from the same published content records as the website. Canonical page links identify the original context.',
+    `## ${campaignIntro.title}`,
+    `Canonical: ${absoluteUrl('/campaigns')}`,
+    campaignIntro.description,
+    campaignIntro.copy,
+    '### Campaign channels',
+    ...campaignChannels.map((channel) =>
+      [
+        `#### ${channel.name}${channel.owner ? ` (${channel.owner})` : ''}`,
+        channel.role,
+        channel.description,
+        `Formats: ${channel.formats}`,
+        ...(channel.note ? [channel.note, 'Platform reference: https://ads.openai.com/'] : []),
+      ].join('\n\n'),
+    ),
+    '### Campaign process',
+    ...campaignSteps.map((step) => `#### ${step.title}\n\n${step.body}`),
+    '### Campaign deliverables',
+    ...campaignDeliverables.map((item) => `#### ${item.title}\n\n${item.body}`),
+    '### Campaign questions',
+    ...campaignFaqs.map((faq) => `#### ${faq.q}\n\n${faq.a}`),
     `## ${socialLeadIntro.title}`,
     `Canonical: ${absoluteUrl('/social-media-leads')}`,
     socialLeadIntro.description,

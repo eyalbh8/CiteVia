@@ -85,6 +85,14 @@ export const contentIndex = [
     group: 'Services',
     updated: '2026-10-24',
   },
+  {
+    path: '/campaigns',
+    title: 'Campaign strategy & management',
+    description:
+      'Campaign planning and management across ChatGPT, Reddit, Instagram, Facebook, LinkedIn, Google, YouTube, and TikTok.',
+    group: 'Services',
+    updated: '2026-11-03',
+  },
   ...services.map((item) => ({
     path: `/services/${item.slug}`,
     title: item.name,
