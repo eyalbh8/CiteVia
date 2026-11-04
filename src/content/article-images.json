@@ -236,5 +236,19 @@
     "imageUrl": "https://images.unsplash.com/photo-1763368230845-150be8503232",
     "license": "https://unsplash.com/license",
     "sourceCheckedAt": "2026-11-03"
+  },
+  "content-syndication-ai-search": {
+    "src": "https://images.unsplash.com/photo-1523995462485-3d171b5c8fa9?fit=crop&w=1600&q=85&fm=jpg",
+    "alt": "A stack of folded newspapers on a table",
+    "altTranslations": {
+      "es": "Una pila de periódicos doblados sobre una mesa",
+      "tr": "Bir masanın üzerinde üst üste konmuş katlı gazeteler"
+    },
+    "unsplashId": "Mwuod2cm8g4",
+    "sourceUrl": "https://unsplash.com/photos/bundle-of-newspaper-on-table-Mwuod2cm8g4",
+    "photographer": "Mr Cup / Fabien Barral",
+    "imageUrl": "https://images.unsplash.com/photo-1523995462485-3d171b5c8fa9",
+    "license": "https://unsplash.com/license",
+    "sourceCheckedAt": "2026-11-04"
   }
 }

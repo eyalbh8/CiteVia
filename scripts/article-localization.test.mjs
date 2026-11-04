@@ -1,4 +1,8 @@
 import {
+  contentSyndicationAiSearch,
+  syndicationTranslations,
+} from '../src/content/content-syndication-ai-search.js';
+import {
   javascriptSeoAiSearch,
   javascriptSeoTranslations,
 } from '../src/content/javascript-seo-ai-search.js';
@@ -41,6 +45,7 @@ test('article copy registers complete paragraphs, link anchors and surrounding n
 });
 
 for (const [article, articleTranslations] of [
+  [contentSyndicationAiSearch, syndicationTranslations],
   [javascriptSeoAiSearch, javascriptSeoTranslations],
   [productDataAiSearch, productDataTranslations],
   [pdfSeoAiSearch, pdfSeoTranslations],

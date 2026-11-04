@@ -1,3 +1,4 @@
+import { contentSyndicationAiSearch } from './content-syndication-ai-search.js';
 import { javascriptSeoAiSearch } from './javascript-seo-ai-search.js';
 import type { Article } from './articles';
 import { productDataAiSearch } from './product-data-ai-search.js';
@@ -8,6 +9,7 @@ import { multilingualSeo } from './multilingual-seo.js';
 import { faqSchemaAiSearch } from './faq-schema-ai-search.js';
 
 export const newArticles: Article[] = [
+  contentSyndicationAiSearch,
   javascriptSeoAiSearch,
   productDataAiSearch,
   pdfSeoAiSearch,

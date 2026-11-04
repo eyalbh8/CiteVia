@@ -1,4 +1,8 @@
 import {
+  syndicationTranslations,
+  syndicationFragments,
+} from '../content/content-syndication-ai-search.js';
+import {
   javascriptSeoTranslations,
   javascriptSeoFragments,
 } from '../content/javascript-seo-ai-search.js';
@@ -54,6 +58,7 @@ const translationsByLanguage = {
     ...pdfSeoTranslations.es,
     ...productDataTranslations.es,
     ...javascriptSeoTranslations.es,
+    ...syndicationTranslations.es,
     ...partnerTranslations.es,
     ...imageTranslations('es'),
   },
@@ -72,6 +77,7 @@ const translationsByLanguage = {
     ...pdfSeoTranslations.tr,
     ...productDataTranslations.tr,
     ...javascriptSeoTranslations.tr,
+    ...syndicationTranslations.tr,
     ...partnerTranslations.tr,
     ...imageTranslations('tr'),
   },
@@ -85,6 +91,7 @@ const articleFragments = {
     ...pdfSeoFragments.es,
     ...productDataFragments.es,
     ...javascriptSeoFragments.es,
+    ...syndicationFragments.es,
   },
   tr: {
     ...aiCrawlerFragments.tr,
@@ -94,6 +101,7 @@ const articleFragments = {
     ...pdfSeoFragments.tr,
     ...productDataFragments.tr,
     ...javascriptSeoFragments.tr,
+    ...syndicationFragments.tr,
   },
 };
 const normalizedTranslationsByLanguage = Object.fromEntries(
