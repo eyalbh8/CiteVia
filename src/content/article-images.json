@@ -250,5 +250,19 @@
     "imageUrl": "https://images.unsplash.com/photo-1523995462485-3d171b5c8fa9",
     "license": "https://unsplash.com/license",
     "sourceCheckedAt": "2026-11-04"
+  },
+  "search-console-ai-report": {
+    "src": "https://images.unsplash.com/photo-1743796055664-3473eedab36e?fit=crop&w=1600&q=85&fm=jpg",
+    "alt": "A magnifying glass beside a laptop on a marble surface",
+    "altTranslations": {
+      "es": "Una lupa junto a un portátil sobre una superficie de mármol",
+      "tr": "Mermer yüzeyde dizüstü bilgisayarın yanında bir büyüteç"
+    },
+    "unsplashId": "P_5mirRrg0k",
+    "sourceUrl": "https://unsplash.com/photos/magnifying-glass-sits-near-a-laptop-on-a-table-P_5mirRrg0k",
+    "photographer": "MJ Duford",
+    "imageUrl": "https://images.unsplash.com/photo-1743796055664-3473eedab36e",
+    "license": "https://unsplash.com/license",
+    "sourceCheckedAt": "2026-11-06"
   }
 }

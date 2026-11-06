@@ -1,4 +1,8 @@
 import {
+  searchConsoleTranslations,
+  searchConsoleFragments,
+} from '../content/search-console-ai-report.js';
+import {
   syndicationTranslations,
   syndicationFragments,
 } from '../content/content-syndication-ai-search.js';
@@ -59,6 +63,7 @@ const translationsByLanguage = {
     ...productDataTranslations.es,
     ...javascriptSeoTranslations.es,
     ...syndicationTranslations.es,
+    ...searchConsoleTranslations.es,
     ...partnerTranslations.es,
     ...imageTranslations('es'),
   },
@@ -78,6 +83,7 @@ const translationsByLanguage = {
     ...productDataTranslations.tr,
     ...javascriptSeoTranslations.tr,
     ...syndicationTranslations.tr,
+    ...searchConsoleTranslations.tr,
     ...partnerTranslations.tr,
     ...imageTranslations('tr'),
   },
@@ -92,6 +98,7 @@ const articleFragments = {
     ...productDataFragments.es,
     ...javascriptSeoFragments.es,
     ...syndicationFragments.es,
+    ...searchConsoleFragments.es,
   },
   tr: {
     ...aiCrawlerFragments.tr,
@@ -102,6 +109,7 @@ const articleFragments = {
     ...productDataFragments.tr,
     ...javascriptSeoFragments.tr,
     ...syndicationFragments.tr,
+    ...searchConsoleFragments.tr,
   },
 };
 const normalizedTranslationsByLanguage = Object.fromEntries(
