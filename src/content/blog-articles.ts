@@ -1,3 +1,4 @@
+import { brokenAiReferralLinks } from './broken-ai-referral-links.js';
 import { searchConsoleAiReport } from './search-console-ai-report.js';
 import { contentSyndicationAiSearch } from './content-syndication-ai-search.js';
 import { javascriptSeoAiSearch } from './javascript-seo-ai-search.js';
@@ -10,6 +11,7 @@ import { multilingualSeo } from './multilingual-seo.js';
 import { faqSchemaAiSearch } from './faq-schema-ai-search.js';
 
 export const newArticles: Article[] = [
+  brokenAiReferralLinks,
   searchConsoleAiReport,
   contentSyndicationAiSearch,
   javascriptSeoAiSearch,

@@ -1,4 +1,8 @@
 import {
+  brokenAiReferralLinks,
+  brokenLinkTranslations,
+} from '../src/content/broken-ai-referral-links.js';
+import {
   searchConsoleAiReport,
   searchConsoleTranslations,
 } from '../src/content/search-console-ai-report.js';
@@ -49,6 +53,7 @@ test('article copy registers complete paragraphs, link anchors and surrounding n
 });
 
 for (const [article, articleTranslations] of [
+  [brokenAiReferralLinks, brokenLinkTranslations],
   [searchConsoleAiReport, searchConsoleTranslations],
   [contentSyndicationAiSearch, syndicationTranslations],
   [javascriptSeoAiSearch, javascriptSeoTranslations],

@@ -264,5 +264,19 @@
     "imageUrl": "https://images.unsplash.com/photo-1743796055664-3473eedab36e",
     "license": "https://unsplash.com/license",
     "sourceCheckedAt": "2026-11-06"
+  },
+  "broken-ai-referral-links": {
+    "src": "https://images.unsplash.com/photo-1775120998713-15968473292d?fit=crop&w=1600&q=85&fm=jpg",
+    "alt": "An orange road closure sign on a city sidewalk beside a van in the street",
+    "altTranslations": {
+      "es": "Una señal naranja de carretera cortada en una acera y una furgoneta en la calle",
+      "tr": "Şehirde kaldırımda yolun kapalı olduğunu bildiren turuncu tabela ve caddede bir minibüs"
+    },
+    "unsplashId": "-ge6Pl1F4-A",
+    "sourceUrl": "https://unsplash.com/photos/road-closed-ahead-sign-on-city-street--ge6Pl1F4-A",
+    "photographer": "Mark Thomas",
+    "imageUrl": "https://images.unsplash.com/photo-1775120998713-15968473292d",
+    "license": "https://unsplash.com/license",
+    "sourceCheckedAt": "2026-11-09"
   }
 }

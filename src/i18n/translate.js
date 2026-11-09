@@ -1,4 +1,8 @@
 import {
+  brokenLinkTranslations,
+  brokenLinkFragments,
+} from '../content/broken-ai-referral-links.js';
+import {
   searchConsoleTranslations,
   searchConsoleFragments,
 } from '../content/search-console-ai-report.js';
@@ -64,6 +68,7 @@ const translationsByLanguage = {
     ...javascriptSeoTranslations.es,
     ...syndicationTranslations.es,
     ...searchConsoleTranslations.es,
+    ...brokenLinkTranslations.es,
     ...partnerTranslations.es,
     ...imageTranslations('es'),
   },
@@ -84,6 +89,7 @@ const translationsByLanguage = {
     ...javascriptSeoTranslations.tr,
     ...syndicationTranslations.tr,
     ...searchConsoleTranslations.tr,
+    ...brokenLinkTranslations.tr,
     ...partnerTranslations.tr,
     ...imageTranslations('tr'),
   },
@@ -99,6 +105,7 @@ const articleFragments = {
     ...javascriptSeoFragments.es,
     ...syndicationFragments.es,
     ...searchConsoleFragments.es,
+    ...brokenLinkFragments.es,
   },
   tr: {
     ...aiCrawlerFragments.tr,
@@ -110,6 +117,7 @@ const articleFragments = {
     ...javascriptSeoFragments.tr,
     ...syndicationFragments.tr,
     ...searchConsoleFragments.tr,
+    ...brokenLinkFragments.tr,
   },
 };
 const normalizedTranslationsByLanguage = Object.fromEntries(
