@@ -41,7 +41,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <script
           async
           src="https://api.citevia.io/v1/traffic/tracker.js"
-          data-project-id="account_624c05657f26d8bc21b705a597227bd7"
+          data-project-id="e709d0ed-3e13-5852-a3f0-321d3e7ba75e"
         />
         <CriticalStyles />
         <SiteStyles href={stylesheet} />
