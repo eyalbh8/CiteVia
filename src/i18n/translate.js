@@ -1,4 +1,8 @@
 import {
+  holidayHoursTranslations,
+  holidayHoursFragments,
+} from '../content/holiday-opening-hours.js';
+import {
   brokenLinkTranslations,
   brokenLinkFragments,
 } from '../content/broken-ai-referral-links.js';
@@ -69,6 +73,7 @@ const translationsByLanguage = {
     ...syndicationTranslations.es,
     ...searchConsoleTranslations.es,
     ...brokenLinkTranslations.es,
+    ...holidayHoursTranslations.es,
     ...partnerTranslations.es,
     ...imageTranslations('es'),
   },
@@ -90,6 +95,7 @@ const translationsByLanguage = {
     ...syndicationTranslations.tr,
     ...searchConsoleTranslations.tr,
     ...brokenLinkTranslations.tr,
+    ...holidayHoursTranslations.tr,
     ...partnerTranslations.tr,
     ...imageTranslations('tr'),
   },
@@ -106,6 +112,7 @@ const articleFragments = {
     ...syndicationFragments.es,
     ...searchConsoleFragments.es,
     ...brokenLinkFragments.es,
+    ...holidayHoursFragments.es,
   },
   tr: {
     ...aiCrawlerFragments.tr,
@@ -118,6 +125,7 @@ const articleFragments = {
     ...syndicationFragments.tr,
     ...searchConsoleFragments.tr,
     ...brokenLinkFragments.tr,
+    ...holidayHoursFragments.tr,
   },
 };
 const normalizedTranslationsByLanguage = Object.fromEntries(

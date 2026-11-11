@@ -278,5 +278,19 @@
     "imageUrl": "https://images.unsplash.com/photo-1775120998713-15968473292d",
     "license": "https://unsplash.com/license",
     "sourceCheckedAt": "2026-11-09"
+  },
+  "holiday-opening-hours": {
+    "src": "https://images.unsplash.com/photo-1769259179770-c0de5dccf60a?fit=crop&w=1600&q=85&fm=jpg",
+    "alt": "Opening hours painted on a shop door, seen from inside through the glass",
+    "altTranslations": {
+      "es": "Horario de apertura pintado en una puerta de cristal, visto desde el interior de la tienda",
+      "tr": "Bir dükkânın cam kapısına yazılmış çalışma saatlerinin içeriden görünümü"
+    },
+    "unsplashId": "1EkBQ-HdCtI",
+    "sourceUrl": "https://unsplash.com/photos/store-hours-written-on-a-glass-door-1EkBQ-HdCtI",
+    "photographer": "Phil Hearing",
+    "imageUrl": "https://images.unsplash.com/photo-1769259179770-c0de5dccf60a",
+    "license": "https://unsplash.com/license",
+    "sourceCheckedAt": "2026-11-11"
   }
 }

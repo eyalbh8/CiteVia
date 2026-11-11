@@ -1,4 +1,8 @@
 import {
+  holidayOpeningHours,
+  holidayHoursTranslations,
+} from '../src/content/holiday-opening-hours.js';
+import {
   brokenAiReferralLinks,
   brokenLinkTranslations,
 } from '../src/content/broken-ai-referral-links.js';
@@ -53,6 +57,7 @@ test('article copy registers complete paragraphs, link anchors and surrounding n
 });
 
 for (const [article, articleTranslations] of [
+  [holidayOpeningHours, holidayHoursTranslations],
   [brokenAiReferralLinks, brokenLinkTranslations],
   [searchConsoleAiReport, searchConsoleTranslations],
   [contentSyndicationAiSearch, syndicationTranslations],
