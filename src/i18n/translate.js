@@ -1,4 +1,8 @@
 import {
+  brandConfusionTranslations,
+  brandConfusionFragments,
+} from '../content/brand-confusion-ai-search.js';
+import {
   holidayHoursTranslations,
   holidayHoursFragments,
 } from '../content/holiday-opening-hours.js';
@@ -74,6 +78,7 @@ const translationsByLanguage = {
     ...searchConsoleTranslations.es,
     ...brokenLinkTranslations.es,
     ...holidayHoursTranslations.es,
+    ...brandConfusionTranslations.es,
     ...partnerTranslations.es,
     ...imageTranslations('es'),
   },
@@ -96,6 +101,7 @@ const translationsByLanguage = {
     ...searchConsoleTranslations.tr,
     ...brokenLinkTranslations.tr,
     ...holidayHoursTranslations.tr,
+    ...brandConfusionTranslations.tr,
     ...partnerTranslations.tr,
     ...imageTranslations('tr'),
   },
@@ -113,6 +119,7 @@ const articleFragments = {
     ...searchConsoleFragments.es,
     ...brokenLinkFragments.es,
     ...holidayHoursFragments.es,
+    ...brandConfusionFragments.es,
   },
   tr: {
     ...aiCrawlerFragments.tr,
@@ -126,6 +133,7 @@ const articleFragments = {
     ...searchConsoleFragments.tr,
     ...brokenLinkFragments.tr,
     ...holidayHoursFragments.tr,
+    ...brandConfusionFragments.tr,
   },
 };
 const normalizedTranslationsByLanguage = Object.fromEntries(

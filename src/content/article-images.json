@@ -292,5 +292,19 @@
     "imageUrl": "https://images.unsplash.com/photo-1769259179770-c0de5dccf60a",
     "license": "https://unsplash.com/license",
     "sourceCheckedAt": "2026-11-11"
+  },
+  "brand-confusion-ai-search": {
+    "src": "https://images.unsplash.com/photo-1778764156878-0ec69daafd0a?fit=crop&w=1600&q=85&fm=jpg",
+    "alt": "Vintage signs naming a grocer and a carpenter above adjoining doors in Kraków",
+    "altTranslations": {
+      "es": "Rótulos antiguos con los nombres de un tendero y un carpintero sobre dos puertas contiguas en Cracovia",
+      "tr": "Krakov’da yan yana iki kapının üzerinde bir bakkalın ve bir marangozun adlarını taşıyan eski tabelalar"
+    },
+    "unsplashId": "27lJR3s5pLQ",
+    "sourceUrl": "https://unsplash.com/photos/shopfronts-with-vintage-signs-and-wooden-displays-27lJR3s5pLQ",
+    "photographer": "Noemi Palmieri",
+    "imageUrl": "https://images.unsplash.com/photo-1778764156878-0ec69daafd0a",
+    "license": "https://unsplash.com/license",
+    "sourceCheckedAt": "2026-11-13"
   }
 }

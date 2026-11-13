@@ -1,3 +1,4 @@
+import { brandConfusion } from './brand-confusion-ai-search.js';
 import { holidayOpeningHours } from './holiday-opening-hours.js';
 import { brokenAiReferralLinks } from './broken-ai-referral-links.js';
 import { searchConsoleAiReport } from './search-console-ai-report.js';
@@ -12,6 +13,7 @@ import { multilingualSeo } from './multilingual-seo.js';
 import { faqSchemaAiSearch } from './faq-schema-ai-search.js';
 
 export const newArticles: Article[] = [
+  brandConfusion,
   holidayOpeningHours,
   brokenAiReferralLinks,
   searchConsoleAiReport,

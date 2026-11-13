@@ -2,7 +2,7 @@
 
 ## Architecture
 
-The site serves 62 content pages: home, service index, eleven services, social media leads, methodology, about, blog index, twenty-one articles, solutions index, three solutions, industry index, five industries, case-study index, six illustrative studies, resources, company facts, contact, partners, private assessment, privacy, and website terms. A separate thank-you utility route is also available. The 60 marketing and editorial pages enter the production sitemap. Privacy, terms and thank-you retain canonicals and use `noindex, follow`.
+The site serves 63 content pages: home, service index, eleven services, social media leads, methodology, about, blog index, twenty-two articles, solutions index, three solutions, industry index, five industries, case-study index, six illustrative studies, resources, company facts, contact, partners, private assessment, privacy, and website terms. A separate thank-you utility route is also available. The 61 marketing and editorial pages enter the production sitemap. Privacy, terms and thank-you retain canonicals and use `noindex, follow`.
 
 Next.js server routes provide metadata and prerender the primary page content, including the supplied interactive React components. Client components handle shared navigation, five static report tabs, image dialogs and contact interaction. Pages use semantic headings, descriptive links, image alternatives, and accessible FAQ disclosures. Brand, origin, and contact details share one configuration.
 
