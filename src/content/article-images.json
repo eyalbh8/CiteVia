@@ -306,5 +306,19 @@
     "imageUrl": "https://images.unsplash.com/photo-1778764156878-0ec69daafd0a",
     "license": "https://unsplash.com/license",
     "sourceCheckedAt": "2026-11-13"
+  },
+  "bing-not-indexing": {
+    "src": "https://images.unsplash.com/photo-1769092992803-ee97d235ba87?fit=crop&w=1600&q=85&fm=jpg",
+    "alt": "Rows of wooden card catalog drawers with metal label holders",
+    "altTranslations": {
+      "es": "Filas de cajones de madera de un catálogo de fichas con portaetiquetas metálicos",
+      "tr": "Metal etiketlikleri olan ahşap kart katalog çekmecelerinin sıraları"
+    },
+    "unsplashId": "2j0acCTvBWM",
+    "sourceUrl": "https://unsplash.com/photos/wooden-card-catalog-drawers-with-metal-labels-2j0acCTvBWM",
+    "photographer": "Ilya Semenov",
+    "imageUrl": "https://images.unsplash.com/photo-1769092992803-ee97d235ba87",
+    "license": "https://unsplash.com/license",
+    "sourceCheckedAt": "2026-11-16"
   }
 }

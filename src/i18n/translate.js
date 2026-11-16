@@ -1,3 +1,4 @@
+import { bingIndexingTranslations, bingIndexingFragments } from '../content/bing-not-indexing.js';
 import {
   brandConfusionTranslations,
   brandConfusionFragments,
@@ -79,6 +80,7 @@ const translationsByLanguage = {
     ...brokenLinkTranslations.es,
     ...holidayHoursTranslations.es,
     ...brandConfusionTranslations.es,
+    ...bingIndexingTranslations.es,
     ...partnerTranslations.es,
     ...imageTranslations('es'),
   },
@@ -102,6 +104,7 @@ const translationsByLanguage = {
     ...brokenLinkTranslations.tr,
     ...holidayHoursTranslations.tr,
     ...brandConfusionTranslations.tr,
+    ...bingIndexingTranslations.tr,
     ...partnerTranslations.tr,
     ...imageTranslations('tr'),
   },
@@ -120,6 +123,7 @@ const articleFragments = {
     ...brokenLinkFragments.es,
     ...holidayHoursFragments.es,
     ...brandConfusionFragments.es,
+    ...bingIndexingFragments.es,
   },
   tr: {
     ...aiCrawlerFragments.tr,
@@ -134,6 +138,7 @@ const articleFragments = {
     ...brokenLinkFragments.tr,
     ...holidayHoursFragments.tr,
     ...brandConfusionFragments.tr,
+    ...bingIndexingFragments.tr,
   },
 };
 const normalizedTranslationsByLanguage = Object.fromEntries(

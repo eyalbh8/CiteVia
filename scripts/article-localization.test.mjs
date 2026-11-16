@@ -1,3 +1,4 @@
+import { bingNotIndexing, bingIndexingTranslations } from '../src/content/bing-not-indexing.js';
 import {
   brandConfusion,
   brandConfusionTranslations,
@@ -61,6 +62,7 @@ test('article copy registers complete paragraphs, link anchors and surrounding n
 });
 
 for (const [article, articleTranslations] of [
+  [bingNotIndexing, bingIndexingTranslations],
   [brandConfusion, brandConfusionTranslations],
   [holidayOpeningHours, holidayHoursTranslations],
   [brokenAiReferralLinks, brokenLinkTranslations],
