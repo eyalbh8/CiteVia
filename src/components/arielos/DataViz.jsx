@@ -5,6 +5,15 @@ import { useId } from 'react';
 // Platform icons reused from Homepage
 function PlatformIcon({ id }) {
   const common = { viewBox: '0 0 24 24', fill: 'currentColor', 'aria-hidden': true };
+  if (id === 'deepseek') {
+    return (
+      <svg {...common} fill="none" stroke="currentColor" strokeWidth="1.5">
+        <circle cx="12" cy="12" r="9" />
+        <ellipse cx="12" cy="12" rx="4" ry="9" />
+        <path d="M3 12h18M5 6.5h14M5 17.5h14" />
+      </svg>
+    );
+  }
   if (id === 'chatgpt') {
     return (
       <svg {...common}>
@@ -234,7 +243,7 @@ export function SourceTable({ sources, className = '' }) {
           <tr>
             <th>#</th>
             <th>Source</th>
-            <th>Usage</th>
+            <th>Answer coverage</th>
           </tr>
         </thead>
         <tbody>

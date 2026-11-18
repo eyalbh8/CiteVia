@@ -18,7 +18,7 @@ import {
   socialLeadCases,
 } from '@/content/social-media-leads';
 
-const introduction = `# Citevia\n\n> ${site.description}\n\nWebsite: ${site.url}\nContact: ${site.email}\n\nCitevia provides services. Project scope is agreed with the business. Example case studies are constructed educational scenarios, not client engagements or achieved performance results. The homepage Nayax ranking, mentions and sentiment are transcribed from a supplied static screenshot. Other homepage reporting views remain illustrative; case-study metrics are synthetic and no live analytics API is connected. Independent search rankings and AI recommendations are not guaranteed.\n`;
+const introduction = `# Citevia\n\n> ${site.description}\n\nWebsite: ${site.url}\nContact: ${site.email}\n\nCitevia provides services. Project scope is agreed with the business. Example case studies are constructed educational scenarios, not client engagements or achieved performance results. The homepage Freedom Power example uses a static export of the citevia-app demo account, including its solar-market comparison, prompts, referral traffic and citation sources. All of this account’s reporting is synthetic and illustrative. Visibility and traffic cover 20 October–18 November 2026; citations cover the latest ChatGPT scan. Case-study metrics are synthetic and no live analytics API is connected. Independent search rankings and AI recommendations are not guaranteed.\n`;
 const bullets = (items: string[]) => items.map((item) => `- ${item}`).join('\n');
 const articleMarkdown = (value: string) =>
   parseArticleText(value)

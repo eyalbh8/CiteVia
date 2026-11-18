@@ -1,0 +1,229 @@
+{
+  "provenance": {
+    "project": "citevia-app",
+    "account": "Freedom Power",
+    "kind": "synthetic-demo",
+    "exportedAt": "2026-11-18T15:58:59.062Z",
+    "visibilityPeriod": {
+      "start": "2026-10-20T00:00:00.000Z",
+      "end": "2026-11-18T15:58:59.062Z",
+      "granularity": "daily",
+      "timezone": "UTC"
+    },
+    "trafficPeriod": {
+      "start": "2026-10-20T00:00:00.000Z",
+      "end": "2026-11-18T15:58:59.278Z",
+      "granularity": "daily",
+      "timezone": "UTC"
+    },
+    "citations": {
+      "scope": "latest OpenAI scan",
+      "start": "2026-11-12T22:00:00.000Z",
+      "end": "2026-11-16T08:19:12.000Z",
+      "grouping": "Corporate brands and utilities; institutional government, university and NABCEP sources; Reddit and YouTube as UGC; generated .example publications as editorial."
+    }
+  },
+  "visibility": {
+    "analyzed": 1272,
+    "ranking": [
+      {
+        "brand": "Freedom Power",
+        "rank": 1,
+        "mentions": 889,
+        "sentiment": 84,
+        "isTarget": true
+      },
+      {
+        "brand": "Tesla Energy",
+        "rank": 2.6,
+        "mentions": 561,
+        "sentiment": 73,
+        "isTarget": false
+      },
+      {
+        "brand": "Sunrun",
+        "rank": 2.8,
+        "mentions": 555,
+        "sentiment": 71,
+        "isTarget": false
+      },
+      {
+        "brand": "TriSMART Solar",
+        "rank": 3.2,
+        "mentions": 535,
+        "sentiment": 69,
+        "isTarget": false
+      },
+      {
+        "brand": "Greenstar Power",
+        "rank": 5.2,
+        "mentions": 418,
+        "sentiment": 64,
+        "isTarget": false
+      }
+    ]
+  },
+  "traffic": {
+    "total": 897,
+    "previous": 879,
+    "change": 2.05,
+    "providers": [
+      {
+        "provider": "openai",
+        "visits": 727
+      },
+      {
+        "provider": "claude",
+        "visits": 29
+      },
+      {
+        "provider": "perplexity",
+        "visits": 71
+      },
+      {
+        "provider": "gemini",
+        "visits": 43
+      },
+      {
+        "provider": "copilot",
+        "visits": 18
+      },
+      {
+        "provider": "deepseek",
+        "visits": 9
+      }
+    ],
+    "locations": [
+      {
+        "country": "US",
+        "entries": 351
+      },
+      {
+        "country": "CA",
+        "entries": 270
+      },
+      {
+        "country": "GB",
+        "entries": 182
+      },
+      {
+        "country": "AU",
+        "entries": 94
+      }
+    ]
+  },
+  "prompts": {
+    "total": 50,
+    "topics": [
+      "Residential solar installation",
+      "Home battery backup",
+      "Heating and cooling services",
+      "Whole-home backup generators",
+      "Commercial solar installation"
+    ],
+    "intentSplit": [
+      {
+        "intent": "Informational",
+        "percent": 30,
+        "color": "#2d4f9e"
+      },
+      {
+        "intent": "Commercial",
+        "percent": 30,
+        "color": "#6f8fd8"
+      },
+      {
+        "intent": "Validation",
+        "percent": 20,
+        "color": "#8ca6e0"
+      },
+      {
+        "intent": "Transactional",
+        "percent": 20,
+        "color": "#bfcdf0"
+      }
+    ],
+    "samples": [
+      {
+        "text": "What should homeowners know about residential solar installation in Texas and Florida?",
+        "intent": "Informational"
+      },
+      {
+        "text": "How should I compare residential solar installation providers in Texas and Florida?",
+        "intent": "Commercial"
+      },
+      {
+        "text": "What should homeowners know about home battery backup in Texas and Florida?",
+        "intent": "Informational"
+      },
+      {
+        "text": "How should I compare home battery backup providers in Texas and Florida?",
+        "intent": "Commercial"
+      },
+      {
+        "text": "How can I request heating and cooling services in Texas and Florida?",
+        "intent": "Transactional"
+      },
+      {
+        "text": "What should homeowners know about whole-home backup generators in Texas and Florida?",
+        "intent": "Informational"
+      },
+      {
+        "text": "What should I verify before choosing whole-home backup generators in Texas and Florida?",
+        "intent": "Validation"
+      },
+      {
+        "text": "How can I request commercial solar installation in Texas and Florida?",
+        "intent": "Transactional"
+      }
+    ]
+  },
+  "citations": {
+    "total": 1736,
+    "domains": 1166,
+    "byType": [
+      {
+        "type": "Corporate",
+        "count": 211,
+        "color": "#2d4f9e"
+      },
+      {
+        "type": "Institutional",
+        "count": 59,
+        "color": "#6f8fd8"
+      },
+      {
+        "type": "UGC",
+        "count": 116,
+        "color": "#8ca6e0"
+      },
+      {
+        "type": "Editorial",
+        "count": 1350,
+        "color": "#bfcdf0"
+      }
+    ],
+    "topSources": [
+      {
+        "domain": "gofreedompower.com",
+        "usage": 100
+      },
+      {
+        "domain": "reddit.com",
+        "usage": 92
+      },
+      {
+        "domain": "youtube.com",
+        "usage": 64
+      },
+      {
+        "domain": "energy.gov",
+        "usage": 58
+      },
+      {
+        "domain": "trismartsolar.com",
+        "usage": 18
+      }
+    ]
+  }
+}

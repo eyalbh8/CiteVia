@@ -8,22 +8,23 @@ const trHome = {
   'Citevia builds custom AI Search marketing infrastructure for brands that want to lead the next iteration of the Internet. Data tells us where to act — our infrastructure lets us execute faster, learn continuously, and compound results over time.':
     'Citevia, internetin bir sonraki dönemine öncülük etmek isteyen markalar için özel yapay zekâ arama pazarlaması altyapısı kurar. Veriler nerede harekete geçmemiz gerektiğini gösterir; altyapımız daha hızlı uygulama yapmamızı, sürekli öğrenmemizi ve zaman içinde sonuçları katlayarak artırmamızı sağlar.',
   'Book a meeting': 'Toplantı ayarla',
-  'Nayax visibility snapshot · animated reporting concepts.':
-    'Nayax görünürlük özeti · animasyonlu raporlama konseptleri.',
+  'Freedom Power · illustrative reporting from Citevia.':
+    'Freedom Power · Citevia örnek raporlaması.',
   'AI platforms considered in our work':
     'Çalışmalarımızda dikkate aldığımız yapay zekâ platformları',
-  'Nayax or squareup for payments?': 'Ödemeler için Nayax mı, squareup mı?',
-  'Compare Nayax and Cantaloupe': 'Nayax ve Cantaloupe’u karşılaştırın',
-  'Nayax vs 365 Retail Markets': 'Nayax ve 365 Retail Markets karşılaştırması',
-  'Nayax and ingenico.com compared': 'Nayax ve ingenico.com karşılaştırması',
+  'Freedom Power or Tesla Energy for solar?':
+    'Güneş enerjisi için Freedom Power mı, Tesla Energy mi?',
+  'Compare Freedom Power and Sunrun': 'Freedom Power ve Sunrun’u karşılaştırın',
+  'Freedom Power vs TriSMART Solar': 'Freedom Power ve TriSMART Solar karşılaştırması',
+  'Freedom Power and Greenstar Power compared': 'Freedom Power ve Greenstar Power karşılaştırması',
   'The developers redefining coastal living': 'Kıyı yaşamını yeniden tanımlayan geliştiriciler',
   'Where private wealth is relocating next': 'Özel servetin yeni taşınma rotaları',
   Editorial: 'Editoryal',
   'Industry report': 'Sektör raporu',
   'Cited · ChatGPT': 'Kaynak gösterildi · ChatGPT',
   'Cited · Perplexity': 'Kaynak gösterildi · Perplexity',
-  'Nayax · average rank': 'Nayax · ortalama sıralama',
-  'Nayax · AI mentions': 'Nayax · yapay zekâ bahsetmeleri',
+  'Freedom Power · average rank': 'Freedom Power · ortalama sıralama',
+  'Freedom Power · AI mentions': 'Freedom Power · yapay zekâ bahsetmeleri',
   Citations: 'Atıflar',
   Entities: 'Varlıklar',
   Retrieval: 'Bilgi erişimi',
@@ -49,12 +50,10 @@ const trHome = {
     'Markanın yapay zekâ platformlarında nasıl göründüğünü keşfedin',
   'Visibility, prompts, AI traffic, mentions and citation authority - built into custom infrastructure around each client':
     'Görünürlük, istemler, yapay zekâ trafiği, bahsetmeler ve atıf otoritesi; her müşteriye özel bir altyapıda bir araya geliyor',
-  'Nayax · brand visibility snapshot': 'Nayax · marka görünürlük özeti',
-  'Nayax · illustrative reporting preview': 'Nayax · örnek raporlama ön izlemesi',
   'Product views': 'Ürün görünümleri',
   'Private assessment': 'Özel değerlendirme',
-  'Compare Nayax with the brands in its market through AI mentions, average rank and sentiment in one visibility snapshot.':
-    'Nayax’ı pazarındaki markalarla yapay zekâ bahsetmeleri, ortalama sıralama ve duygu analizi üzerinden tek bir görünürlük özetinde karşılaştırın.',
+  'Compare Freedom Power with the brands in its market through AI mentions, average rank and sentiment in one visibility snapshot.':
+    'Freedom Power’ı pazarındaki markalarla yapay zekâ bahsetmeleri, ortalama sıralama ve duygu analizi üzerinden tek bir görünürlük özetinde karşılaştırın.',
   'Build and track the prompt universe': 'İstem evrenini oluşturun ve takip edin',
   'Map topics, intent and buyer questions so you appear in the conversations that reveal genuine purchase intent - not vanity keywords.':
     'Gerçek satın alma niyetini ortaya çıkaran konuşmalarda yer almanız için konuları, niyeti ve alıcı sorularını haritalandırın; gösteriş amaçlı anahtar kelimelere odaklanmayın.',
@@ -63,19 +62,19 @@ const trHome = {
     'Siteye hangi asistanların trafik gönderdiğini, bu talebin zaman içinde nasıl değiştiğini ve yapay zekâ keşfini ziyarete dönüştüren kaynakları, sayfaları ve konumları görün.',
   'Watch how engines choose and describe you':
     'Arama motorlarının sizi nasıl seçip tanımladığını izleyin',
-  'See how often Nayax, squareup, Cantaloupe, 365 Retail Markets and ingenico.com appear, and compare their rank and sentiment.':
-    'Nayax, squareup, Cantaloupe, 365 Retail Markets ve ingenico.com’un ne sıklıkta göründüğünü inceleyin; sıralamalarını ve duygu analizlerini karşılaştırın.',
+  'See how often Freedom Power, Tesla Energy, Sunrun, TriSMART Solar and Greenstar Power appear, and compare their rank and sentiment.':
+    'Freedom Power, Tesla Energy, Sunrun, TriSMART Solar ve Greenstar Power’un ne sıklıkta göründüğünü inceleyin; sıralamalarını ve duygu analizlerini karşılaştırın.',
   'See which sources AI trusts': 'Yapay zekânın hangi kaynaklara güvendiğini görün',
   'Understand the corporate, institutional and editorial domains that back AI answers - and where authority is thin or outdated.':
     'Yapay zekâ yanıtlarını destekleyen kurumsal, resmî ve editoryal alan adlarını; otoritenin zayıf veya güncelliğini yitirmiş olduğu yerleri anlayın.',
-  'Citevia Account Brief showing Nayax visibility, brand mentions and market position':
-    'Nayax görünürlüğünü, marka bahsetmelerini ve pazar konumunu gösteren Citevia Hesap Özeti',
+  'Citevia Account Brief showing Freedom Power visibility, brand mentions and market position':
+    'Freedom Power görünürlüğünü, marka bahsetmelerini ve pazar konumunu gösteren Citevia Hesap Özeti',
   'Citevia Prompts view with topic pills, intent distribution and tracked prompt library':
     'Konu etiketleri, niyet dağılımı ve takip edilen istem kütüphanesini içeren Citevia İstemler görünümü',
   'Citevia AI Traffic view with provider entry cards and LLM visit trends chart':
     'Sağlayıcı giriş kartları ve büyük dil modeli ziyaret eğilimleri grafiğini içeren Citevia Yapay Zekâ Trafiği görünümü',
-  'Citevia Mentions view comparing Nayax with four other payment and retail brands':
-    'Nayax’ı dört ödeme ve perakende markasıyla karşılaştıran Citevia Bahsetmeler görünümü',
+  'Citevia Mentions view comparing Freedom Power with four other solar and energy brands':
+    'Freedom Power’ı diğer dört güneş enerjisi ve enerji markasıyla karşılaştıran Citevia Bahsetmeler görünümü',
   'Citevia Citations view with source-type donut, usage trend and domain table':
     'Kaynak türü halka grafiği, kullanım eğilimi ve alan adı tablosunu içeren Citevia Atıflar görünümü',
   'A quiet decision': 'Sessiz bir karar',
@@ -100,15 +99,17 @@ const trHome = {
     'ABD perakende sektöründe yapay zekâ kaynaklı trafikte ziyaret başına gelir (yapay zekâ dışı trafiğe kıyasla)',
   'Adobe Digital Insights · March 2026': 'Adobe Digital Insights · Mart 2026',
   'Brands that show up. Results that speak.': 'Görünür olan markalar. Kendini anlatan sonuçlar.',
-  'Payments & unattended retail': 'Ödemeler ve personelsiz perakende',
-  'See how Nayax appears alongside squareup, Cantaloupe, 365 Retail Markets and ingenico.com. The visibility snapshot brings AI mentions, average rank and sentiment into one clear market comparison.':
-    'Nayax’ın squareup, Cantaloupe, 365 Retail Markets ve ingenico.com ile birlikte nasıl göründüğünü inceleyin. Görünürlük özeti; yapay zekâ bahsetmelerini, ortalama sıralamayı ve duygu analizini tek bir net pazar karşılaştırmasında sunar.',
+  'Solar, home energy & backup power': 'Güneş enerjisi, ev enerjisi ve yedek güç',
+  'See how Freedom Power appears alongside Tesla Energy, Sunrun, TriSMART Solar and Greenstar Power. The visibility snapshot brings AI mentions, average rank and sentiment into one clear market comparison.':
+    'Freedom Power’ın Tesla Energy, Sunrun, TriSMART Solar ve Greenstar Power ile birlikte nasıl göründüğünü inceleyin. Görünürlük özeti; yapay zekâ bahsetmelerini, ortalama sıralamayı ve duygu analizini tek bir net pazar karşılaştırmasında sunar.',
   'Discuss your baseline': 'Mevcut durumunuzu görüşün',
   'Explore our methodology': 'Yöntemimizi keşfedin',
   'Brand visibility snapshot': 'Marka görünürlük özeti',
   'Market position': 'Pazar konumu',
-  'Source: supplied brand-ranking snapshot': 'Kaynak: sağlanan marka sıralama özeti',
-  'Rankings reflect the captured prompt set.': 'Sıralamalar, kaydedilen istem kümesini yansıtır.',
+  'Source: Citevia Freedom Power example · 20 Oct–18 Nov 2026':
+    'Kaynak: Citevia Freedom Power örneği · 20 Eki–18 Kas 2026',
+  'Illustrative rankings for the selected prompt set.':
+    'Seçilen sorgu kümesi için örnek sıralamalar.',
   'AI-driven visits': 'Yapay zekâ kaynaklı ziyaretler',
   'Traffic that starts in ': 'Trafiğin başladığı yer: ',
   'AI assistants.': 'yapay zekâ asistanları.',
@@ -194,8 +195,8 @@ const trHome = {
   'Unique domains': 'Benzersiz alan adları',
   'AI traffic entries': 'Yapay zekâ kaynaklı ziyaret',
   'Visibility snapshot': 'Görünürlük özeti',
-  'Illustrative reporting · 90 days': 'Örnek raporlama · 90 gün',
-  'Illustrative reporting · 14 days': 'Örnek raporlama · 14 gün',
+  'Illustrative reporting · 30 days': 'Örnek raporlama · 30 gün',
+  'Illustrative reporting · latest ChatGPT scan': 'Örnek raporlama · son ChatGPT taraması',
   'Illustrative data, not Citevia client results':
     'Örnek verilerdir; Citevia müşterilerinin sonuçları değildir',
   'United States': 'Amerika Birleşik Devletleri',
@@ -254,16 +255,6 @@ const trHome = {
   Selected: 'Seçildi',
   You: 'Siz',
   'Known, not selected': 'Biliniyor, ancak seçilmedi',
-  'What is unattended retail?': 'Personelsiz perakende nedir?',
-  'Compare Nayax and Cantaloupe for vending payments':
-    'Otomat ödemeleri için Nayax ve Cantaloupe’u karşılaştırın',
-  'How do cashless vending payments work?': 'Otomatlarda nakitsiz ödeme nasıl çalışır?',
-  'What is a payment terminal?': 'Ödeme terminali nedir?',
-  'Request a Nayax payment solution demo': 'Nayax ödeme çözümü demosu talep edin',
-  'What is a micro market?': 'Mikro market nedir?',
-  'Nayax, squareup or 365 Retail Markets?': 'Nayax, squareup mı yoksa 365 Retail Markets mı?',
-  'How does ingenico.com describe payment terminals?':
-    'ingenico.com ödeme terminallerini nasıl tanımlıyor?',
   'High intent': 'Yüksek niyet',
   Info: 'Bilgi',
   'high intent · {percent}% informational': 'yüksek satın alma niyeti · %{percent} bilgi amaçlı',
@@ -281,9 +272,32 @@ const trHome = {
   'Build brand authority with clear claims, credible sources, and a sensible review process. Show your expertise while protecting confidential details.':
     'Açık iddialar, güvenilir kaynaklar ve sağlıklı bir inceleme süreciyle marka otoritesi oluşturun. Gizli ayrıntıları korurken uzmanlığınızı gösterin.',
   Read: 'Oku',
-  'Nayax · illustrative reporting · 90 days': 'Nayax · örnek raporlama · 90 gün',
-  'Nayax · illustrative reporting · 14 days': 'Nayax · örnek raporlama · 14 gün',
+  'Freedom Power · Illustrative prompt library': 'Freedom Power · örnek sorgu kütüphanesi',
+  'Freedom Power · Illustrative reporting · latest ChatGPT scan':
+    'Freedom Power · örnek raporlama · son ChatGPT taraması',
   'Illustrative data': 'Örnek veriler',
+  'Illustrative prompt library': 'Örnek sorgu kütüphanesi',
+  'Freedom Power · Illustrative reporting · 30 days': 'Freedom Power · örnek raporlama · 30 gün',
+  'Answer coverage': 'Yanıt kapsamı',
+  Validation: 'Doğrulama',
+  'United Kingdom': 'Birleşik Krallık',
+  Australia: 'Avustralya',
+  'What should homeowners know about residential solar installation in Texas and Florida?':
+    'Ev sahipleri Teksas ve Florida’da konut tipi güneş enerjisi kurulumu hakkında ne bilmeli?',
+  'How should I compare residential solar installation providers in Texas and Florida?':
+    'Teksas ve Florida’da konut tipi güneş enerjisi kurulum firmalarını nasıl karşılaştırmalıyım?',
+  'What should homeowners know about home battery backup in Texas and Florida?':
+    'Ev sahipleri Teksas ve Florida’da ev tipi yedek bataryalar hakkında ne bilmeli?',
+  'How should I compare home battery backup providers in Texas and Florida?':
+    'Teksas ve Florida’da ev tipi yedek batarya sağlayıcılarını nasıl karşılaştırmalıyım?',
+  'How can I request heating and cooling services in Texas and Florida?':
+    'Teksas ve Florida’da ısıtma ve soğutma hizmetlerini nasıl talep edebilirim?',
+  'What should homeowners know about whole-home backup generators in Texas and Florida?':
+    'Ev sahipleri Teksas ve Florida’da tüm eve güç sağlayan yedek jeneratörler hakkında ne bilmeli?',
+  'What should I verify before choosing whole-home backup generators in Texas and Florida?':
+    'Teksas ve Florida’da tüm eve güç sağlayan yedek jeneratörleri seçmeden önce neyi doğrulamalıyım?',
+  'How can I request commercial solar installation in Texas and Florida?':
+    'Teksas ve Florida’da ticari güneş enerjisi kurulumunu nasıl talep edebilirim?',
 };
 
 export { trHome };

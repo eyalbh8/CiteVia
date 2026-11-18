@@ -8,12 +8,19 @@ import positioningPhoto from '../../../public/images/generated/service-positioni
 import authorityPhoto from '../../../public/images/generated/service-authority.jpg';
 import monitoringPhoto from '../../../public/images/generated/service-monitoring.jpg';
 import { Link } from './Link.jsx';
-import { nayaxCase, faqs, marketStats, platforms, productTabs, servicePillars } from './data.js';
 import {
-  nayaxAccountBrief,
+  freedomPowerCase,
+  faqs,
+  marketStats,
+  platforms,
+  productTabs,
+  servicePillars,
+} from './data.js';
+import {
+  freedomPowerAccountBrief,
   citationsData,
   promptsData,
-  nayaxMetrics,
+  freedomPowerMetrics,
   aiTrafficData,
 } from './data/workspaceData.js';
 import { insightArticles } from './content/insights.js';
@@ -48,7 +55,7 @@ const heroOrbit = ['chatgpt', 'claude', 'gemini', 'perplexity', 'copilot'];
 const heroPrompts = [
   {
     icon: 'chatgpt',
-    text: 'Nayax or squareup for payments?',
+    text: 'Freedom Power or Tesla Energy for solar?',
     side: 'left',
     y: 22,
     delay: 0,
@@ -57,7 +64,7 @@ const heroPrompts = [
   },
   {
     icon: 'perplexity',
-    text: 'Compare Nayax and Cantaloupe',
+    text: 'Compare Freedom Power and Sunrun',
     side: 'left',
     y: 75,
     delay: -7,
@@ -65,7 +72,7 @@ const heroPrompts = [
   },
   {
     icon: 'claude',
-    text: 'Nayax vs 365 Retail Markets',
+    text: 'Freedom Power vs TriSMART Solar',
     side: 'right',
     y: 77,
     delay: -3,
@@ -73,7 +80,7 @@ const heroPrompts = [
   },
   {
     icon: 'gemini',
-    text: 'Nayax and ingenico.com compared',
+    text: 'Freedom Power and Greenstar Power compared',
     side: 'left',
     y: 58,
     delay: -10,
@@ -104,8 +111,8 @@ const heroSources = [
 
 const heroMetrics = [
   {
-    label: 'Nayax · average rank',
-    value: nayaxAccountBrief.metrics.averageRank.toFixed(1),
+    label: 'Freedom Power · average rank',
+    value: freedomPowerAccountBrief.metrics.averageRank.toFixed(1),
     side: 'left',
     y: 88,
     delay: -2,
@@ -113,8 +120,8 @@ const heroMetrics = [
     mobile: true,
   },
   {
-    label: 'Nayax · AI mentions',
-    value: nayaxAccountBrief.metrics.totalMentions.toLocaleString('en-US'),
+    label: 'Freedom Power · AI mentions',
+    value: freedomPowerAccountBrief.metrics.totalMentions.toLocaleString('en-US'),
     side: 'right',
     y: 17,
     delay: -8,
@@ -287,9 +294,7 @@ function Hero() {
           <span>Turn comments into lead opportunities</span>
           <span aria-hidden="true">→</span>
         </Link>
-        <span className="hero-demo-note">
-          Nayax visibility snapshot · animated reporting concepts.
-        </span>
+        <span className="hero-demo-note">Freedom Power · illustrative reporting from Citevia.</span>
       </div>
     </section>
   );
@@ -370,11 +375,11 @@ function ProductTheater() {
       return (
         <DataPanel
           title="Account brief"
-          subtitle={`${nayaxAccountBrief.client} · ${nayaxAccountBrief.period}`}
+          subtitle={`${freedomPowerAccountBrief.client} · ${freedomPowerAccountBrief.period}`}
         >
-          <MetricGrid metrics={nayaxMetrics} />
-          <BrandMentionBars brands={nayaxAccountBrief.marketPosition} />
-          <RankTable data={nayaxAccountBrief.marketPosition} />
+          <MetricGrid metrics={freedomPowerMetrics} />
+          <BrandMentionBars brands={freedomPowerAccountBrief.marketPosition} />
+          <RankTable data={freedomPowerAccountBrief.marketPosition} />
         </DataPanel>
       );
     }
@@ -423,11 +428,11 @@ function ProductTheater() {
       return (
         <DataPanel
           title="AI mentions by brand"
-          subtitle={`${nayaxAccountBrief.client} · ${nayaxAccountBrief.period}`}
+          subtitle={`${freedomPowerAccountBrief.client} · ${freedomPowerAccountBrief.period}`}
         >
-          <MetricGrid metrics={[nayaxMetrics[0]]} />
-          <BrandMentionBars brands={nayaxAccountBrief.marketPosition} />
-          <RankTable data={nayaxAccountBrief.marketPosition} />
+          <MetricGrid metrics={[freedomPowerMetrics[0]]} />
+          <BrandMentionBars brands={freedomPowerAccountBrief.marketPosition} />
+          <RankTable data={freedomPowerAccountBrief.marketPosition} />
         </DataPanel>
       );
     }
@@ -464,11 +469,7 @@ function ProductTheater() {
         title="See how the brand shows up across AI"
         copy="Visibility, prompts, AI traffic, mentions and citation authority - built into custom infrastructure around each client"
       />
-      <p className="demo-disclosure">
-        {tab.id === 'overview' || tab.id === 'mentions'
-          ? 'Nayax · brand visibility snapshot'
-          : 'Nayax · illustrative reporting preview'}
-      </p>
+      <p className="demo-disclosure">Freedom Power · illustrative reporting from Citevia.</p>
       <div className="product-tabs" role="tablist" aria-label="Product views">
         {productTabs.map((item, index) => {
           const selected = index === active;
@@ -575,31 +576,33 @@ function MarketStats() {
   );
 }
 
-function NayaxCase() {
+function FreedomPowerCase() {
   return (
     <Section id="case" tone="blue" className="case-strip-section">
       <div className="case-strip">
         <div className="case-strip__copy">
-          <p className="eyebrow">{nayaxCase.sector}</p>
-          <h2>{nayaxCase.headline}</h2>
-          <p>{nayaxCase.copy}</p>
-          <AssessmentLink placement="homepage-nayax-case">Discuss your baseline</AssessmentLink>
+          <p className="eyebrow">{freedomPowerCase.sector}</p>
+          <h2>{freedomPowerCase.headline}</h2>
+          <p>{freedomPowerCase.copy}</p>
+          <AssessmentLink placement="homepage-freedom-power-case">
+            Discuss your baseline
+          </AssessmentLink>
           <InternalLink to="/methodology">Explore our methodology</InternalLink>
         </div>
         <div className="case-strip__card">
           <span className="snapshot-kicker">Brand visibility snapshot</span>
-          <p className="case-strip__client">{nayaxAccountBrief.client}</p>
-          <MetricGrid metrics={nayaxMetrics} className="case-strip__metric-grid" />
+          <p className="case-strip__client">{freedomPowerAccountBrief.client}</p>
+          <MetricGrid metrics={freedomPowerMetrics} className="case-strip__metric-grid" />
           <div className="case-strip__platforms">
             <p className="case-strip__platforms-label">AI mentions by brand</p>
-            <BrandMentionBars brands={nayaxAccountBrief.marketPosition} />
+            <BrandMentionBars brands={freedomPowerAccountBrief.marketPosition} />
           </div>
           <div className="case-strip__rank">
             <p className="case-strip__rank-label">Market position</p>
-            <RankTable data={nayaxAccountBrief.marketPosition.slice(0, 5)} />
+            <RankTable data={freedomPowerAccountBrief.marketPosition.slice(0, 5)} />
           </div>
           <p className="case-strip__footnote">
-            {nayaxAccountBrief.source}. Rankings reflect the captured prompt set.
+            {freedomPowerAccountBrief.source}. Illustrative rankings for the selected prompt set.
           </p>
         </div>
       </div>
@@ -1185,7 +1188,7 @@ export default function Homepage() {
       <ProductTheater />
       <MarketStats />
       <Industries />
-      <NayaxCase />
+      <FreedomPowerCase />
       <AITrafficPanel />
       <Research />
       <Services />

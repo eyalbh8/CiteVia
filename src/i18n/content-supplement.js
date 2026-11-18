@@ -1,15 +1,19 @@
 // Translations for rendered text fragments around inline links and shared page copy.
 export const supplementalTranslations = [
-  ['Nayax · Visibility snapshot', 'Nayax · Resumen de visibilidad', 'Nayax · Görünürlük özeti'],
+  [
+    'Freedom Power · Visibility snapshot',
+    'Freedom Power · Resumen de visibilidad',
+    'Freedom Power · Görünürlük özeti',
+  ],
   [
     'Which agency should handle a discreet off-market sale?. Best private clinic for an executive health check?. Which law firm handles cross-border M&A in Cyprus?. Most trusted wealth manager for relocating families',
     '¿Qué agencia debería gestionar una venta discreta fuera del mercado? ¿Cuál es la mejor clínica privada para un chequeo ejecutivo? ¿Qué bufete gestiona fusiones y adquisiciones transfronterizas en Chipre? Gestor patrimonial de confianza para familias que se trasladan.',
     'Piyasa dışında gizli bir satışı hangi ajans yönetmeli? Yönetici sağlık taraması için en iyi özel klinik hangisi? Kıbrıs’ta sınır ötesi birleşme ve satın almaları hangi hukuk bürosu yönetiyor? Taşınan aileler için en güvenilir varlık yöneticisi hangisi?',
   ],
   [
-    '. Rankings reflect the captured prompt set.',
-    '. Las posiciones reflejan el conjunto de consultas registrado.',
-    '. Sıralamalar, kaydedilen sorgu kümesini yansıtır.',
+    '. Illustrative rankings for the selected prompt set.',
+    '. Clasificaciones ilustrativas para el conjunto de prompts seleccionado.',
+    '. Seçilen sorgu kümesi için örnek sıralamalar.',
   ],
   ['high intent ·', 'alta intención ·', 'yüksek niyet ·'],
   [

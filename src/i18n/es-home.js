@@ -9,13 +9,13 @@ const esHome = {
   'Citevia builds custom AI Search marketing infrastructure for brands that want to lead the next iteration of the Internet. Data tells us where to act — our infrastructure lets us execute faster, learn continuously, and compound results over time.':
     'Citevia crea infraestructuras de marketing para búsquedas con IA a medida para marcas que quieren liderar la próxima etapa de Internet. Los datos nos indican dónde actuar; nuestra infraestructura nos permite ejecutar con más rapidez, aprender continuamente y multiplicar los resultados con el tiempo.',
   'Book a meeting': 'Agenda una reunión',
-  'Nayax visibility snapshot · animated reporting concepts.':
-    'Resumen de visibilidad de Nayax · conceptos de informes animados.',
+  'Freedom Power · illustrative reporting from Citevia.':
+    'Freedom Power · informes ilustrativos de Citevia.',
   'AI platforms considered in our work': 'Plataformas de IA que tenemos en cuenta',
-  'Nayax or squareup for payments?': '¿Nayax o squareup para pagos?',
-  'Compare Nayax and Cantaloupe': 'Compara Nayax y Cantaloupe',
-  'Nayax vs 365 Retail Markets': 'Nayax frente a 365 Retail Markets',
-  'Nayax and ingenico.com compared': 'Comparativa entre Nayax e ingenico.com',
+  'Freedom Power or Tesla Energy for solar?': '¿Freedom Power o Tesla Energy para energía solar?',
+  'Compare Freedom Power and Sunrun': 'Compara Freedom Power y Sunrun',
+  'Freedom Power vs TriSMART Solar': 'Freedom Power frente a TriSMART Solar',
+  'Freedom Power and Greenstar Power compared': 'Comparativa entre Freedom Power y Greenstar Power',
   'The developers redefining coastal living':
     'Los promotores que están redefiniendo la vida junto al mar',
   'Where private wealth is relocating next': 'Los próximos destinos de la riqueza privada',
@@ -23,8 +23,8 @@ const esHome = {
   'Industry report': 'Informe sectorial',
   'Cited · ChatGPT': 'Citado · ChatGPT',
   'Cited · Perplexity': 'Citado · Perplexity',
-  'Nayax · average rank': 'Nayax · posición media',
-  'Nayax · AI mentions': 'Nayax · menciones en IA',
+  'Freedom Power · average rank': 'Freedom Power · posición media',
+  'Freedom Power · AI mentions': 'Freedom Power · menciones en IA',
   Citations: 'Citas',
   Entities: 'Entidades',
   Retrieval: 'Recuperación de información',
@@ -49,12 +49,10 @@ const esHome = {
   'See how the brand shows up across AI': 'Descubre cómo aparece la marca en las plataformas de IA',
   'Visibility, prompts, AI traffic, mentions and citation authority - built into custom infrastructure around each client':
     'Visibilidad, prompts, tráfico de IA, menciones y autoridad de las citas, integrados en una infraestructura a medida para cada cliente',
-  'Nayax · brand visibility snapshot': 'Nayax · resumen de visibilidad de marca',
-  'Nayax · illustrative reporting preview': 'Nayax · vista previa ilustrativa de informes',
   'Product views': 'Vistas del producto',
   'Private assessment': 'Evaluación privada',
-  'Compare Nayax with the brands in its market through AI mentions, average rank and sentiment in one visibility snapshot.':
-    'Compara Nayax con las marcas de su mercado mediante las menciones en IA, la posición media y el sentimiento en un único resumen de visibilidad.',
+  'Compare Freedom Power with the brands in its market through AI mentions, average rank and sentiment in one visibility snapshot.':
+    'Compara Freedom Power con las marcas de su mercado mediante las menciones en IA, la posición media y el sentimiento en un único resumen de visibilidad.',
   'Build and track the prompt universe': 'Crea y monitoriza el universo de prompts',
   'Map topics, intent and buyer questions so you appear in the conversations that reveal genuine purchase intent - not vanity keywords.':
     'Identifica temas, intención y preguntas de compradores para aparecer en conversaciones que revelan una intención de compra real, más allá de las palabras clave vanidosas.',
@@ -63,19 +61,19 @@ const esHome = {
     'Descubre qué asistentes envían tráfico al sitio, cómo evoluciona esa demanda y qué fuentes, páginas y ubicaciones convierten el descubrimiento en IA en visitas.',
   'Watch how engines choose and describe you':
     'Observa cómo te eligen y describen los motores de IA',
-  'See how often Nayax, squareup, Cantaloupe, 365 Retail Markets and ingenico.com appear, and compare their rank and sentiment.':
-    'Consulta con qué frecuencia aparecen Nayax, squareup, Cantaloupe, 365 Retail Markets e ingenico.com, y compara su posición y sentimiento.',
+  'See how often Freedom Power, Tesla Energy, Sunrun, TriSMART Solar and Greenstar Power appear, and compare their rank and sentiment.':
+    'Consulta con qué frecuencia aparecen Freedom Power, Tesla Energy, Sunrun, TriSMART Solar y Greenstar Power, y compara su posición y sentimiento.',
   'See which sources AI trusts': 'Descubre en qué fuentes confía la IA',
   'Understand the corporate, institutional and editorial domains that back AI answers - and where authority is thin or outdated.':
     'Identifica los dominios corporativos, institucionales y editoriales que respaldan las respuestas de IA, y detecta dónde la autoridad es escasa o está desactualizada.',
-  'Citevia Account Brief showing Nayax visibility, brand mentions and market position':
-    'Resumen de cuenta de Citevia con la visibilidad, las menciones de marca y la posición de Nayax en el mercado',
+  'Citevia Account Brief showing Freedom Power visibility, brand mentions and market position':
+    'Resumen de cuenta de Citevia con la visibilidad, las menciones de marca y la posición de Freedom Power en el mercado',
   'Citevia Prompts view with topic pills, intent distribution and tracked prompt library':
     'Vista de Prompts de Citevia con temas, distribución de intención y biblioteca de prompts monitorizados',
   'Citevia AI Traffic view with provider entry cards and LLM visit trends chart':
     'Vista de tráfico de IA de Citevia con tarjetas de visitas por proveedor y gráfico de tendencias de visitas de modelos de lenguaje',
-  'Citevia Mentions view comparing Nayax with four other payment and retail brands':
-    'Vista de Menciones de Citevia que compara Nayax con otras cuatro marcas de pagos y comercio minorista',
+  'Citevia Mentions view comparing Freedom Power with four other solar and energy brands':
+    'Vista de Menciones de Citevia que compara Freedom Power con otras cuatro marcas de energía solar y energía',
   'Citevia Citations view with source-type donut, usage trend and domain table':
     'Vista de Citas de Citevia con gráfico circular por tipo de fuente, tendencia de uso y tabla de dominios',
   'A quiet decision': 'Una decisión discreta',
@@ -100,17 +98,17 @@ const esHome = {
     'de ingresos por visita en el tráfico minorista de EE. UU. procedente de IA frente al que no procede de IA',
   'Adobe Digital Insights · March 2026': 'Adobe Digital Insights · marzo de 2026',
   'Brands that show up. Results that speak.': 'Marcas que aparecen. Resultados que hablan.',
-  'Payments & unattended retail': 'Pagos y comercio minorista desatendido',
-  'See how Nayax appears alongside squareup, Cantaloupe, 365 Retail Markets and ingenico.com. The visibility snapshot brings AI mentions, average rank and sentiment into one clear market comparison.':
-    'Descubre cómo aparece Nayax junto a squareup, Cantaloupe, 365 Retail Markets e ingenico.com. Este resumen de visibilidad reúne las menciones en IA, la posición media y el sentimiento en una comparativa de mercado clara.',
+  'Solar, home energy & backup power': 'Energía solar, energía doméstica y respaldo eléctrico',
+  'See how Freedom Power appears alongside Tesla Energy, Sunrun, TriSMART Solar and Greenstar Power. The visibility snapshot brings AI mentions, average rank and sentiment into one clear market comparison.':
+    'Descubre cómo aparece Freedom Power junto a Tesla Energy, Sunrun, TriSMART Solar y Greenstar Power. Este resumen de visibilidad reúne las menciones en IA, la posición media y el sentimiento en una comparativa de mercado clara.',
   'Discuss your baseline': 'Hablemos de tu punto de partida',
   'Explore our methodology': 'Conoce nuestra metodología',
   'Brand visibility snapshot': 'Resumen de visibilidad de marca',
   'Market position': 'Posición en el mercado',
-  'Source: supplied brand-ranking snapshot':
-    'Fuente: resumen de clasificación de marcas facilitado',
-  'Rankings reflect the captured prompt set.':
-    'Las posiciones reflejan el conjunto de prompts recopilado.',
+  'Source: Citevia Freedom Power example · 20 Oct–18 Nov 2026':
+    'Fuente: ejemplo de Freedom Power en Citevia · 20 oct.–18 nov. 2026',
+  'Illustrative rankings for the selected prompt set.':
+    'Clasificaciones ilustrativas para el conjunto de prompts seleccionado.',
   'AI-driven visits': 'Visitas procedentes de IA',
   'Traffic that starts in ': 'Tráfico que comienza en ',
   'AI assistants.': 'asistentes de IA.',
@@ -196,8 +194,9 @@ const esHome = {
   'Unique domains': 'Dominios únicos',
   'AI traffic entries': 'Visitas procedentes de IA',
   'Visibility snapshot': 'Resumen de visibilidad',
-  'Illustrative reporting · 90 days': 'Informe ilustrativo · 90 días',
-  'Illustrative reporting · 14 days': 'Informe ilustrativo · 14 días',
+  'Illustrative reporting · 30 days': 'Informe ilustrativo · 30 días',
+  'Illustrative reporting · latest ChatGPT scan':
+    'Informe ilustrativo · último análisis de ChatGPT',
   'Illustrative data, not Citevia client results':
     'Datos ilustrativos; no corresponden a resultados de clientes de Citevia',
   'United States': 'Estados Unidos',
@@ -256,18 +255,6 @@ const esHome = {
   Selected: 'Elegida',
   You: 'Tú',
   'Known, not selected': 'Conocida, pero no elegida',
-  'What is unattended retail?': '¿Qué es el comercio minorista desatendido?',
-  'Compare Nayax and Cantaloupe for vending payments':
-    'Compara Nayax y Cantaloupe para pagos en máquinas expendedoras',
-  'How do cashless vending payments work?':
-    '¿Cómo funcionan los pagos sin efectivo en máquinas expendedoras?',
-  'What is a payment terminal?': '¿Qué es un terminal de pago?',
-  'Request a Nayax payment solution demo':
-    'Solicita una demostración de la solución de pago de Nayax',
-  'What is a micro market?': '¿Qué es un micromercado?',
-  'Nayax, squareup or 365 Retail Markets?': '¿Nayax, squareup o 365 Retail Markets?',
-  'How does ingenico.com describe payment terminals?':
-    '¿Cómo describe ingenico.com los terminales de pago?',
   'High intent': 'Alta intención',
   Info: 'Info',
   'high intent · {percent}% informational': 'alta intención · {percent}% informativa',
@@ -285,9 +272,34 @@ const esHome = {
   'Build brand authority with clear claims, credible sources, and a sensible review process. Show your expertise while protecting confidential details.':
     'Desarrolla la autoridad de marca con afirmaciones claras, fuentes fiables y un proceso de revisión adecuado. Demuestra tu experiencia y protege la información confidencial.',
   Read: 'Leer',
-  'Nayax · illustrative reporting · 90 days': 'Nayax · informe ilustrativo · 90 días',
-  'Nayax · illustrative reporting · 14 days': 'Nayax · informe ilustrativo · 14 días',
+  'Freedom Power · Illustrative prompt library':
+    'Freedom Power · biblioteca ilustrativa de prompts',
+  'Freedom Power · Illustrative reporting · latest ChatGPT scan':
+    'Freedom Power · informe ilustrativo · último análisis de ChatGPT',
   'Illustrative data': 'Datos ilustrativos',
+  'Illustrative prompt library': 'Biblioteca ilustrativa de prompts',
+  'Freedom Power · Illustrative reporting · 30 days':
+    'Freedom Power · informe ilustrativo · 30 días',
+  'Answer coverage': 'Cobertura de respuestas',
+  Validation: 'Validación',
+  'United Kingdom': 'Reino Unido',
+  Australia: 'Australia',
+  'What should homeowners know about residential solar installation in Texas and Florida?':
+    '¿Qué deben saber los propietarios sobre la instalación de energía solar residencial en Texas y Florida?',
+  'How should I compare residential solar installation providers in Texas and Florida?':
+    '¿Cómo debo comparar proveedores de instalación solar residencial en Texas y Florida?',
+  'What should homeowners know about home battery backup in Texas and Florida?':
+    '¿Qué deben saber los propietarios sobre las baterías de respaldo domésticas en Texas y Florida?',
+  'How should I compare home battery backup providers in Texas and Florida?':
+    '¿Cómo debo comparar proveedores de baterías de respaldo domésticas en Texas y Florida?',
+  'How can I request heating and cooling services in Texas and Florida?':
+    '¿Cómo puedo solicitar servicios de calefacción y refrigeración en Texas y Florida?',
+  'What should homeowners know about whole-home backup generators in Texas and Florida?':
+    '¿Qué deben saber los propietarios sobre los generadores de respaldo para toda la vivienda en Texas y Florida?',
+  'What should I verify before choosing whole-home backup generators in Texas and Florida?':
+    '¿Qué debo verificar antes de elegir generadores de respaldo para toda la vivienda en Texas y Florida?',
+  'How can I request commercial solar installation in Texas and Florida?':
+    '¿Cómo puedo solicitar una instalación solar comercial en Texas y Florida?',
 };
 
 export { esHome };

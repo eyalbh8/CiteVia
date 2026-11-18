@@ -166,22 +166,13 @@ function GapChart({ running }) {
   );
 }
 
-const intentPrompts = [
-  { text: 'What is unattended retail?', intent: 'Informational' },
-  { text: 'Compare Nayax and Cantaloupe for vending payments', intent: 'Commercial' },
-  { text: 'How do cashless vending payments work?', intent: 'Informational' },
-  { text: 'What is a payment terminal?', intent: 'Informational' },
-  { text: 'Request a Nayax payment solution demo', intent: 'Transactional' },
-  { text: 'What is a micro market?', intent: 'Informational' },
-  { text: 'Nayax, squareup or 365 Retail Markets?', intent: 'Commercial' },
-  { text: 'How does ingenico.com describe payment terminals?', intent: 'Informational' },
-];
+const intentPrompts = promptsData.samples;
 
 function IntentFeed({ running }) {
   const tick = useTicker(running, 1800) + 3;
   const split = promptsData.intentSplit;
   const highIntent = split
-    .filter((s) => s.intent === 'Commercial' || s.intent === 'Transactional')
+    .filter((s) => s.intent !== 'Informational')
     .reduce((sum, s) => sum + s.percent, 0);
   const count = intentPrompts.length;
   return (
@@ -289,10 +280,10 @@ function getChartAttribution(slug) {
     return 'Illustrative concept';
   }
   if (slug === 'high-intent-prompt-intelligence') {
-    return 'Nayax · illustrative reporting · 90 days';
+    return `${promptsData.client} · ${promptsData.period}`;
   }
   if (slug === 'authority-without-overexposure') {
-    return 'Nayax · illustrative reporting · 14 days';
+    return `${citationsData.client} · ${citationsData.period}`;
   }
   return 'Illustrative data';
 }

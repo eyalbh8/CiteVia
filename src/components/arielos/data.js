@@ -228,9 +228,10 @@ export const productTabs = [
     id: 'overview',
     label: 'Overview',
     title: 'See how the brand shows up across AI',
-    copy: 'Compare Nayax with the brands in its market through AI mentions, average rank and sentiment in one visibility snapshot.',
+    copy: 'Compare Freedom Power with the brands in its market through AI mentions, average rank and sentiment in one visibility snapshot.',
     image: '/images/product/overview.png',
-    imageAlt: 'Citevia Account Brief showing Nayax visibility, brand mentions and market position',
+    imageAlt:
+      'Citevia Account Brief showing Freedom Power visibility, brand mentions and market position',
     width: 862,
     height: 560,
   },
@@ -259,9 +260,10 @@ export const productTabs = [
     id: 'mentions',
     label: 'Mentions',
     title: 'Watch how engines choose and describe you',
-    copy: 'See how often Nayax, squareup, Cantaloupe, 365 Retail Markets and ingenico.com appear, and compare their rank and sentiment.',
+    copy: 'See how often Freedom Power, Tesla Energy, Sunrun, TriSMART Solar and Greenstar Power appear, and compare their rank and sentiment.',
     image: '/images/product/mentions.png',
-    imageAlt: 'Citevia Mentions view comparing Nayax with four other payment and retail brands',
+    imageAlt:
+      'Citevia Mentions view comparing Freedom Power with four other solar and energy brands',
     width: 862,
     height: 560,
   },
@@ -308,11 +310,11 @@ export const marketStats = [
   },
 ];
 
-export const nayaxCase = {
-  client: 'Nayax',
-  sector: 'Payments & unattended retail',
+export const freedomPowerCase = {
+  client: 'Freedom Power',
+  sector: 'Solar, home energy & backup power',
   headline: 'Brands that show up. Results that speak.',
-  copy: 'See how Nayax appears alongside squareup, Cantaloupe, 365 Retail Markets and ingenico.com. The visibility snapshot brings AI mentions, average rank and sentiment into one clear market comparison.',
+  copy: 'See how Freedom Power appears alongside Tesla Energy, Sunrun, TriSMART Solar and Greenstar Power. The visibility snapshot brings AI mentions, average rank and sentiment into one clear market comparison.',
 };
 
 export const faqs = [
