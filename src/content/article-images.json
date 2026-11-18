@@ -320,5 +320,19 @@
     "imageUrl": "https://images.unsplash.com/photo-1769092992803-ee97d235ba87",
     "license": "https://unsplash.com/license",
     "sourceCheckedAt": "2026-11-16"
+  },
+  "google-review-requests": {
+    "src": "https://images.unsplash.com/photo-1706759755820-0dbc35c19959?fit=crop&w=1600&q=85&fm=jpg",
+    "alt": "A person using a phone to scan a feedback QR code displayed on a laptop",
+    "altTranslations": {
+      "es": "Una persona escanea con el móvil un código QR de opiniones mostrado en un portátil",
+      "tr": "Dizüstü bilgisayarda gösterilen geri bildirim QR kodunu telefonuyla tarayan bir kişi"
+    },
+    "unsplashId": "31w2Muz6Ydg",
+    "sourceUrl": "https://unsplash.com/photos/a-person-using-a-cell-phone-while-sitting-in-front-of-a-laptop-31w2Muz6Ydg",
+    "photographer": "Marielle Ursua",
+    "imageUrl": "https://images.unsplash.com/photo-1706759755820-0dbc35c19959",
+    "license": "https://unsplash.com/license",
+    "sourceCheckedAt": "2026-11-18"
   }
 }

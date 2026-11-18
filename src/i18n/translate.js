@@ -1,3 +1,7 @@
+import {
+  reviewRequestTranslations,
+  reviewRequestFragments,
+} from '../content/google-review-requests.js';
 import { bingIndexingTranslations, bingIndexingFragments } from '../content/bing-not-indexing.js';
 import {
   brandConfusionTranslations,
@@ -81,6 +85,7 @@ const translationsByLanguage = {
     ...holidayHoursTranslations.es,
     ...brandConfusionTranslations.es,
     ...bingIndexingTranslations.es,
+    ...reviewRequestTranslations.es,
     ...partnerTranslations.es,
     ...imageTranslations('es'),
   },
@@ -105,6 +110,7 @@ const translationsByLanguage = {
     ...holidayHoursTranslations.tr,
     ...brandConfusionTranslations.tr,
     ...bingIndexingTranslations.tr,
+    ...reviewRequestTranslations.tr,
     ...partnerTranslations.tr,
     ...imageTranslations('tr'),
   },
@@ -124,6 +130,7 @@ const articleFragments = {
     ...holidayHoursFragments.es,
     ...brandConfusionFragments.es,
     ...bingIndexingFragments.es,
+    ...reviewRequestFragments.es,
   },
   tr: {
     ...aiCrawlerFragments.tr,
@@ -139,6 +146,7 @@ const articleFragments = {
     ...holidayHoursFragments.tr,
     ...brandConfusionFragments.tr,
     ...bingIndexingFragments.tr,
+    ...reviewRequestFragments.tr,
   },
 };
 const normalizedTranslationsByLanguage = Object.fromEntries(

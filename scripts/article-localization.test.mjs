@@ -1,3 +1,7 @@
+import {
+  googleReviewRequests,
+  reviewRequestTranslations,
+} from '../src/content/google-review-requests.js';
 import { bingNotIndexing, bingIndexingTranslations } from '../src/content/bing-not-indexing.js';
 import {
   brandConfusion,
@@ -62,6 +66,7 @@ test('article copy registers complete paragraphs, link anchors and surrounding n
 });
 
 for (const [article, articleTranslations] of [
+  [googleReviewRequests, reviewRequestTranslations],
   [bingNotIndexing, bingIndexingTranslations],
   [brandConfusion, brandConfusionTranslations],
   [holidayOpeningHours, holidayHoursTranslations],

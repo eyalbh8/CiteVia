@@ -1,3 +1,4 @@
+import { googleReviewRequests } from './google-review-requests.js';
 import { bingNotIndexing } from './bing-not-indexing.js';
 import { brandConfusion } from './brand-confusion-ai-search.js';
 import { holidayOpeningHours } from './holiday-opening-hours.js';
@@ -14,6 +15,7 @@ import { multilingualSeo } from './multilingual-seo.js';
 import { faqSchemaAiSearch } from './faq-schema-ai-search.js';
 
 export const newArticles: Article[] = [
+  googleReviewRequests,
   bingNotIndexing,
   brandConfusion,
   holidayOpeningHours,
