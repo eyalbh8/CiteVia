@@ -1,4 +1,8 @@
 import {
+  googleAiOptOutTranslations,
+  googleAiOptOutFragments,
+} from '../content/google-ai-opt-out.js';
+import {
   reviewRequestTranslations,
   reviewRequestFragments,
 } from '../content/google-review-requests.js';
@@ -86,6 +90,7 @@ const translationsByLanguage = {
     ...brandConfusionTranslations.es,
     ...bingIndexingTranslations.es,
     ...reviewRequestTranslations.es,
+    ...googleAiOptOutTranslations.es,
     ...partnerTranslations.es,
     ...imageTranslations('es'),
   },
@@ -111,6 +116,7 @@ const translationsByLanguage = {
     ...brandConfusionTranslations.tr,
     ...bingIndexingTranslations.tr,
     ...reviewRequestTranslations.tr,
+    ...googleAiOptOutTranslations.tr,
     ...partnerTranslations.tr,
     ...imageTranslations('tr'),
   },
@@ -131,6 +137,7 @@ const articleFragments = {
     ...brandConfusionFragments.es,
     ...bingIndexingFragments.es,
     ...reviewRequestFragments.es,
+    ...googleAiOptOutFragments.es,
   },
   tr: {
     ...aiCrawlerFragments.tr,
@@ -147,6 +154,7 @@ const articleFragments = {
     ...brandConfusionFragments.tr,
     ...bingIndexingFragments.tr,
     ...reviewRequestFragments.tr,
+    ...googleAiOptOutFragments.tr,
   },
 };
 const normalizedTranslationsByLanguage = Object.fromEntries(

@@ -334,5 +334,19 @@
     "imageUrl": "https://images.unsplash.com/photo-1706759755820-0dbc35c19959",
     "license": "https://unsplash.com/license",
     "sourceCheckedAt": "2026-11-18"
+  },
+  "google-ai-opt-out": {
+    "src": "https://images.unsplash.com/photo-1758873263914-230f8ff60569?fit=crop&w=1600&q=85&fm=jpg",
+    "alt": "A yellow selector switch beside an orange indicator light on an industrial control panel",
+    "altTranslations": {
+      "es": "Un selector amarillo junto a una luz indicadora naranja en un panel de control industrial",
+      "tr": "Endüstriyel kontrol panelinde turuncu gösterge ışığının yanında sarı seçici anahtar"
+    },
+    "unsplashId": "7Oqc89s3VI8",
+    "sourceUrl": "https://unsplash.com/photos/close-up-of-a-yellow-toggle-switch-on-a-control-panel-7Oqc89s3VI8",
+    "photographer": "Hans Westbeek",
+    "imageUrl": "https://images.unsplash.com/photo-1758873263914-230f8ff60569",
+    "license": "https://unsplash.com/license",
+    "sourceCheckedAt": "2026-11-20"
   }
 }

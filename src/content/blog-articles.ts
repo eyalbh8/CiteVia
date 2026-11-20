@@ -1,3 +1,4 @@
+import { googleAiOptOut } from './google-ai-opt-out.js';
 import { googleReviewRequests } from './google-review-requests.js';
 import { bingNotIndexing } from './bing-not-indexing.js';
 import { brandConfusion } from './brand-confusion-ai-search.js';
@@ -15,6 +16,7 @@ import { multilingualSeo } from './multilingual-seo.js';
 import { faqSchemaAiSearch } from './faq-schema-ai-search.js';
 
 export const newArticles: Article[] = [
+  googleAiOptOut,
   googleReviewRequests,
   bingNotIndexing,
   brandConfusion,

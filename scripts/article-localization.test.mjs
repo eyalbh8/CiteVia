@@ -1,3 +1,4 @@
+import { googleAiOptOut, googleAiOptOutTranslations } from '../src/content/google-ai-opt-out.js';
 import {
   googleReviewRequests,
   reviewRequestTranslations,
@@ -66,6 +67,7 @@ test('article copy registers complete paragraphs, link anchors and surrounding n
 });
 
 for (const [article, articleTranslations] of [
+  [googleAiOptOut, googleAiOptOutTranslations],
   [googleReviewRequests, reviewRequestTranslations],
   [bingNotIndexing, bingIndexingTranslations],
   [brandConfusion, brandConfusionTranslations],
