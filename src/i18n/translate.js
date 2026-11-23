@@ -1,3 +1,4 @@
+import { aiSeoAuditTranslations, aiSeoAuditFragments } from '../content/ai-seo-audit.js';
 import {
   googleAiOptOutTranslations,
   googleAiOptOutFragments,
@@ -91,6 +92,7 @@ const translationsByLanguage = {
     ...bingIndexingTranslations.es,
     ...reviewRequestTranslations.es,
     ...googleAiOptOutTranslations.es,
+    ...aiSeoAuditTranslations.es,
     ...partnerTranslations.es,
     ...imageTranslations('es'),
   },
@@ -117,6 +119,7 @@ const translationsByLanguage = {
     ...bingIndexingTranslations.tr,
     ...reviewRequestTranslations.tr,
     ...googleAiOptOutTranslations.tr,
+    ...aiSeoAuditTranslations.tr,
     ...partnerTranslations.tr,
     ...imageTranslations('tr'),
   },
@@ -138,6 +141,7 @@ const articleFragments = {
     ...bingIndexingFragments.es,
     ...reviewRequestFragments.es,
     ...googleAiOptOutFragments.es,
+    ...aiSeoAuditFragments.es,
   },
   tr: {
     ...aiCrawlerFragments.tr,
@@ -155,6 +159,7 @@ const articleFragments = {
     ...bingIndexingFragments.tr,
     ...reviewRequestFragments.tr,
     ...googleAiOptOutFragments.tr,
+    ...aiSeoAuditFragments.tr,
   },
 };
 const normalizedTranslationsByLanguage = Object.fromEntries(

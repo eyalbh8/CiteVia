@@ -1,3 +1,4 @@
+import { aiSeoAudit, aiSeoAuditTranslations } from '../src/content/ai-seo-audit.js';
 import { googleAiOptOut, googleAiOptOutTranslations } from '../src/content/google-ai-opt-out.js';
 import {
   googleReviewRequests,
@@ -67,6 +68,7 @@ test('article copy registers complete paragraphs, link anchors and surrounding n
 });
 
 for (const [article, articleTranslations] of [
+  [aiSeoAudit, aiSeoAuditTranslations],
   [googleAiOptOut, googleAiOptOutTranslations],
   [googleReviewRequests, reviewRequestTranslations],
   [bingNotIndexing, bingIndexingTranslations],

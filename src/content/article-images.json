@@ -348,5 +348,19 @@
     "imageUrl": "https://images.unsplash.com/photo-1758873263914-230f8ff60569",
     "license": "https://unsplash.com/license",
     "sourceCheckedAt": "2026-11-20"
+  },
+  "ai-seo-audit": {
+    "src": "https://images.unsplash.com/photo-1775163024488-e88e4a71179f?fit=crop&w=1600&q=85&fm=jpg",
+    "alt": "Two people reviewing printed documents beside a tablet and pen on a table",
+    "altTranslations": {
+      "es": "Dos personas revisan documentos impresos junto a una tableta y un bolígrafo sobre una mesa",
+      "tr": "Masada tablet ve kalemin yanında basılı belgeleri inceleyen iki kişi"
+    },
+    "unsplashId": "MhqUBTxQ3Hw",
+    "sourceUrl": "https://unsplash.com/photos/two-people-reviewing-documents-at-a-table-MhqUBTxQ3Hw",
+    "photographer": "Olena Kholina",
+    "imageUrl": "https://images.unsplash.com/photo-1775163024488-e88e4a71179f",
+    "license": "https://unsplash.com/license",
+    "sourceCheckedAt": "2026-11-23"
   }
 }
