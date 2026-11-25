@@ -1,3 +1,4 @@
+import { websiteMigration } from './website-migration-ai-search.js';
 import { aiSeoAudit } from './ai-seo-audit.js';
 import { googleAiOptOut } from './google-ai-opt-out.js';
 import { googleReviewRequests } from './google-review-requests.js';
@@ -17,6 +18,7 @@ import { multilingualSeo } from './multilingual-seo.js';
 import { faqSchemaAiSearch } from './faq-schema-ai-search.js';
 
 export const newArticles: Article[] = [
+  websiteMigration,
   aiSeoAudit,
   googleAiOptOut,
   googleReviewRequests,

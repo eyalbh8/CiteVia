@@ -1,3 +1,7 @@
+import {
+  websiteMigration,
+  websiteMigrationTranslations,
+} from '../src/content/website-migration-ai-search.js';
 import { aiSeoAudit, aiSeoAuditTranslations } from '../src/content/ai-seo-audit.js';
 import { googleAiOptOut, googleAiOptOutTranslations } from '../src/content/google-ai-opt-out.js';
 import {
@@ -68,6 +72,7 @@ test('article copy registers complete paragraphs, link anchors and surrounding n
 });
 
 for (const [article, articleTranslations] of [
+  [websiteMigration, websiteMigrationTranslations],
   [aiSeoAudit, aiSeoAuditTranslations],
   [googleAiOptOut, googleAiOptOutTranslations],
   [googleReviewRequests, reviewRequestTranslations],

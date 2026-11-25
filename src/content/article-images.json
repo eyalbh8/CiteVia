@@ -362,5 +362,19 @@
     "imageUrl": "https://images.unsplash.com/photo-1775163024488-e88e4a71179f",
     "license": "https://unsplash.com/license",
     "sourceCheckedAt": "2026-11-23"
+  },
+  "website-migration-ai-search": {
+    "src": "https://images.unsplash.com/photo-1663625318264-695d2d04f11a?fit=crop&w=1600&q=85&fm=jpg",
+    "alt": "Labeled cardboard moving boxes stacked beside a sunlit window with a white curtain",
+    "altTranslations": {
+      "es": "Cajas de cartón de mudanza etiquetadas y apiladas junto a una ventana soleada con cortina blanca",
+      "tr": "Beyaz perdeli, güneş alan bir pencerenin yanında üst üste konmuş etiketli karton taşınma kutuları"
+    },
+    "unsplashId": "bV7WI-AeiTA",
+    "sourceUrl": "https://unsplash.com/photos/a-room-with-boxes-and-a-window-bV7WI-AeiTA",
+    "photographer": "Alicia Christin Gerald",
+    "imageUrl": "https://images.unsplash.com/photo-1663625318264-695d2d04f11a",
+    "license": "https://unsplash.com/license",
+    "sourceCheckedAt": "2026-11-25"
   }
 }
