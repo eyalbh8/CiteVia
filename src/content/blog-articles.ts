@@ -1,3 +1,4 @@
+import { videoSeo } from './video-seo-ai-search.js';
 import { websiteMigration } from './website-migration-ai-search.js';
 import { aiSeoAudit } from './ai-seo-audit.js';
 import { googleAiOptOut } from './google-ai-opt-out.js';
@@ -18,6 +19,7 @@ import { multilingualSeo } from './multilingual-seo.js';
 import { faqSchemaAiSearch } from './faq-schema-ai-search.js';
 
 export const newArticles: Article[] = [
+  videoSeo,
   websiteMigration,
   aiSeoAudit,
   googleAiOptOut,

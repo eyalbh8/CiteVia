@@ -376,5 +376,19 @@
     "imageUrl": "https://images.unsplash.com/photo-1663625318264-695d2d04f11a",
     "license": "https://unsplash.com/license",
     "sourceCheckedAt": "2026-11-25"
+  },
+  "video-seo-ai-search": {
+    "src": "https://images.unsplash.com/photo-1776690329274-674493ca9ce1?fit=crop&w=1600&q=85&fm=jpg",
+    "alt": "A video camera on a tripod with people visible on its flip-out screen",
+    "altTranslations": {
+      "es": "Una cámara de vídeo sobre un trípode con personas visibles en su pantalla abatible",
+      "tr": "Açılır ekranında insanlar görünen, tripoda takılı bir video kamera"
+    },
+    "unsplashId": "bfU8EdCOX4Y",
+    "sourceUrl": "https://unsplash.com/photos/a-professional-video-camera-on-a-tripod-filming-bfU8EdCOX4Y",
+    "photographer": "Gabriel Weyand",
+    "imageUrl": "https://images.unsplash.com/photo-1776690329274-674493ca9ce1",
+    "license": "https://unsplash.com/license",
+    "sourceCheckedAt": "2026-11-27"
   }
 }

@@ -1,3 +1,4 @@
+import { videoSeoTranslations, videoSeoFragments } from '../content/video-seo-ai-search.js';
 import {
   websiteMigrationTranslations,
   websiteMigrationFragments,
@@ -98,6 +99,7 @@ const translationsByLanguage = {
     ...googleAiOptOutTranslations.es,
     ...aiSeoAuditTranslations.es,
     ...websiteMigrationTranslations.es,
+    ...videoSeoTranslations.es,
     ...partnerTranslations.es,
     ...imageTranslations('es'),
   },
@@ -126,6 +128,7 @@ const translationsByLanguage = {
     ...googleAiOptOutTranslations.tr,
     ...aiSeoAuditTranslations.tr,
     ...websiteMigrationTranslations.tr,
+    ...videoSeoTranslations.tr,
     ...partnerTranslations.tr,
     ...imageTranslations('tr'),
   },
@@ -149,6 +152,7 @@ const articleFragments = {
     ...googleAiOptOutFragments.es,
     ...aiSeoAuditFragments.es,
     ...websiteMigrationFragments.es,
+    ...videoSeoFragments.es,
   },
   tr: {
     ...aiCrawlerFragments.tr,
@@ -168,6 +172,7 @@ const articleFragments = {
     ...googleAiOptOutFragments.tr,
     ...aiSeoAuditFragments.tr,
     ...websiteMigrationFragments.tr,
+    ...videoSeoFragments.tr,
   },
 };
 const normalizedTranslationsByLanguage = Object.fromEntries(

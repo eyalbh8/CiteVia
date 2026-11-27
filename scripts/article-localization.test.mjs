@@ -1,3 +1,4 @@
+import { videoSeo, videoSeoTranslations } from '../src/content/video-seo-ai-search.js';
 import {
   websiteMigration,
   websiteMigrationTranslations,
@@ -72,6 +73,7 @@ test('article copy registers complete paragraphs, link anchors and surrounding n
 });
 
 for (const [article, articleTranslations] of [
+  [videoSeo, videoSeoTranslations],
   [websiteMigration, websiteMigrationTranslations],
   [aiSeoAudit, aiSeoAuditTranslations],
   [googleAiOptOut, googleAiOptOutTranslations],
