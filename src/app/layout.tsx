@@ -38,6 +38,16 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en" data-theme="light" data-scroll-behavior="smooth" suppressHydrationWarning>
       <head>
+        <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-K66JCGH6" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag() { dataLayer.push(arguments); }
+              gtag('js', new Date());
+            `,
+          }}
+        />
         <script
           async
           src="https://api.citevia.io/v1/traffic/tracker.js"
